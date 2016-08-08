@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-Jul-2016, 10:24:31
+    Author     : April
+*/
+body {
+	overflow: hidden;
+}
+
+#index {
+	position: relative;
+}
+
+.myVideo {
+	width: 100%;
+}
+
+.btn_wrapper {
+	position: relative;
+	z-index: 2;
+	border: none;
+  text-align: center;
+}
+
+.btn_skip a {
+  cursor: pointer;
+}
+
+.img_logoDr {
+	position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 20px;
+}
+
+.line_skip {
+	background: url("http://localhost/thp/sites/default/files/line_skip.png") top center repeat-y;
+	height: 100px;
+	position: relative;
+	z-index: 2;
+  text-align: center;
+}
+
+.video2-wrapper {
+  display: none;
+}
+
+.btn_wrapper a:hover {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.skip-wrapper {
+  position: absolute;
+  bottom: 120px;
+  text-align: center;
+  width: 100%;
+  display: none;
+}

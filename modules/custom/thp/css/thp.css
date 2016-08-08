@@ -1,0 +1,435 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-Jul-2016, 10:24:31
+    Author     : April
+*/
+html,body {
+  height:100%;
+  font-family: 'utm_neo_sans_intelregular';
+}
+
+body.no-sidebars {
+  font-family: 'utm_neo_sans_intelregular';
+  color: #FFFFFF;
+  line-height: 20px;
+}
+
+body.not-logged-in  {
+  overflow: hidden;
+}
+
+.layout-center {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.header {
+  position: absolute;
+  left: 86px;
+  top: 10px;
+  z-index: 1;
+}
+
+.front .header {
+  left: 30px;
+}
+
+main.layout-3col__full {
+  padding: 0;
+  margin: 0;
+}
+
+.layout-swap {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page-node-2 article {
+  text-align: center;
+}
+
+.page-node-2 {
+  background: url('../images/homepagebg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.layout-swap__top {
+  display: none;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 auto 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 100%;
+}
+@media (min-width: 400px) {
+  .btn {
+    display: inline-block;
+    margin-right: 2.5em;
+  }
+  .btn:nth-of-type(even) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 600px) {
+  .btn:nth-of-type(even) {
+    margin-right: 2.5em;
+  }
+  .btn:nth-of-type(5) {
+    margin-right: 0;
+  }
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+.block-wrapper {
+  position: relative;
+}
+
+/** Menu ***/
+#block-block-2 {
+  margin: 0 0 0 56px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: calc(100% - 56px);
+  display: none;
+}
+
+#block-block-2.active {
+}
+
+#block-block-2 .block-wrapper {
+  height: 100vh;
+}
+
+#block-block-2 .block-wrapper > div {
+  float: left;
+  width: 50%;
+  height: 50%;
+}
+
+#block-block-2 .block-wrapper > div a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#block-block-2 .block-wrapper div.menu1 {
+  background: url('../images/m1.jpg') 0 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#block-block-2 .block-wrapper div.menu2 {
+  background: url('../images/m2.jpg') 0 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#block-block-2 .block-wrapper div.menu3 {
+  background: url('../images/m3.jpg') 0 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#block-block-2 .block-wrapper div.menu4 {
+  background: url('../images/m4.jpg') 0 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#block-block-2 .block-wrapper > div .label {
+  font-family: 'utm_bebasregular';
+  margin: 0 0 7px 0;
+}
+
+#block-block-2 .block-wrapper > div .title {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 0 30px 0;
+}
+
+#block-block-2 .block-wrapper > div .desc {
+  margin: 0 0 20px 0;
+  padding: 30px 0 0 0;
+  font-size: 80%;
+}
+
+#block-block-2 .block-wrapper > div .view {
+  border: 3px solid #FFFFFF;;
+  display: inline-block;
+}
+
+#block-block-2 .block-wrapper > div .view a {
+  display: block;
+  font-family: 'utm_bebasregular';
+  padding: 5px 35px;
+  background: #f0a001;
+  text-decoration: none;
+}
+
+#block-block-2 .block-wrapper > div .serpa {
+  height: 1px;
+  width: 40px;
+  background: #FFFFFF;
+}
+
+#block-block-2 .block-wrapper > div > div {
+  padding: 80px 0 0 80px;
+} 
+
+#block-block-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 56px;
+  background: #d11212 url('../images/serpa-leftitem.jpg') 0 56px repeat-x;
+  display: flex;
+  z-index: 11;
+}
+
+#menu-bnt {
+  background: url('../images/icon_menu.png') 16px center no-repeat;
+  cursor: pointer;
+  height: 56px;
+}
+
+#menu-bnt.active {
+  background: #f0a001 url('../images/icon_menu_active.png') 16px center no-repeat;
+}
+
+#fb-bnt { 
+  background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+  bottom: 56px;
+  height: 56px;
+}
+
+#fb-bnt a { 
+  background: url('../images/icon_fb.png') 19px center no-repeat;
+  display: block;
+  height: 56px;
+}
+  
+#youtube-bnt {
+  background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+  bottom: 0;
+  height: 56px;
+}
+
+#youtube-bnt a {
+  background: url('../images/icon-youtube.png') 12px center no-repeat;
+  display: block;
+  height: 56px;
+}
+
+#copy-right {
+  bottom: 128px;
+  -webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  transform: rotate(-90deg);
+  white-space:nowrap;
+  padding: 0 0 0 10px;
+  color: #FFFFFF;
+}
+
+.left-item {
+  width: 56px;
+  position: absolute;
+}
+/** End Menu ***/
+
+.node-2 .bnt-try img {
+  margin: 0 auto;
+  display: block;
+}
+
+.node-2 .bnt-try .img_exper1 {
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.node-2 .bnt-try .img_exper1 img {
+   opacity:0.2;
+   transition: all 0.3s ease-in;
+   cursor: pointer;
+}
+
+.node-2 .bnt-try .img_exper1 .mask {
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  border: 27px solid rgba(255,255,255,0.2);
+  border-top: 26px solid rgba(255,255,255,0.2);
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.940, 0.850, 0.100, 0.620);
+  width: 216px;
+  height: 53px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.node-2 .bnt-try .img_exper1:hover .mask {
+  border:0px double rgba(255,255,255,0.7);
+  opacity:0;
+  visibility:hidden;
+}
+
+.node-2 .bnt-try .img_exper1:hover img {
+   opacity:1;
+}
+
+body.page-node-3 {
+  background-size: cover;
+}
+
+#block-views-aseptic-block-1 {
+  height: 100vh;
+  width: 94px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #d11212;
+}
+
+#block-views-aseptic-block-1 p {
+  margin: 0;
+  padding: 0;
+}
+
+#block-views-aseptic-block-1 .views-row-first {
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  line-height: 14px;
+  background: url(/thp/sites/default/files/line_center_r.jpg) repeat-x left bottom;
+  cursor: pointer;
+}
+
+#block-views-aseptic-block-1 .views-row-first:hover {
+  background: #f0a001 url(/thp/sites/default/files/line_center_r.jpg) repeat-x left bottom;
+}
+
+#block-views-aseptic-block-1 .views-row-first p {
+  padding: 20px 0;
+}
+
+#block-views-aseptic-block-1 .views-row {
+  position: relative;
+  cursor: pointer;
+}
+
+#block-views-aseptic-block-1 .views-row:not(.views-row-first) .views-field-title {
+  opacity: 0;
+  background-color: #eeeeee;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: #000000;
+  position: absolute;
+  top: 15px;
+  right: 100px;
+  width: auto;
+  white-space: nowrap;
+}
+
+#block-views-aseptic-block-1 .views-row .views-field-field-menu-icon,
+#block-views-aseptic-block-1 .views-row.views-row-first .views-field-title {
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  display: table;
+}
+
+#block-views-aseptic-block-1 .views-row .views-field-field-menu-icon .field-content,
+#block-views-aseptic-block-1 .views-row.views-row-first .views-field-title .field-content{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon,
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon {
+  background: url(/thp/sites/default/files/arrow_r.png) no-repeat 2px 21px;
+}
+
+#block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content,
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content {
+  background: url('/thp/sites/default/files/icon_Preparation_Fuel.png') no-repeat center center;
+}
+
+#block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content img,
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content img {
+  display: none;
+}
+
+#block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-title {
+  opacity: 1;
+}
+
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title {
+  animation: seconds 7s linear 1;
+}
+
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#block-views-aseptic-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#block-views-aseptic-block .views-row {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  left: 100vw;
+}
