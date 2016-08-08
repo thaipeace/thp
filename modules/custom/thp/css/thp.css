@@ -31,7 +31,7 @@ body.not-logged-in  {
   position: absolute;
   left: 86px;
   top: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .front .header {
@@ -432,4 +432,51 @@ body.page-node-3 {
   height: 100vh;
   width: 100vw;
   left: 100vw;
+  z-index: 2;
+  padding: 0 94px 0 56px;
+}
+
+#block-views-aseptic-block .views-row.views-row-first {
+  background: url('../images/trainghiembg.jpg') 0 0 no-repeat;
+  background-size: cover;
+}
+
+article.node-4 {
+  position: absolute;
+  left: 100vw;
+  top: 0;
+}
+
+#block-views-aseptic-block .views-row .views-field-nothing {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vw;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-nothing {
+  width: 100vw;
+  height: auto;
+  bottom: 100px;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-nothing .field-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 50px;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-nothing .field-name-field-title {
+  float: left;
+  margin: 0 45px;
+}
+
+.dash-line {
+  color: #FFFFFF;
 }
