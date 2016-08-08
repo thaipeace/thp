@@ -343,12 +343,12 @@ body.page-node-3 {
   font-size: 14px;
   text-align: center;
   line-height: 14px;
-  background: url(/thp/sites/default/files/line_center_r.jpg) repeat-x left bottom;
+  background: url(/thpv1/sites/default/files/line_center_r.jpg) repeat-x left bottom;
   cursor: pointer;
 }
 
 #block-views-aseptic-block-1 .views-row-first:hover {
-  background: #f0a001 url(/thp/sites/default/files/line_center_r.jpg) repeat-x left bottom;
+  background: #f0a001 url(/thpv1/sites/default/files/line_center_r.jpg) repeat-x left bottom;
 }
 
 #block-views-aseptic-block-1 .views-row-first p {
@@ -390,12 +390,12 @@ body.page-node-3 {
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon,
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon {
-  background: url(/thp/sites/default/files/arrow_r.png) no-repeat 2px 21px;
+  background: url(/thpv1/sites/default/files/arrow_r.png) no-repeat 2px 21px;
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content,
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content {
-  background: url('/thp/sites/default/files/icon_Preparation_Fuel.png') no-repeat center center;
+  background: url('/thpv1/sites/default/files/icon_Preparation_Fuel.png') no-repeat center center;
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content img,

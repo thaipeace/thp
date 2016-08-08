@@ -38,7 +38,7 @@ body {
 }
 
 .line_skip {
-	background: url("http://localhost/thp/sites/default/files/line_skip.png") top center repeat-y;
+	background: url("http://localhost/thpv1/sites/default/files/line_skip.png") top center repeat-y;
 	height: 100px;
 	position: relative;
 	z-index: 2;
