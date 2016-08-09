@@ -54,6 +54,40 @@
         });
       }
       
+      // Try it button
+      if ($('.node-2 .bnt-try').length > 0) {
+        // Try it button
+        for (var i = 0; i < 51; i++) {
+          if (i < 10) {
+            i = '0' + i;
+          }
+          $('.node-2 .bnt-try .img_exper1 a').append('<div class="item' + i + '"></div>');
+          $('.node-2 .bnt-try .img_exper1 .item' + i).css('background', 'url("/thp/sites/default/modules/custom/thp/images/tryitbnt/heloo_000' + i + '.png") center center no-repeat');
+        }
+        
+        $('.node-2 .bnt-try .img_exper1 a').hover(function(){
+          tryAnimate();
+        }, function(){});
+      }
+      
+      /*
+      * Tryit button twikle
+      */  
+      function tryAnimate() {
+       var maxLoops = 73;
+       var counter = 0;
+
+       (function next() {
+           if (counter++ >= maxLoops) return;
+
+           setTimeout(function() {
+               $('.node-2 .bnt-try .img_exper1 a > div').hide();
+               $('.node-2 .bnt-try .img_exper1 a .item' + counter).show();
+               next();
+           }, 10);
+       })();
+      }
+      
       // Summary process
       if ($('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').length > 0) {
         var width = $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').width();

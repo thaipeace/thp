@@ -1,0 +1,68 @@
+/*** Zoom out item to a small offset ***/
+@keyframes makezoomout {
+  0% {
+    width: 400px;
+    height: auto;
+    opacity: 1;
+  }
+  50% {
+    width: 280px;
+    height: auto;
+  }
+  100% {
+    width: 280px;
+    height: auto;
+    opacity: 0;
+  }
+}
+
+/*** Zoom in item from a small offset ***/
+@keyframes makezoomin {
+  0% {
+    width: 280px;
+    height: auto;
+    opacity: 0;
+  }
+  50% {
+    width: 280px;
+    height: auto;
+  }
+  100% {
+    width: 400px;
+    height: auto;
+    opacity: 1;
+  }
+}
+
+/*** Svg run line path ***/
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*** Fade out item ***/
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*** Row blink ***/
+@keyframes blink {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -4,11 +4,6 @@
  * Implement hook_preprocess_page
  */
 function thp_preprocess_page(&$vars) {
-  if ($vars['is_front']) {
-    drupal_add_css(drupal_get_path('module', 'thp') . '/css/intro.css');
-    drupal_add_js(drupal_get_path('module', 'thp') . '/js/intro.js');
-  }
-  
   if ($vars['directory'] != 'themes/seven') {
     drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'external');
     drupal_add_js('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js', 'external');
@@ -22,11 +17,17 @@ function thp_preprocess_page(&$vars) {
       }
     }
     
+    drupal_add_css(drupal_get_path('module', 'thp') . '/css/keyframes.css');
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/tam.css');
     drupal_add_js(drupal_get_path('module', 'thp') . '/js/tam.js');
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/thp.css');
     drupal_add_js(drupal_get_path('module', 'thp') . '/js/thp.js');
     
+  }
+  
+  if ($vars['is_front']) {
+    drupal_add_css(drupal_get_path('module', 'thp') . '/css/intro.css');
+    drupal_add_js(drupal_get_path('module', 'thp') . '/js/intro.js');
   }
 }
 

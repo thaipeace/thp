@@ -26,8 +26,16 @@ body {
   text-align: center;
 }
 
-.btn_skip a {
+#btn_skip {
   cursor: pointer;
+  width: 116px;
+  height: 11px;
+  display: block;
+  margin: 0 auto;
+}
+
+#btn_skip:hover img {
+  animation: blink 0.7s infinite;
 }
 
 .img_logoDr {
