@@ -64,36 +64,50 @@
         
         $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing .field-name-field-title').each(function(index, element) {
           x = getCenterDiv(element);
-          circles += '<circle cx="' + x + '" cy="50" r="2" />';
-          path += (index === 0)? x + ' 50 ':'L' + x + ' 50 ' ;
+          circles += '<div class="pw" style="top:29px;left:' + (x-22) + 'px;"><div class="point"></div><div class="circle"></div></div>';
+          path += (index === 0)? x + ' 70 ':'L' + x + ' 70 ' ;
         });
+        var svgCir = "<div class='svg-circle'>" + circles + "</div>";
         
-        var svg = pathAnimate(path, width, height);
+        var pathTag = pathAnimate(path);
+        var svgLine = "<svg class='dash-line' width='" + width + "' height='" + height + "' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
+        svgLine += pathTag;
+        svgLine += "</svg>";
+        
+        var svg = svgCir + svgLine;
         
         $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').prepend(svg);
-        $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing .dash-line').prepend(circles);
+        
+        // Click proccess
+        $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw').click(function() {
+          if (!$(this).hasClass('active')) {
+            var ind = $(this).index();
+
+            $('.svg-circle .pw').removeClass('active');
+            $(this).addClass('active');
+
+            $('.svg-circle .pw .point').hide();
+            $('.point', this).show();
+            
+            var element = $($('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity').get(ind));
+            $('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity.active .field-name-field-image img').css('animation', 'makezoomout 0.5s ease-in-out forwards');
+            $('.field-name-field-image img', element).css('animation', 'makezoomin 0.5s ease-in-out forwards');
+            
+            $('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity').removeClass('active');
+            $($('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity').get(ind)).addClass('active');
+          }
+        });
+        
+        $('#block-views-aseptic-block .views-row.views-row-first .field-collection-item-field-parts .field-name-field-description').prepend('<div class="line"></div>');
       }
       
     }
   };
   
   /*
-   * width Int, height Int: offset of container
    * path String: html5 path format. Ex. M200 0 L40 25 L100 200
-   * style Array: svg path style colection
-   *  EX: 
-   *  style = [
-        "fill:none",
-        "stroke:black",
-        "stroke-width:1",
-        "stroke-linejoin:round",
-        "stroke-linecap:round",
-        "stroke-dasharray:1000",
-        "animation: dash 3s 1 linear forwards",
-        "stroke:#000000"
-      ];
    */
-  function pathAnimate(path, width, height) {
+  function pathAnimate(path) {
     var style = [
       "fill:none",
       "stroke:black",
@@ -101,17 +115,14 @@
       "stroke-linejoin:round",
       "stroke-linecap:round",
       "stroke-dasharray:1000",
-      "animation: dash 3s 1 linear forwards",
+      "animation: dash 3s 1 ease-in-out forwards",
       "stroke:#FFFFFF"
     ];
     
-    var svg = '';
-    
-    svg = "<svg class='dash-line' width='" + width + "' height='" + height + "' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
-    svg += "<path d='" + path + "' style='" + style.join(";") + "' />";
-    svg += "</svg>";
+    var pathTag = '';
+    pathTag = "<path d='" + path + "' style='" + style.join(";") + "' />";
 
-    return svg;
+    return pathTag;
   }
   
   function getCenterDiv(container) {
