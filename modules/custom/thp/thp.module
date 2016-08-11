@@ -10,6 +10,7 @@ function thp_preprocess_page(&$vars) {
     
     if (isset($vars['node'])) {
       if ($vars['node']->nid == 4) {
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/draggable_background.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');

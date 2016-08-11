@@ -15,13 +15,26 @@
       // Build 360image
       $('.views-field-field-background-360-images .field-content').hide();
       var materialPaths = {};
-      $('#block-views-aseptic-block .views-row').each(function(index, element){
-        $('.views-field-field-background-360-images', element).attr('id', 'three-'+index);
-        var materialPaths = $('.views-field-field-background-360-images .field-content', element).text();
+      
+      $('#block-views-aseptic-block-1 .views-row').click(function() {
+        var index = $(this).index();
+        var asepticBlock = $($('#block-views-aseptic-block .views-row')).get(index);
+        
+        // Background 360 build
+        if ($('.views-field-field-background-360-images canvas').length > 0) {
+          $('.views-field-field-background-360-images canvas').remove();
+        }
+        $('.views-field-field-background-360-images', asepticBlock).attr('id', 'three-' + index);
+        var materialPaths = $('.views-field-field-background-360-images .field-content', asepticBlock).text();
         if (materialPaths.length > 0) {
           var container = 'three-' + index;
           build360Img(container, materialPaths.split(","));
         }
+        
+        // Drag background
+        var imageUrl = $('.views-field-field-drag-background .field-content', asepticBlock).attr('src');
+        $(asepticBlock).css('background','url("'+ imageUrl +'")').backgroundDraggable({axis: 'x'});
+        
       });
     }
   };

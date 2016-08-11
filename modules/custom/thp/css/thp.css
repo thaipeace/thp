@@ -639,8 +639,12 @@ article.node-4.active {
   display: none;
 }
 
-#block-views-aseptic-block .views-row .views-field {
-  
+#block-views-aseptic-block .views-row > .views-field-field-image {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -1;
 }
 
 #block-views-aseptic-block .views-row .views-field-field-background-360-images {
