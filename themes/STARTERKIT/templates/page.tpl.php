@@ -142,4 +142,3 @@
 </div>
 
 <?php print render($page['bottom']); ?>
-<div id="three-container"></div>

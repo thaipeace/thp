@@ -13,9 +13,16 @@
   Drupal.behaviors.build360Bg = {
     attach: function (context, settings) {  
       // Build 360image
-      var container = 'three-container';
-      var materialPaths = ['./image/px.jpg', './image/nx.jpg', './image/py.jpg', './image/ny.jpg', './image/pz.jpg', './image/nz.jpg'];
-      build360Img(container, materialPaths);
+      $('.views-field-field-background-360-images .field-content').hide();
+      var materialPaths = {};
+      $('#block-views-aseptic-block .views-row').each(function(index, element){
+        $('.views-field-field-background-360-images', element).attr('id', 'three-'+index);
+        var materialPaths = $('.views-field-field-background-360-images .field-content', element).text();
+        if (materialPaths.length > 0) {
+          var container = 'three-' + index;
+          build360Img(container, materialPaths.split(","));
+        }
+      });
     }
   };
 
@@ -36,17 +43,10 @@ function build360Img(container, materialPaths) {
 	lat = 0,
 	onMouseDownLat = 0,
 	phi = 0,
-	theta = 0;
-  
-  var target = new THREE.Vector3();
-	
-  if (container1 == null) {
-    return false;
-  }
-  else {
-    init(container1, materialPaths);
-    animate();
-  }
+	theta = 0,
+	target = new THREE.Vector3();
+	init(container1, materialPaths);
+	animate();
 
 	//-----------------//
 
@@ -54,7 +54,9 @@ function build360Img(container, materialPaths) {
 
 		var container, mesh;
 
-		camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
+		camera = new THREE.PerspectiveCamera( 110, window.innerWidth / window.innerHeight, 1, 1100 );
+		camera.fov = (120*8) * 0.05;
+		camera.updateProjectionMatrix();
 
 		scene = new THREE.Scene();
 
@@ -92,7 +94,7 @@ function build360Img(container, materialPaths) {
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 		document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-		document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
+		//document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
 		document.addEventListener( 'MozMousePixelScroll', onDocumentMouseWheel, false);
 
 		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
@@ -101,8 +103,18 @@ function build360Img(container, materialPaths) {
 		//
 
 		window.addEventListener( 'resize', onWindowResize, false );
-
+    
+    //console.log(scene);
 	}
+  
+  function create3DPoint(x,y,z) {
+    var pointGeometry = new THREE.SphereGeometry( 2, 16, 16 ), // adjust the first value for the 'point' radius
+    pointMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} ),  // adjust the color of your 'point'
+    point3D = new THREE.Mesh( pointGeometry, pointMaterial );
+    point3D.position.set(x,y,z);
+    
+    return point3D;
+  }
 
 	//-----------------//
 
@@ -146,18 +158,28 @@ function build360Img(container, materialPaths) {
 
 		onPointerDownLon = lon;
 		onPointerDownLat = lat;
+    
+//    console.log(onPointerDownPointerX + "-" + onPointerDownPointerX);
+//    console.log(onPointerDownLon);
 
 	}
 
 	//-----------------------//
-
 	function onDocumentMouseMove( event ) {
 
 		if ( isUserInteracting === true ) {
-
+      
 			lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
-			lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-
+//			lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+      var point3D = create3DPoint(90,0,90);
+      console.log((Math.round(lon)-90)/360);
+      if (Number.isInteger((Math.round(lon)-90)/360)) {
+        console.log('bbb');
+        scene.add(point3D);
+      }else {
+        console.log('aaa');
+        scene.remove(point3D);
+      }
 		}
 	}
 
@@ -245,7 +267,7 @@ function build360Img(container, materialPaths) {
 
 		if ( isUserInteracting === false ) {
 
-			lon += 0.1;
+			//lon += 0.1;
 
 		}
 
@@ -254,7 +276,9 @@ function build360Img(container, materialPaths) {
 		theta = THREE.Math.degToRad( lon );
 
 		target.x = 500 * Math.sin( phi ) * Math.cos( theta );
-		target.y = 500 * Math.cos( phi );
+		//target.y = 500 * Math.cos( phi );
+    //console.log(target.y);
+		target.y = -92.8;
 		target.z = 500 * Math.sin( phi ) * Math.sin( theta );
 
 		camera.position.copy( target ).negate();
@@ -263,10 +287,4 @@ function build360Img(container, materialPaths) {
 		renderer.render( scene, camera );
 
 	}
-
-
-	function Panorama360FishEye(container, materials) {
-
-	}
-
 }

@@ -226,6 +226,19 @@ main.layout-3col__full {
   background: #f0a001 url('../images/icon_menu_active.png') 16px center no-repeat;
 }
 
+#question-bnt .left-item-inner {
+  background: url('../images/question.png') center center no-repeat;
+  display: block;
+  height: 56px;
+  cursor: pointer;
+}
+
+#question-bnt {
+  background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+  bottom: 112px;
+  height: 56px;
+}
+
 #fb-bnt { 
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
   bottom: 56px;
@@ -251,7 +264,7 @@ main.layout-3col__full {
 }
 
 #copy-right {
-  bottom: 128px;
+  bottom: 180px;
   -webkit-transform:rotate(-90deg);
   -moz-transform:rotate(-90deg);
   -o-transform: rotate(-90deg);
@@ -331,14 +344,23 @@ body.page-node-3 {
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first) .views-field-title {
   opacity: 0;
+  position: absolute;
+  top: 15px;
+  right: 78px;
+  padding: 0 20px 0 0;
+}
+
+#block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-title,
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title {
+  background: url(/thpv1/sites/default/files/arrow_r.png) no-repeat right center;
+}
+
+#block-views-aseptic-block-1 .views-row:not(.views-row-first) .views-field-title .field-content {
   background-color: #eeeeee;
   font-size: 12px;
   border-radius: 3px;
   padding: 5px 10px;
   color: #000000;
-  position: absolute;
-  top: 15px;
-  right: 100px;
   width: auto;
   white-space: nowrap;
 }
@@ -359,7 +381,7 @@ body.page-node-3 {
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon,
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon {
-  background: url(/thpv1/sites/default/files/arrow_r.png) no-repeat 2px 21px;
+  
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content,
@@ -392,7 +414,10 @@ body.page-node-3 {
   height: 100vh;
   width: 100vw;
   left: 100vw;
-  z-index: 2;
+}
+
+#block-views-aseptic-block .views-row.active {
+  left: 0;
 }
 
 #block-views-aseptic-block .views-row.views-row-first {
@@ -402,19 +427,26 @@ body.page-node-3 {
 
 article.node-4 {
   position: absolute;
-  left: 100vw;
+  left: 0;
   top: 0;
+  width: 100vw;
+  opacity: 0;
+}
+
+article.node-4.active {
+  animation: thpfadeinwait 1s ease-in-out forwards;
 }
 
 #block-views-aseptic-block .views-row .views-field-nothing {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100vh;
+  width: 100%;
   height: 100vw;
 }
 
-#block-views-aseptic-block .views-row.views-row-first .views-field-nothing {
+#block-views-aseptic-block .views-row.views-row-first .views-field-nothing,
+#block-views-aseptic-block .views-row.views-row-last .views-field-nothing {
   width: 100vw;
   height: auto;
   bottom: 100px;
@@ -492,11 +524,14 @@ article.node-4 {
   padding: 0 94px 0 56px;
 }
 
+#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity.active .field-name-field-description .field-items {
+  animation: thpfadeinwait 1s ease-in forwards;
+}
+
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .content {
   display: table;
   width: 100vw;
   height: 100vh;
-  padding: 0 94px 0 56px;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity:first-child {
@@ -520,6 +555,10 @@ article.node-4 {
   z-index: 1;
 }
 
+#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .field-name-field-description .field-items {
+  opacity: 0;
+}
+
 .line {
   height: 1px;
   width: 140px;
@@ -527,26 +566,93 @@ article.node-4 {
   position: absolute;
   top: 37px;
   left: 60px;
+  opacity: 0;
+}
+
+.entity.active .line {
+  animation: thpfadeinwait 1s ease-in forwards;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body {
-  position: absolute;
-  right: 200px;
-  bottom: 0;
-  top: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-#block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content {
-  display: table;
+#block-views-aseptic-block .views-row.views-row-last .views-field-body {
+  width: 100%;
   height: 100%;
+  position: relative;
+  display: none;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next {
-  display: table-cell;
-  vertical-align: middle;
-  animation: zomout 3s linear forwards;
+  width: 175px;
+  height: 37px;
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  z-index: 1;
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next div {
+  background: url('../images/white-arrow.png') 85% center no-repeat;
+  padding: 10px 50px 5px 20px;
+  text-transform: uppercase;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next div:hover {
+  animation: blink 0.8s ease-in-out infinite;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img {
   opacity: 0;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity:first-child .field-name-field-image img {
+  animation: makezoomin 0.5s ease-in-out forwards;
+}
+
+#block-views-aseptic-block .views-row .views-field-title {
+  display: none;
+  text-align: center;
+  margin: 40px 0 0 0;
+  text-transform: uppercase;
+  font-size: 170%;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-title {
+  display: block;
+}
+
+#block-views-aseptic-block .views-row {
+  opacity: 0;
+}
+
+#block-views-aseptic-block .views-row.active {
+  animation: thpfadeinwait 1s ease-in-out forwards;
+}
+
+#block-views-aseptic-block-1 .views-row-last {
+  display: none;
+}
+
+#block-views-aseptic-block .views-row .views-field {
+  
+}
+
+#block-views-aseptic-block .views-row .views-field-field-background-360-images {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vw;
+}
+
+#block-views-aseptic-block .views-row .views-field-field-background-360-images ul,
+#block-views-aseptic-block .views-row .views-field-field-background-360-images li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

@@ -1,7 +1,7 @@
 /*** Zoom out item to a small offset ***/
 @keyframes makezoomout {
   0% {
-    width: 400px;
+    width: 500px;
     height: auto;
     opacity: 1;
   }
@@ -28,7 +28,7 @@
     height: auto;
   }
   100% {
-    width: 400px;
+    width: 500px;
     height: auto;
     opacity: 1;
   }
@@ -48,9 +48,34 @@
 @keyframes seconds {
   0% {
     opacity: 1;
+  }  
+  33% {
+    opacity: 0.4;
+  }
+  66% {
+    opacity: 0.6;
   }
   100% {
     opacity: 0;
+  }
+}
+
+/*** Fade in item ***/
+@keyframes thpfadeinwait {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -64,5 +89,15 @@
   }
   100% {
     width: 100%;
+  }
+}
+
+/*** Menu slide in ***/
+@keyframes menuslidein {
+  0% {
+    left: 100vw;
+  }
+  100% {
+    left: 0;
   }
 }

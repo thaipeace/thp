@@ -63,7 +63,7 @@
       $('.wp_experience').append(pathAnimate('M270 540 L232 540 L232 475', style, 768, screen.height));
       $('.wp_experience').append(pathAnimate('M480 500 L548 500 L548 474', style, 768, screen.height));
       $('.wp_experience').append(pathAnimate('M650 350 L667 350 L667 295', style, 768, screen.height));
-      $('.wp_experience').append(pathAnimate('M768 330 L667 330 L667 295', style, 768, screen.height));
+      //$('.wp_experience').append(pathAnimate('M768 330 L667 330 L667 295', style, 768, screen.height));
     }
   };
 

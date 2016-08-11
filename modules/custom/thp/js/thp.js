@@ -12,7 +12,8 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.services = {
     attach: function (context, settings) {
-
+      var stopTimeout;
+      
       // Left Menu click
       if ($('#menu-bnt').length > 0) {
         $('#menu-bnt').click(function(){
@@ -34,14 +35,16 @@
             $(this).addClass('active');
 
             var ind = $(this).index();
-            $('#block-views-aseptic-block .views-row').css('left','100vw');
-            $($('#block-views-aseptic-block .views-row').get(ind)).animate({'left':'0'}, 500, 'swing');
+            $('#block-views-aseptic-block .views-row').removeClass('active');
+            $($('#block-views-aseptic-block .views-row').get(ind)).addClass('active');
+            
+            clearTimeout(stopTimeout);
+            $('#block-views-aseptic-block .views-row-last .views-field-body').hide();
           }
-
+          
         });
-        $('#block-views-aseptic-block .views-row-first').css('left', '0');
+        $('#block-views-aseptic-block .views-row.views-row-first').addClass('active');
       }
-      
       
       // Reorder parts title
       if ($('#block-views-aseptic-block .views-row').length > 0) {
@@ -57,35 +60,54 @@
       // Try it button
       if ($('.node-2 .bnt-try').length > 0) {
         // Try it button
-        for (var i = 0; i < 51; i++) {
+        for (var i = 0; i < 50; i++) {
           if (i < 10) {
             i = '0' + i;
           }
           $('.node-2 .bnt-try .img_exper1 a').append('<div class="item' + i + '"></div>');
-          $('.node-2 .bnt-try .img_exper1 .item' + i).css('background', 'url("/thp/sites/default/modules/custom/thp/images/tryitbnt/heloo_000' + i + '.png") center center no-repeat');
+          $('.node-2 .bnt-try .img_exper1 .item' + i).css('background', 'url("/thpv1/sites/default/modules/custom/thp/images/tryitbnt/heloo_000' + i + '.png") center center no-repeat');
         }
         
-        $('.node-2 .bnt-try .img_exper1 a').hover(function(){
-          tryAnimate();
-        }, function(){});
+        $('.node-2 .bnt-try .img_exper1').hover(function(){
+          tryAnimateForward(49, 10);
+        }, function(){
+          tryAnimateBack(49, 3);
+        });
       }
       
       /*
       * Tryit button twikle
       */  
-      function tryAnimate() {
-       var maxLoops = 73;
-       var counter = 0;
+      function tryAnimateForward(maxLoops, speed) {
+        var counter = 0;
+        $('.node-2 .bnt-try .img_exper1 a img').css('opacity','0.2');
+        (function next() {
+          if (counter++ >= maxLoops) return;
 
-       (function next() {
-           if (counter++ >= maxLoops) return;
+          setTimeout(function() {
+             $('.node-2 .bnt-try .img_exper1 a > div').hide();
+             $('.node-2 .bnt-try .img_exper1 a .item' + counter).show();
+             next();
+          }, speed);
+          
+          if (counter === maxLoops) $('.node-2 .bnt-try .img_exper1 a img').css('opacity','0');
+        })();
+      }
+      
+      function tryAnimateBack(maxLoops, speed) {
+        var counter = maxLoops;
 
-           setTimeout(function() {
-               $('.node-2 .bnt-try .img_exper1 a > div').hide();
-               $('.node-2 .bnt-try .img_exper1 a .item' + counter).show();
-               next();
-           }, 10);
-       })();
+        (function next() {
+          if (counter-- <= 0) return;
+
+          setTimeout(function() {
+             $('.node-2 .bnt-try .img_exper1 a > div').hide();
+             $('.node-2 .bnt-try .img_exper1 a .item' + counter).show();
+             next();
+          }, speed);
+          
+          if (counter === 0) $('.node-2 .bnt-try .img_exper1 a img').css('opacity','1');
+        })();
       }
       
       // Summary process
@@ -109,7 +131,6 @@
         svgLine += "</svg>";
         
         var svg = svgCir + svgLine;
-        
         $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').prepend(svg);
         
         // Click proccess
@@ -132,9 +153,37 @@
           }
         });
         
+        if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
+          var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
+          autoClick(items, 3000, '#block-views-aseptic-block-1 .views-row.views-row-11');
+        }
+        
+        // Active first child when load
+        $('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity:first-child').addClass('active');
         $('#block-views-aseptic-block .views-row.views-row-first .field-collection-item-field-parts .field-name-field-description').prepend('<div class="line"></div>');
       }
       
+      function autoClick(items, speed, nextpage) {
+        var counter = 0;
+        (function next() {
+          if (counter++ >= items.length+1) return;
+          stopTimeout = setTimeout(function() {
+            $(items[counter]).trigger('click'); 
+            next();
+            if (counter == items.length+2) $(nextpage).trigger('click');
+          }, speed, nextpage);
+        })();
+      }
+       
+      $('#question-bnt .left-item-inner').click(function(){
+        $('#block-views-aseptic-block-1 .views-row-last').trigger('click');
+        $('#block-views-aseptic-block .views-row-last .views-field-body').show();
+      });
+      
+      $('#block-views-aseptic-block .views-row-first .views-field-body .next').click(function(){
+        $('#block-views-aseptic-block-1 .views-row-last').trigger('click');
+        $('#block-views-aseptic-block .views-row-last .views-field-body').show();
+      });
     }
   };
   
