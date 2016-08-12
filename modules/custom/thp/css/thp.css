@@ -425,6 +425,11 @@ body.page-node-3 {
   background-size: cover;
 }
 
+#block-views-aseptic-block .views-row .views-field-field-fix-background,
+#block-views-aseptic-block .views-row .views-field-field-drag-background {
+  display: none;
+}
+
 article.node-4 {
   position: absolute;
   left: 0;
@@ -437,12 +442,18 @@ article.node-4.active {
   animation: thpfadeinwait 1s ease-in-out forwards;
 }
 
-#block-views-aseptic-block .views-row .views-field-nothing {
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+#block-views-aseptic-block .views-row-first .views-field-nothing {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100vw;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-nothing,
@@ -659,4 +670,110 @@ article.node-4.active {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-content {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  overflow-y: visible;
+  cursor: pointer;
+  color: #000000;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover {
+  background: #FFFFFF;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title .field-items .field-item {
+  position: absolute;
+  top: 65px;
+  padding: 0 20px;
+  text-align: center;
+  width: 100%;
+  display: none;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title .field-items .field-item::after {
+  content: "Chi tiết";
+  display: block;
+  margin: 10px 0;
+  padding: 0 35px 0 0;
+  text-align: center;
+  background: url('../images/black-arrow.png') 68% center no-repeat;
+  font-weight: bold;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover .field-items .field-item {
+  display: block;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title .field-items {
+  background: url('../images/icon_hxg.png') center bottom no-repeat;
+  position: relative;
+  height: 212px;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:nth-child(1) {
+  left: 20%;
+  top: 18%;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:nth-child(2) {
+  left: 56%;
+  top: 10%;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: rgba(0,0,0,0.5);
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity {
+  position: absolute;
+  z-index: 1;
+  right: -632px;
+  height: 100vh;
+  width: 632px;
+  padding: 0 94px 0 0;
+  background: #f1a001;
+  display: none;
+  animation: itemlideout 0.5s ease-in-out forwards;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity.active {
+  display: block;
+  animation: itemlidein 0.5s ease-in-out forwards;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity .field-content {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+  display: block;
+  position: absolute;
+  right: 565px;
+  top: 165px;
+  opacity: 0;
+  width: 100%;
+}
+
+#block-views-aseptic-block .views-row.active:not(.views-row-first) .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+  animation: thpfadeinwait 2s ease-in-out forwards;
 }

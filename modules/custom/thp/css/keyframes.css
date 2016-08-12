@@ -101,3 +101,23 @@
     left: 0;
   }
 }
+
+/*** Item slide in ***/
+@keyframes itemlidein {
+  0% {
+    right: -632px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+/*** Item slide out ***/
+@keyframes itemlideout {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -632px;
+  }
+}

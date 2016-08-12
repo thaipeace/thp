@@ -12,13 +12,29 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.build360Bg = {
     attach: function (context, settings) {  
+      
       // Build 360image
       $('.views-field-field-background-360-images .field-content').hide();
       var materialPaths = {};
       
       $('#block-views-aseptic-block-1 .views-row').click(function() {
         var index = $(this).index();
-        var asepticBlock = $($('#block-views-aseptic-block .views-row')).get(index);
+        var asepticBlock = $('#block-views-aseptic-block .views-row').get(index);
+        
+        // Drag background
+        if ($('.views-field-field-drag-background', asepticBlock).length > 0) {
+          var imageUrl = $('.views-field-field-drag-background .field-content', asepticBlock).text();
+          $('.views-field-nothing', asepticBlock).css('background','url("'+ imageUrl +'")').backgroundDraggable({axis: 'x'});
+        }
+        
+        // Fix background
+        if ($('.views-field-field-fix-background', asepticBlock).length > 0) {
+          var imageUrl = $('.views-field-field-fix-background .field-content', asepticBlock).text();
+          $(asepticBlock).css({
+            'background': 'url("'+ imageUrl +'")',
+            'background-size': 'cover'
+          });
+        }
         
         // Background 360 build
         if ($('.views-field-field-background-360-images canvas').length > 0) {
@@ -29,12 +45,18 @@
         if (materialPaths.length > 0) {
           var container = 'three-' + index;
           build360Img(container, materialPaths.split(","));
-        }
+        }          
+      });
+      
+      // Point clicked
+      $('.field-name-field-title').click(function(){
+        var index = $(this).index();
+        var step = $(this).parents('.views-row');
         
-        // Drag background
-        var imageUrl = $('.views-field-field-drag-background .field-content', asepticBlock).attr('src');
-        $(asepticBlock).css('background','url("'+ imageUrl +'")').backgroundDraggable({axis: 'x'});
+        $('.views-field-field-parts', step).css('z-index', '1');
         
+        $('.views-field-field-parts .entity', step).removeClass('active');
+        $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
       });
     }
   };
@@ -119,15 +141,6 @@ function build360Img(container, materialPaths) {
     
     //console.log(scene);
 	}
-  
-  function create3DPoint(x,y,z) {
-    var pointGeometry = new THREE.SphereGeometry( 2, 16, 16 ), // adjust the first value for the 'point' radius
-    pointMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} ),  // adjust the color of your 'point'
-    point3D = new THREE.Mesh( pointGeometry, pointMaterial );
-    point3D.position.set(x,y,z);
-    
-    return point3D;
-  }
 
 	//-----------------//
 
@@ -184,15 +197,6 @@ function build360Img(container, materialPaths) {
       
 			lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
 //			lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-      var point3D = create3DPoint(90,0,90);
-      console.log((Math.round(lon)-90)/360);
-      if (Number.isInteger((Math.round(lon)-90)/360)) {
-        console.log('bbb');
-        scene.add(point3D);
-      }else {
-        console.log('aaa');
-        scene.remove(point3D);
-      }
 		}
 	}
 
