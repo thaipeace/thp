@@ -689,6 +689,10 @@ article.node-4.active {
   color: #000000;
 }
 
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.hide {
+  display: none;
+}
+
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover {
   background: #FFFFFF;
 }
@@ -739,7 +743,6 @@ article.node-4.active {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: rgba(0,0,0,0.5);
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity {
@@ -750,7 +753,6 @@ article.node-4.active {
   width: 632px;
   padding: 0 94px 0 0;
   background: #f1a001;
-  display: none;
   animation: itemlideout 0.5s ease-in-out forwards;
 }
 
@@ -774,6 +776,61 @@ article.node-4.active {
   width: 100%;
 }
 
-#block-views-aseptic-block .views-row.active:not(.views-row-first) .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+#block-views-aseptic-block .views-row.active:not(.views-row-first) .views-field-field-parts .entity.active:first-child .field-name-field-image .field-item:nth-child(2) {
   animation: thpfadeinwait 2s ease-in-out forwards;
+}
+
+#block-views-aseptic-block .views-row.active:not(.views-row-first) .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+  opacity: 0;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity .close {
+  position: absolute;
+  bottom: 0;
+  right: 94px;
+  width: 62px;
+  height: 60px;
+  background: url('../images/close.png') 0 0 no-repeat;
+  cursor: pointer;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts.active {
+  z-index: 1;
+  background: rgba(0,0,0,0.5);
+}
+
+.field-name-field-description {
+  text-align: center;
+  padding: 40px 40px 20px;
+}
+
+.field-name-field-description .label {
+  text-transform: uppercase;
+  font-size: 150%;
+}
+
+.field-name-field-description .title {
+  text-transform: uppercase;
+  font-size: 250%;
+  padding: 40px 0;
+  line-height: 50px;
+}
+
+.field-name-field-description .desc {
+  
+}
+
+.field-name-field-description .bnt {
+  margin: 40px 0 0 0;
+}
+
+.field-name-field-description .bnt span {
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  padding: 10px 20px;
+  margin: 0 auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
 }

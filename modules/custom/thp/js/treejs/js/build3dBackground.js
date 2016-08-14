@@ -24,7 +24,10 @@
         // Drag background
         if ($('.views-field-field-drag-background', asepticBlock).length > 0) {
           var imageUrl = $('.views-field-field-drag-background .field-content', asepticBlock).text();
-          $('.views-field-nothing', asepticBlock).css('background','url("'+ imageUrl +'")').backgroundDraggable({axis: 'x'});
+          $(asepticBlock).css({
+            'background': 'url("'+ imageUrl +'") 0 0 no-repeat',
+          });
+          $(asepticBlock).backgroundDraggable({axis: 'x'});
         }
         
         // Fix background
@@ -45,7 +48,7 @@
         if (materialPaths.length > 0) {
           var container = 'three-' + index;
           build360Img(container, materialPaths.split(","));
-        }          
+        }
       });
       
       // Point clicked
@@ -53,11 +56,11 @@
         var index = $(this).index();
         var step = $(this).parents('.views-row');
         
-        $('.views-field-field-parts', step).css('z-index', '1');
-        
-        $('.views-field-field-parts .entity', step).removeClass('active');
+        $('.views-field-field-parts', step).addClass('active');
         $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
       });
+      
+      
     }
   };
 
@@ -197,6 +200,14 @@ function build360Img(container, materialPaths) {
       
 			lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
 //			lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+      
+      // Control point when load
+      var n = (lon-90)%360;
+      if (n<-15 || n>15) {
+        jQuery('.views-row.active .field-name-field-title').addClass('hide');
+      }else {
+        jQuery('.views-row.active .field-name-field-title').removeClass('hide');
+      }
 		}
 	}
 
