@@ -10,7 +10,9 @@
 /*----------- node2 home */
 
 .field-items .field-item p {
-	margin: 0.5em;
+	margin: 20px;
+  line-height: 20px;
+  color: #000;
 }
 
 .node2 .field-item {
@@ -81,7 +83,7 @@
 /* ------node 3 factory-map------------*/
 
 body.page-node-3  {
-	background: url('http://localhost/thp/sites/default/files/bg_factory_map.png') no-repeat center center ;
+	background: url('../../../../files/bg_factory_map.png') no-repeat center center ;
 	width: 100%;
 	height: 100%;
 }
@@ -419,7 +421,7 @@ body.page-node-4 {
 }
 
 .person_experience {
-	background: url('/thp/sites/default/files/person_experience.png')no-repeat bottom center fixed;
+	background: url('../../../../files/person_experience.png') no-repeat bottom center fixed;
 	text-align: center;
     height: 100vh;
 }
@@ -521,7 +523,7 @@ background-color: #d11212;
 .wp_r_item:hover {
  width: 100%;
     height: 56px;
-    background: url('/thp/sites/default/files/icon_Preparation_Fuel.png') no-repeat center center;
+    background: url('../../../../files/icon_Preparation_Fuel.png') no-repeat center center;
     background-color: #a20202;
 }
 
@@ -546,7 +548,7 @@ background-color: #d11212;
 
 .tooltip_item_text:after {
  content: '';
- background: url('/thp/sites/default/files/arrow_r.png')no-repeat;
+ background: url('../../../../files/arrow_r.png')no-repeat;
  position: absolute;
  top: 7px;
  right: -30px;
@@ -564,47 +566,47 @@ background-color: #d11212;
 }
 
 .r_item1 {
- background: url('/thp/sites/default/files/icon_bottled_check.png') no-repeat center center;
+ background: url('../../../../files/icon_bottled_check.png') no-repeat center center;
 }
 
 .r_item2 {
- background: url('/thp/sites/default/files/icon_Filling_sterile.png') no-repeat center center; 
+ background: url('../../../../files/icon_Filling_sterile.png') no-repeat center center; 
 }
 
 .r_item3 {
- background: url('/thp/sites/default/files/icon_mixing.png') no-repeat center center;  
+ background: url('../../../../files/icon_mixing.png') no-repeat center center;  
 }
 
 .r_item4 {
- background: url('/thp/sites/default/files/icon_heat_treatment.png') no-repeat center center; 
+ background: url('../../../../files/icon_heat_treatment.png') no-repeat center center; 
 }
 
 .r_item5 {
- background: url('/thp/sites/default/files/icon_extraction.png') no-repeat center center;
+ background: url('../../../../files/icon_extraction.png') no-repeat center center;
 }
 
 .r_item6 {
- background: url('/thp/sites/default/files/icon_centrifugal_filter.png') no-repeat center center;
+ background: url('../../../../files/icon_centrifugal_filter.png') no-repeat center center;
 }
 
 .r_item7 {
- background: url('/thp/sites/default/files/icon_extraction.png') no-repeat center center;
+ background: url('../../../../files/icon_extraction.png') no-repeat center center;
 }
 
 .r_item8 {
- background: url('/thp/sites/default/files/icon_testingProcess.png') no-repeat center center;
+ background: url('../../../../files/icon_testingProcess.png') no-repeat center center;
 }
 
 .r_item9 {
- background: url('/thp/sites/default/files/icon_Preparation_Fuel.png') no-repeat center center;
+ background: url('../../../../files/icon_Preparation_Fuel.png') no-repeat center center;
 }
 
 .r_item10 {
- background: url('/thp/sites/default/files/icon_sound.png') no-repeat center center;
+ background: url('../../../../files/icon_sound.png') no-repeat center center;
 }
 .r_item9:after, .r_item_header:after {
     content: '';
-    background: url('/thp/sites/default/files/line_center_r.jpg')repeat-x;
+    background: url('../../../../files/line_center_r.jpg')repeat-x;
     width: 94px;
     height: 2px;
     top: 62px;

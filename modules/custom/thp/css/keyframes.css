@@ -121,3 +121,21 @@
     right: -632px;
   }
 }
+
+@keyframes simplefadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slowfly {
+  0% {
+    background-position: 0 80%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}

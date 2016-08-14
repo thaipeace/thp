@@ -36,6 +36,7 @@ body.not-logged-in  {
 
 .front .header {
   left: 30px;
+  display: none;
 }
 
 main.layout-3col__full {
@@ -166,8 +167,8 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper > div .label {
-  font-family: 'utm_bebasregular';
   margin: 0 0 7px 0;
+  text-transform: uppercase;
 }
 
 #block-block-2 .block-wrapper > div .title {
@@ -180,17 +181,20 @@ main.layout-3col__full {
   margin: 0 0 20px 0;
   padding: 30px 0 0 0;
   font-size: 80%;
+  opacity: 0;
 }
 
 #block-block-2 .block-wrapper > div .view {
   border: 3px solid #FFFFFF;;
-  display: inline-block;
+  display: block;
+  opacity: 0;
+  float: left;
 }
 
 #block-block-2 .block-wrapper > div .view a {
   display: block;
-  font-family: 'utm_bebasregular';
-  padding: 5px 35px;
+  text-transform: uppercase;
+  padding: 10px 35px 5px;
   background: #f0a001;
   text-decoration: none;
 }
@@ -201,9 +205,9 @@ main.layout-3col__full {
   background: #FFFFFF;
 }
 
-#block-block-2 .block-wrapper > div > div {
+#block-block-2 > div > div {
   padding: 80px 0 0 80px;
-} 
+}
 
 #block-block-1 {
   position: absolute;
@@ -302,6 +306,11 @@ main.layout-3col__full {
   display: none;
 }
 
+.node-2 {
+  background: url('../../../../files/img_cloudtop_left.png') 0 100% no-repeat;
+  animation: slowfly 20s infinite alternate;
+}
+
 body.page-node-3 {
   background-size: cover;
 }
@@ -325,12 +334,12 @@ body.page-node-3 {
   font-size: 14px;
   text-align: center;
   line-height: 14px;
-  background: url(/thpv1/sites/default/files/line_center_r.jpg) repeat-x left bottom;
+  background: url(../../../../files/line_center_r.jpg) repeat-x left bottom;
   cursor: pointer;
 }
 
 #block-views-aseptic-block-1 .views-row-first:hover {
-  background: #f0a001 url(/thpv1/sites/default/files/line_center_r.jpg) repeat-x left bottom;
+  background: #f0a001 url(../../../../files/line_center_r.jpg) repeat-x left bottom;
 }
 
 #block-views-aseptic-block-1 .views-row-first p {
@@ -352,7 +361,7 @@ body.page-node-3 {
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-title,
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title {
-  background: url(/thpv1/sites/default/files/arrow_r.png) no-repeat right center;
+  background: url(../../../../files/arrow_r.png) no-repeat right center;
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first) .views-field-title .field-content {
@@ -386,7 +395,7 @@ body.page-node-3 {
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content,
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content {
-  background: url('/thpv1/sites/default/files/icon_Preparation_Fuel.png') no-repeat center center;
+  background: url('../../../../files/icon_Preparation_Fuel.png') no-repeat center center;
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content img,
@@ -559,8 +568,8 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .field-name-field-description {
   position: absolute;
-  right: 470px;
-  top: 240px;
+  right: 22%;
+  top: 33%;
   width: 468px;
   padding: 0 0 0 200px;
   z-index: 1;
@@ -595,6 +604,7 @@ article.node-4.active {
   height: 100%;
   position: relative;
   display: none;
+  z-index: 1;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next {

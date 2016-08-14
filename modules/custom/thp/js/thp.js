@@ -25,6 +25,10 @@
             $(this).removeClass('active');
           }
         });
+        
+        $('#block-block-2 .block-wrapper > div').hover(function(){
+          $('.desc, .view', this).css('animation', 'simplefadein 0.5s ease-in-out forwards');
+        });
       }
       
       // Aseptic Menu click
@@ -76,7 +80,7 @@
             i = '0' + i;
           }
           $('.node-2 .bnt-try .img_exper1 a').append('<div class="item' + i + '"></div>');
-          $('.node-2 .bnt-try .img_exper1 .item' + i).css('background', 'url("/thpv1/sites/default/modules/custom/thp/images/tryitbnt/heloo_000' + i + '.png") center center no-repeat');
+          $('.node-2 .bnt-try .img_exper1 .item' + i).css('background', 'url("./sites/default/modules/custom/thp//images/tryitbnt/heloo_000' + i + '.png") center center no-repeat');
         }
         
         $('.node-2 .bnt-try .img_exper1').hover(function(){
@@ -166,7 +170,7 @@
         
         if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
           var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
-          autoClick(items, 3000, '#block-views-aseptic-block-1 .views-row.views-row-11');
+          autoClick(items, 3000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1'); 
         }
         
         // Active first child when load
@@ -174,10 +178,16 @@
         $('#block-views-aseptic-block .views-row.views-row-first .field-collection-item-field-parts .field-name-field-description').prepend('<div class="line"></div>');
       }
       
-      function autoClick(items, speed, nextpage) {
+      function autoClick(items, speed, nextpage, disable) {
         var counter = 0;
         (function next() {
-          if (counter++ >= items.length+1) return;
+          if (counter++ >= items.length+1) {
+            $(disable).css('pointer-events','auto');
+            return;
+          }else {
+            $(disable).css('pointer-events','none');
+          }
+          
           stopTimeout = setTimeout(function() {
             $(items[counter]).trigger('click'); 
             next();
@@ -197,7 +207,7 @@
       });
       
       // Click to step
-      $('.field-name-field-description .bnt span').click(function(){
+      $('.bnt span').click(function(){
         var step = $(this).attr('rel');
         $('.'+step, '#block-views-aseptic-block-1').trigger('click');
       });
