@@ -170,7 +170,7 @@
         
         if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
           var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
-          autoClick(items, 3000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1'); 
+          //autoClick(items, 3000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1'); 
         }
         
         // Active first child when load
@@ -181,7 +181,7 @@
       function autoClick(items, speed, nextpage, disable) {
         var counter = 0;
         (function next() {
-          if (counter++ >= items.length+1) {
+          if (counter++ >= items.length+1 || $('.views-row-11').hasClass('active')) {
             $(disable).css('pointer-events','auto');
             return;
           }else {

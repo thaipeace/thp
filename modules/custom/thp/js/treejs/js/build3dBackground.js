@@ -84,6 +84,7 @@ function build360Img(container, materialPaths) {
 	theta = 0,
 	target = new THREE.Vector3();
 	init(container1, materialPaths);
+  var particleMaterial;
 	animate();
 
 	//-----------------//
@@ -143,6 +144,18 @@ function build360Img(container, materialPaths) {
 		window.addEventListener( 'resize', onWindowResize, false );
     
     //console.log(scene);
+    
+    var PI2 = Math.PI * 2;
+    particleMaterial = new THREE.SpriteMaterial( {
+
+      useScreenCoordinates: true
+
+    } );
+    
+    var particle = new THREE.Sprite( particleMaterial );
+    particle.position.set(100,100,470);
+    particle.scale.x = particle.scale.y = 16;
+    scene.add( particle );
 	}
 
 	//-----------------//

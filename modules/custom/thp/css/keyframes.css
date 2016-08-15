@@ -139,3 +139,21 @@
     background-position: 430% -10%;
   }
 }
+
+@keyframes taller {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 135px;
+  }
+}
+
+@keyframes shorter {
+  0% {
+    height: 135px;
+  }
+  100% {
+    height: 0;
+  }
+}
