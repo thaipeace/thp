@@ -307,8 +307,9 @@ main.layout-3col__full {
 }
 
 .node-2 {
-  background: url('../../../../files/img_cloudtop_left.png') 0 100% no-repeat;
-  animation: slowfly 20s infinite alternate;
+  background: url('../images/may1.png') -260% -10% no-repeat;
+  animation: slowfly 60s linear infinite;
+  height: 100vh;
 }
 
 body.page-node-3 {

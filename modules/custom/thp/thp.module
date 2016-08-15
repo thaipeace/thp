@@ -5,8 +5,8 @@
  */
 function thp_preprocess_page(&$vars) {
   if ($vars['directory'] != 'themes/seven') {
-    drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'external');
-    drupal_add_js('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js', 'external');
+    drupal_add_js(drupal_get_path('module', 'thp') . '/js/jquery.min.js', 'external');
+    drupal_add_js(drupal_get_path('module', 'thp') . '/js/jquery-ui.min.js', 'external');
     
     if (isset($vars['node'])) {
       if ($vars['node']->nid == 4) {
