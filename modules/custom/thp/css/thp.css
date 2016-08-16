@@ -740,7 +740,7 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.hide,
 #block-views-aseptic-block-2 .views-row .views-field-nothing .field-name-field-title.hide {
-  display: none;
+  
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover,
@@ -783,7 +783,7 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:nth-child(1),
 #block-views-aseptic-block-2 .views-row .views-field-nothing .field-name-field-title:nth-child(1) {
-  left: 20%;
+  left: calc(50% - 170px - 90px);
   top: 18%;
 }
 

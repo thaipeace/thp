@@ -60,7 +60,6 @@
         $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
       });
       
-      
     }
   };
 
@@ -146,16 +145,45 @@ function build360Img(container, materialPaths) {
     //console.log(scene);
     
     var PI2 = Math.PI * 2;
-    particleMaterial = new THREE.SpriteMaterial( {
-
-      useScreenCoordinates: true
+    particleMaterial = new THREE.SpriteCanvasMaterial( {
+    
+      color: 0x000000,
+      program: function ( context ) {
+        //console.log(context);
+        context.beginPath();
+        //context.fillRect(1,2,3,4);
+        context.arc( 0, 0, 0.5, 0, PI2, true );
+        context.fill();
+        //console.log(context);
+      }
 
     } );
     
-    var particle = new THREE.Sprite( particleMaterial );
-    particle.position.set(100,100,470);
-    particle.scale.x = particle.scale.y = 16;
-    scene.add( particle );
+    var particle = new THREE.Sprite(particleMaterial);
+    particle.position.set(170,50,470);
+    particle.scale.x = particle.scale.y = 32;
+    scene.add(particle);
+    
+//    var material = new THREE.LineBasicMaterial({
+//      color: 0x0000ff
+//    });
+//
+//    var geometry = new THREE.Geometry();
+//    geometry.vertices.push(
+//      new THREE.Vector3( 10, 20, 0 ),
+//      new THREE.Vector3( 10, 30, 0 ),
+//      new THREE.Vector3( 20, 40, 0 ),
+//      new THREE.Vector3( 30, 30, 0 ),
+//      new THREE.Vector3( 30, 20, 0 ),
+//      new THREE.Vector3( 20, 10, 0 ),
+//      new THREE.Vector3( 10, 20, 0 )
+//    );
+//
+//    var line = new THREE.Line( geometry, material );
+//    line.position.set(100,50,470);
+//    scene.add( line );
+//    
+//    console.log(camera.position);
 	}
 
 	//-----------------//
@@ -201,8 +229,8 @@ function build360Img(container, materialPaths) {
 		onPointerDownLon = lon;
 		onPointerDownLat = lat;
     
-//    console.log(onPointerDownPointerX + "-" + onPointerDownPointerX);
-//    console.log(onPointerDownLon);
+    //console.log(onPointerDownPointerX);
+    //console.log(onPointerDownLon);
 
 	}
 
@@ -213,14 +241,31 @@ function build360Img(container, materialPaths) {
       
 			lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
 //			lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-      
+      //console.log(event.clientX);
       // Control point when load
-      var n = (lon-90)%360;
-      if (n<-15 || n>15) {
-        jQuery('.views-row.active .field-name-field-title').addClass('hide');
-      }else {
-        jQuery('.views-row.active .field-name-field-title').removeClass('hide');
-      }
+//      console.log(lon);
+//      console.log(onPointerDownLon);
+//      console.log(onPointerDownPointerX); bfcgj
+//      var n = (lon-90)%360;
+//      if (n<-15 || n>15) {
+        //jQuery('.views-row.active .field-name-field-title').addClass('hide');
+        
+        //var abc = (camera.position.x > 0)?:;
+//        if (camera.position.x > 0) {
+//          var con = Math.abs((event.clientX/window.innerWidth));
+//        }else {
+//          var con = Math.abs((event.clientX/window.innerWidth));
+//        }
+        
+        
+        var a = (window.innerWidth/2) - 90 - 170 - (camera.position.x);
+        //console.log(a);
+        console.log(camera.position.x);
+        
+        jQuery('.views-row.active .field-name-field-title').css('left', a);
+//      }else {
+        //jQuery('.views-row.active .field-name-field-title').removeClass('hide');
+//      }
 		}
 	}
 
