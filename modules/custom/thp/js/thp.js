@@ -80,7 +80,7 @@
             i = '0' + i;
           }
           $('.node-2 .bnt-try .img_exper1 a').append('<div class="item' + i + '"></div>');
-          $('.node-2 .bnt-try .img_exper1 .item' + i).css('background', 'url("./sites/default/modules/custom/thp//images/tryitbnt/heloo_000' + i + '.png") center center no-repeat');
+          $('.node-2 .bnt-try .img_exper1 .item' + i).css('background', 'url("./sites/default/modules/custom/thp/images/tryitbnt/heloo_000' + i + '.png") center center no-repeat');
         }
         
         $('.node-2 .bnt-try .img_exper1').hover(function(){
