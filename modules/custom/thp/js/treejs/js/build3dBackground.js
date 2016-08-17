@@ -140,12 +140,34 @@ function build360Img(container, materialPaths) {
 
 		window.addEventListener( 'resize', onWindowResize, false );
     
-    var floorTexture = new THREE.ImageUtils.loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
-    var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
+    var floorMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
     var floorGeometry = new THREE.PlaneGeometry(50, 50);
     var floor = new THREE.Mesh(floorGeometry, floorMaterial);
-    floor.position.set(50, 50 , 450);
+    floor.position.set(170, 50 , 450);
     scene.add(floor);
+    
+//    mesh.on('click', function(){
+//        mesh.scale.x *= 2;
+//    });
+
+    var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
+    domEvents.addEventListener(floor, 'click', function(event){
+      console.log('you clicked on the mesh')
+    }, false)
+    
+    var lastTimeMsec= null
+    requestAnimationFrame(function animate(nowMsec){
+      // keep looping
+      requestAnimationFrame( animate );
+      // measure time
+      lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+      var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+      lastTimeMsec	= nowMsec
+      // call each update function
+      onRenderFcts.forEach(function(onRenderFct){
+        onRenderFct(deltaMsec/1000, nowMsec/1000)
+      })
+    })
     
     console.log(scene);
 	}
@@ -164,7 +186,7 @@ function build360Img(container, materialPaths) {
 	function loadTexture( path ) {
 
 		var texture = new THREE.Texture( texture_placeholder );
-		var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
+		var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5, side: THREE.DoubleSide } );
 
 		var image = new Image();
 		image.onload = function () {

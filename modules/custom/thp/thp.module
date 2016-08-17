@@ -14,6 +14,7 @@ function thp_preprocess_page(&$vars) {
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground.js');
       }
     }
