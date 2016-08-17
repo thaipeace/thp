@@ -8583,6 +8583,15 @@ THREE.Object3D = function () {
 THREE.Object3D.DefaultUp = new THREE.Vector3( 0, 1, 0 );
 THREE.Object3D.DefaultMatrixAutoUpdate = true;
 
+THREE.Object3D.prototype.clear = function(){
+  var children = this.children;
+  for(var i = children.length-1;i>=0;i--){
+    var child = children[i];
+    child.clear();
+    this.removeChild(child);
+  };
+};
+
 Object.assign( THREE.Object3D.prototype, THREE.EventDispatcher.prototype, {
 
 	applyMatrix: function ( matrix ) {

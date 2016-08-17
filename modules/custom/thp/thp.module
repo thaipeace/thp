@@ -50,20 +50,26 @@ function thp_preprocess_page(&$vars) {
  */
 function thp_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
-  dpm($view);
-  dpm($vars);
   if ($view->name == 'aseptic' && ($view->current_display == 'block' || $view->current_display == 'block_2')) {
     $classes_array = $vars['classes_array'];
+    $types = ['field_fix_background', 'field_drag_background', 'field_background_360_images'];
     foreach($classes_array as $key => $classes) {
+      $bg_type = '';
+      foreach($types as $type) {
+        if (!empty($view->result[$key]->_field_data['nid']['entity']->$type)) {
+          $bg_type = $type;
+          break;
+        }
+      }
       if (!empty($view->result[$key]->_field_data['nid']['entity']->field_follow_with)) {
         $vars['classes_array'][$key] = $classes
                 . ' nid-' . $view->result[$key]->_field_data['nid']['entity']->nid
-                . ' follow follow-nid-' . $view->result[$key]->_field_data['nid']['entity']->field_follow_with['und'][0]['target_id'];
+                . ' follow follow-nid-' . $view->result[$key]->_field_data['nid']['entity']->field_follow_with['und'][0]['target_id']
+                . ' ' . $bg_type;
       } 
       else {
-        $vars['classes_array'][$key] = $classes . ' nid-' . $view->result[$key]->_field_data['nid']['entity']->nid;
+        $vars['classes_array'][$key] = $classes . ' nid-' . $view->result[$key]->_field_data['nid']['entity']->nid . ' ' . $bg_type;
       }
     }
   }
 }
-

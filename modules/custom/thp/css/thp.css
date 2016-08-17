@@ -738,6 +738,11 @@ article.node-4.active {
   color: #000000;
 }
 
+#block-views-aseptic-block .views-row.field_background_360_images:not(.views-row-first) .views-field-nothing .field-name-field-title,
+#block-views-aseptic-block-2 .views-row.field_background_360_images .views-field-nothing .field-name-field-title {
+  display: none;
+}
+
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.hide,
 #block-views-aseptic-block-2 .views-row .views-field-nothing .field-name-field-title.hide {
   

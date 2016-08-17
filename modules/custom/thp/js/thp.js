@@ -57,6 +57,7 @@
           if ($('.views-field-field-parts .field-collection-item-field-parts', element).length > 0) {
             $('.views-field-field-parts .field-collection-item-field-parts', element).each(function(ind, elem){
               $('.views-field-nothing .field-content', element).append($('.field-name-field-title', elem));
+              $('.views-field-nothing .field-content', element).append($('.field-name-field-position', elem));
               $(elem).append('<div class="close"></div>');
             });
           }

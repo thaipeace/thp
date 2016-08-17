@@ -34,7 +34,7 @@
         if ($('.views-field-field-fix-background', asepticBlock).length > 0) {
           var imageUrl = $('.views-field-field-fix-background .field-content', asepticBlock).text();
           $(asepticBlock).css({
-            'background': 'url("'+ imageUrl +'")',
+            'background': 'url("'+ imageUrl +'") center center no-repeat',
             'background-size': 'cover'
           });
         }
@@ -82,22 +82,24 @@ function build360Img(container, materialPaths) {
 	phi = 0,
 	theta = 0,
 	target = new THREE.Vector3();
+  var targetList = [];
 	init(container1, materialPaths);
-  var particleMaterial;
+  var projector, mouse = { x: 0, y: 0 };
 	animate();
 
 	//-----------------//
 
 	function init(container, materialPaths) {
-
+    
 		var container, mesh;
+    var point = {};
 
 		camera = new THREE.PerspectiveCamera( 110, window.innerWidth / window.innerHeight, 1, 1100 );
 		camera.fov = (120*8) * 0.05;
 		camera.updateProjectionMatrix();
-
+    
 		scene = new THREE.Scene();
-
+    
 		texture_placeholder = document.createElement( 'canvas' );
 		texture_placeholder.width = 128;
 		texture_placeholder.height = 128;
@@ -113,7 +115,8 @@ function build360Img(container, materialPaths) {
 
 		mesh = new THREE.Mesh( new THREE.BoxGeometry( 300, 300, 300, 7, 7, 7 ), new THREE.MultiMaterial( materials ) );
 		mesh.scale.x = - 1;
-		scene.add( mesh );
+    mesh.name = 'wall';
+		scene.add(mesh);
 
 		for ( var i = 0, l = mesh.geometry.vertices.length; i < l; i ++ ) {
 
@@ -128,7 +131,8 @@ function build360Img(container, materialPaths) {
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( window.innerWidth, window.innerHeight );
 		container.appendChild( renderer.domElement );
-
+    
+    projector = new THREE.Projector();
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 		document.addEventListener( 'mouseup', onDocumentMouseUp, false );
@@ -140,36 +144,31 @@ function build360Img(container, materialPaths) {
 
 		window.addEventListener( 'resize', onWindowResize, false );
     
-    var floorMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
-    var floorGeometry = new THREE.PlaneGeometry(50, 50);
-    var floor = new THREE.Mesh(floorGeometry, floorMaterial);
-    floor.position.set(170, 50 , 450);
-    scene.add(floor);
-    
-//    mesh.on('click', function(){
-//        mesh.scale.x *= 2;
-//    });
+    jQuery('.views-field-nothing .field-name-field-position', jQuery(container).parent()).each(function(index, element){
+      var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
+      var pointGeometry = new THREE.PlaneGeometry(50, 50);
+      point = new THREE.Mesh(pointGeometry, pointMaterial);
+      
+      var str_po = jQuery(element).text();
+      var arr_po = str_po.split(',').map(function(item) {
+        return parseInt(item, 10);
+      });
+      
+      point.position.set(arr_po.join());
+//      console.log($(element).text());
+//      if (index === 0) {
+//        point.position.set(190,50,450);
+//      } else if (index === 1) {
+//        point.position.set(50,50,450);
+//      }
+      
+      point.name = index;
+      console.log(point);
+      scene.add(point);
 
-    var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
-    domEvents.addEventListener(floor, 'click', function(event){
-      console.log('you clicked on the mesh')
-    }, false)
+      targetList.push(point);
+    });
     
-    var lastTimeMsec= null
-    requestAnimationFrame(function animate(nowMsec){
-      // keep looping
-      requestAnimationFrame( animate );
-      // measure time
-      lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
-      var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
-      lastTimeMsec	= nowMsec
-      // call each update function
-      onRenderFcts.forEach(function(onRenderFct){
-        onRenderFct(deltaMsec/1000, nowMsec/1000)
-      })
-    })
-    
-    console.log(scene);
 	}
 
 	//-----------------//
@@ -204,7 +203,7 @@ function build360Img(container, materialPaths) {
 	//----------------//
 
 	function onDocumentMouseDown( event ) {
-
+    
 		event.preventDefault();
 
 		isUserInteracting = true;
@@ -215,43 +214,38 @@ function build360Img(container, materialPaths) {
 		onPointerDownLon = lon;
 		onPointerDownLat = lat;
     
-    //console.log(onPointerDownPointerX);
-    //console.log(onPointerDownLon);
+    //console.log("Click.");
+	
+    // update the mouse variable
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
+    // find intersections
+
+    // create a Ray with origin at the mouse position
+    //   and direction into the scene (camera direction)
+    var vector = new THREE.Vector3( mouse.x, mouse.y, 1 );
+    projector.unprojectVector( vector, camera );
+    var ray = new THREE.Raycaster( camera.position, vector.sub( camera.position ).normalize() );
+
+    // create an array containing all objects in the scene with which the ray intersects
+    var intersects = ray.intersectObjects(targetList);
+    console.log(targetList);
+    console.log(intersects);
+    // if there is one (or more) intersections
+    if ( intersects.length > 0 ) {
+      
+      console.log("Hit @ " + toString( intersects[0].point ) );
+      console.log(container);
+      jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).trigger('click');
+    }
 	}
 
 	//-----------------------//
 	function onDocumentMouseMove( event ) {
-
 		if ( isUserInteracting === true ) {
       
 			lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
-//			lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-      //console.log(event.clientX);
-      // Control point when load
-//      console.log(lon);
-//      console.log(onPointerDownLon);
-//      console.log(onPointerDownPointerX); bfcgj
-//      var n = (lon-90)%360;
-//      if (n<-15 || n>15) {
-        //jQuery('.views-row.active .field-name-field-title').addClass('hide');
-        
-        //var abc = (camera.position.x > 0)?:;
-//        if (camera.position.x > 0) {
-//          var con = Math.abs((event.clientX/window.innerWidth));
-//        }else {
-//          var con = Math.abs((event.clientX/window.innerWidth));
-//        }
-        
-        
-//        var a = (window.innerWidth/2) - 90 - 170 - (camera.position.x);
-        //console.log(a);
-//        console.log(camera.position.x);
-        
-//        jQuery('.views-row.active .field-name-field-title').css('left', a);
-//      }else {
-        //jQuery('.views-row.active .field-name-field-title').removeClass('hide');
-//      }
 		}
 	}
 
@@ -349,7 +343,7 @@ function build360Img(container, materialPaths) {
 
 		target.x = 500 * Math.sin( phi ) * Math.cos( theta );
 		//target.y = 500 * Math.cos( phi );
-    //console.log(target.y);
+    
 		target.y = -92.8;
 		target.z = 500 * Math.sin( phi ) * Math.sin( theta );
 
