@@ -154,16 +154,11 @@ function build360Img(container, materialPaths) {
         return parseInt(item, 10);
       });
       
-      point.position.set(arr_po.join());
-//      console.log($(element).text());
-//      if (index === 0) {
-//        point.position.set(190,50,450);
-//      } else if (index === 1) {
-//        point.position.set(50,50,450);
-//      }
+      point.position.x = arr_po[0];
+      point.position.y = arr_po[1];
+      point.position.z = arr_po[2];
       
       point.name = index;
-      console.log(point);
       scene.add(point);
 
       targetList.push(point);
@@ -230,13 +225,13 @@ function build360Img(container, materialPaths) {
 
     // create an array containing all objects in the scene with which the ray intersects
     var intersects = ray.intersectObjects(targetList);
-    console.log(targetList);
-    console.log(intersects);
+//    console.log(targetList);
+//    console.log(intersects);
     // if there is one (or more) intersections
     if ( intersects.length > 0 ) {
       
       console.log("Hit @ " + toString( intersects[0].point ) );
-      console.log(container);
+      console.log(intersects[0]);
       jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).trigger('click');
     }
 	}

@@ -40,7 +40,7 @@
 
             var ind = $(this).index();
             //$('#block-views-aseptic-block .views-row').removeClass('active');
-            $('#block-views-aseptic-block .views-row').removeClass('active').find('.active').removeClass('active');
+            $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
             $($('#block-views-aseptic-block .views-row').get(ind)).addClass('active');
             
             clearTimeout(stopTimeout);
@@ -54,6 +54,18 @@
       // Reorder parts title
       if ($('#block-views-aseptic-block .views-row').length > 0) {
         $('#block-views-aseptic-block .views-row').each(function(index, element) {
+          if ($('.views-field-field-parts .field-collection-item-field-parts', element).length > 0) {
+            $('.views-field-field-parts .field-collection-item-field-parts', element).each(function(ind, elem){
+              $('.views-field-nothing .field-content', element).append($('.field-name-field-title', elem));
+              $('.views-field-nothing .field-content', element).append($('.field-name-field-position', elem));
+              $(elem).append('<div class="close"></div>');
+            });
+          }
+        });
+      }
+      
+      if ($('#block-views-aseptic-block-2 .views-row').length > 0) {
+        $('#block-views-aseptic-block-2 .views-row').each(function(index, element) {
           if ($('.views-field-field-parts .field-collection-item-field-parts', element).length > 0) {
             $('.views-field-field-parts .field-collection-item-field-parts', element).each(function(ind, elem){
               $('.views-field-nothing .field-content', element).append($('.field-name-field-title', elem));
