@@ -255,11 +255,12 @@ main.layout-3col__full {
 #block-block-2 .block-wrapper div.menu3 > div .img-hover {
   background: url('../images/03_lamphoichai.png') center center no-repeat;
   background-size: 459px 222.6px;
-  width: 550px;
+  width: 420px;
   height: 290px;
   transition: all 0.5s ease-in-out;
   position: absolute;
   right: 0;
+  z-index: 0
 }
 
 #block-block-2 .block-wrapper div.menu3 > div:hover .img-hover {
@@ -269,7 +270,7 @@ main.layout-3col__full {
 #block-block-2 .block-wrapper div.menu4 > div .img-hover {
   background: url('../images/mayinannhanchai.png') center center no-repeat;
   background-size: 318px 257.6px;
-  width: 550px;
+  width: 390px;
   height: 300px;
   transition: all 0.5s ease-in-out;
   position: absolute;
