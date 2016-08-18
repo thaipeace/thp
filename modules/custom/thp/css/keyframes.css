@@ -157,3 +157,35 @@
     height: 0;
   }
 }
+
+@keyframes bg-grow1 {
+  0% {
+    background-size: 489px 163px;
+  }
+  100% {
+    background-size: 600px 200px;
+  }
+}
+
+@keyframes boom {
+  0% {
+    width: 59px;
+    height: 63px;
+    opacity: 0;
+  }
+ 40% {
+    opacity: 0.7;
+    width: 85px;
+    height: 90px;
+  }
+  75% {
+    opacity: 0.3;
+    width: 70px;
+    height: 74px;
+  }
+  100% {
+    width: 85px;
+    height: 90px;
+    opacity: 1;
+  }
+}

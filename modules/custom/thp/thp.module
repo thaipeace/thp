@@ -63,12 +63,12 @@ function thp_preprocess_views_view_unformatted(&$vars) {
       }
       if (!empty($view->result[$key]->_field_data['nid']['entity']->field_follow_with)) {
         $vars['classes_array'][$key] = $classes
-                . ' nid-' . $view->result[$key]->_field_data['nid']['entity']->nid
+                . ' aseptic nid-' . $view->result[$key]->_field_data['nid']['entity']->nid
                 . ' follow follow-nid-' . $view->result[$key]->_field_data['nid']['entity']->field_follow_with['und'][0]['target_id']
                 . ' ' . $bg_type;
       } 
       else {
-        $vars['classes_array'][$key] = $classes . ' nid-' . $view->result[$key]->_field_data['nid']['entity']->nid . ' ' . $bg_type;
+        $vars['classes_array'][$key] = $classes . ' aseptic nid-' . $view->result[$key]->_field_data['nid']['entity']->nid . ' ' . $bg_type;
       }
     }
   }

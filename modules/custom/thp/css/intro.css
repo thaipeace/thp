@@ -48,6 +48,7 @@ body {
 .line_skip {
 	background: url("../../../../files/line_skip.png") top center repeat-y;
 	height: 100px;
+  margin: 0 0 10px 0;
 	position: relative;
 	z-index: 2;
   text-align: center;
@@ -64,7 +65,7 @@ body {
 
 .skip-wrapper {
   position: absolute;
-  bottom: 120px;
+  bottom: 12%;
   text-align: center;
   width: 100%;
   display: none;

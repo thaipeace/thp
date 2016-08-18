@@ -51,6 +51,7 @@ main.layout-3col__full {
 
 .page-node-2 article {
   text-align: center;
+  color: #000;
 }
 
 .page-node-2 {
@@ -126,6 +127,7 @@ main.layout-3col__full {
   float: left;
   width: 50%;
   height: 50%;
+  overflow: hidden;
 }
 
 #block-block-2 .block-wrapper > div .menu-inner {
@@ -139,6 +141,9 @@ main.layout-3col__full {
 #block-block-2 .block-wrapper > div > div {
   display: table;
   height: 100%;
+  padding: 80px 0 0 80px;
+  width: 100%;
+  position: relative;
 }
 
 #block-block-2 .block-wrapper > div a {
@@ -148,7 +153,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu1 {
-  background: url('../images/m1.jpg') 0 0;
+  background: url('../images/nen-1.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -156,7 +161,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu2 {
-  background: url('../images/m2.jpg') 0 0;
+  background: url('../images/nen-2.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -164,7 +169,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu3 {
-  background: url('../images/m3.jpg') 0 0;
+  background: url('../images/nen-2.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -172,11 +177,107 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu4 {
-  background: url('../images/m4.jpg') 0 0;
+  background: url('../images/nen-1.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+#block-block-2 .block-wrapper div.menu1 > div .img-hover {
+  background: url('../images/01_nhamay.png') center center no-repeat;
+  background-size: 440px 150px;
+  width: 490px;
+  height: 183px;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0px;
+  top: 154px;
+}
+
+#block-block-2 .block-wrapper div.menu1 > div:hover .img-hover {
+  background-size: 489px 166.7px;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .img-hover {
+  background: url('../images/nhanvien1.png') center center no-repeat;
+  background-size: 303px 614px;
+  width: 323px;
+  height: 654px;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div:hover .img-hover {
+  background-size: 323px 654px;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .boom {
+  position: absolute;
+  width: 59px;
+  height: 63px;
+  opacity: 0;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .boom img {
+}
+
+#block-block-2 .block-wrapper div.menu2 > div:hover .boom {
+  animation: boom 0.5s ease-in-out forwards;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .nv2 {
+  top: 80px;
+  left: -5px;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .nv3 {
+  top: -15px;
+  left: 25px;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .nv4 {
+  top: -10px;
+  left: 130px;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .nv5 {
+  top: 40px;
+  left: 205px;
+}
+
+#block-block-2 .block-wrapper div.menu2 > div .nv6 {
+  top: 130px;
+  left: 230px;
+}
+
+#block-block-2 .block-wrapper div.menu3 > div .img-hover {
+  background: url('../images/03_lamphoichai.png') center center no-repeat;
+  background-size: 459px 222.6px;
+  width: 550px;
+  height: 290px;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+
+#block-block-2 .block-wrapper div.menu3 > div:hover .img-hover {
+  background-size: 499px 242px;
+}
+
+#block-block-2 .block-wrapper div.menu4 > div .img-hover {
+  background: url('../images/mayinannhanchai.png') center center no-repeat;
+  background-size: 318px 257.6px;
+  width: 550px;
+  height: 300px;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+
+#block-block-2 .block-wrapper div.menu4 > div:hover .img-hover {
+  background-size: 358px 290px;
 }
 
 #block-block-2 .block-wrapper > div .label {
@@ -188,6 +289,8 @@ main.layout-3col__full {
   text-transform: uppercase;
   font-weight: bold;
   padding: 0 0 30px 0;
+  font-size: 145%;
+  line-height: 30px;
 }
 
 #block-block-2 .block-wrapper > div .desc-view {
@@ -208,7 +311,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper > div .view {
-  border: 3px solid #FFFFFF;;
+  border: 1.5px solid #FFFFFF;
   display: block;
   opacity: 0;
   float: left;
@@ -217,10 +320,11 @@ main.layout-3col__full {
 #block-block-2 .block-wrapper > div .view a {
   display: block;
   text-transform: uppercase;
-  padding: 10px 35px 5px;
-  background: #f0a001;
+  padding: 7px 22px 3px;
+  background: #ff0000;
   text-decoration: none;
   color: #FFF;
+  font-size: 75%;
 }
 
 #block-block-2 .block-wrapper > div .serpa {
@@ -230,7 +334,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 > div > div {
-  padding: 80px 0 0 80px;
+  
 }
 
 #block-block-1 {
@@ -301,6 +405,7 @@ main.layout-3col__full {
   white-space:nowrap;
   padding: 0 0 0 10px;
   color: #FFFFFF;
+  font-size: 70%;
 }
 
 .left-item {
@@ -904,4 +1009,8 @@ article.node-4.active {
   text-transform: uppercase;
   display: inline-block;
   cursor: pointer;
+}
+
+.field-name-field-position {
+  display: none;
 }

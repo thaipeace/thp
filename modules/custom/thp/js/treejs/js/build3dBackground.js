@@ -15,7 +15,6 @@
       
       // Build 360image
       $('.views-field-field-background-360-images .field-content').hide();
-      var materialPaths = {};
       
       $('#block-views-aseptic-block-1 .views-row').click(function() {
         var index = $(this).index();
@@ -230,8 +229,10 @@ function build360Img(container, materialPaths) {
     // if there is one (or more) intersections
     if ( intersects.length > 0 ) {
       
-      console.log("Hit @ " + toString( intersects[0].point ) );
-      console.log(intersects[0]);
+//      console.log("Hit @ " + toString( intersects[0].point ) );
+//      console.log(intersects[0]);
+      console.log(jQuery('#' + container).parent()); 
+      console.log(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name));
       jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).trigger('click');
     }
 	}

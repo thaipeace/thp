@@ -11,14 +11,14 @@
 
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.home = {
-    attach: function (context, settings) {  
+    attach: function (context, settings) {
       $(".ubl_img").hover(function(){
         if ($(this).parent().parent().css('z-index') === '0') {
-          $('.pnt').css({'opacity': 0});
-          $('.points > div').css({'z-index': 0});
+          $('.pnt').css('opacity', 0);
+          $('.points > div').css('z-index', 0);
           
-          $(this).parent().parent().find('.pnt').animate({opacity: 1}, 200);
-          $(this).parent().parent().css({'z-index': 1});
+          $(this).parent().parent().find('.pnt').css('opacity', 1);
+          $(this).parent().parent().css('z-index', 1);
         }
       }, function(){
         

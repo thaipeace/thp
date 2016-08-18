@@ -57,7 +57,7 @@
           if ($('.views-field-field-parts .field-collection-item-field-parts', element).length > 0) {
             $('.views-field-field-parts .field-collection-item-field-parts', element).each(function(ind, elem){
               $('.views-field-nothing .field-content', element).append($('.field-name-field-title', elem));
-              $('.views-field-nothing .field-content', element).append($('.field-name-field-position', elem));
+              $('.views-field-nothing', element).append($('.field-name-field-position', elem));
               $(elem).append('<div class="close"></div>');
             });
           }
@@ -223,6 +223,24 @@
       $('.bnt span').click(function(){
         var step = $(this).attr('rel');
         $('.'+step, '#block-views-aseptic-block-1').trigger('click');
+      });
+      
+      // 2D position
+      $('.aseptic').each(function(index, element){
+        if ($('.views-field-field-fix-background', element).length > 0) {
+          $('.views-field-nothing .field-name-field-position', element).each(function(ind, elem){
+            
+            var str_po = $(elem).text();
+            var arr_po = str_po.split(',').map(function(item) {
+              return parseInt(item, 10);
+            });
+
+            $($(elem).parent().find('.field-name-field-title').get(ind)).css({
+              left: arr_po[0] + 'px',
+              top: arr_po[1] + 'px'
+            });
+          });
+        }
       });
       
     }
