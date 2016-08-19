@@ -27,7 +27,7 @@
         });
         
         $('#block-block-2 .block-wrapper > div').hover(function(){
-          $('.desc, .view', this).css('animation', 'simplefadein 0.5s ease-in-out forwards');
+          //$('.desc, .view', this).css('animation', 'simplefadein 0.5s ease-in-out forwards');
         });
       }
       
@@ -48,7 +48,7 @@
           }
           
         });
-        $('#block-views-aseptic-block .views-row.views-row-first').addClass('active');
+        $('#block-views-aseptic-block-1 .views-row.views-row-first').trigger('click');
       }
       
       // Reorder parts title
@@ -222,7 +222,7 @@
       // Click to step
       $('.bnt span').click(function(){
         var step = $(this).attr('rel');
-        $('.'+step, '#block-views-aseptic-block-1').trigger('click');
+        $(step).trigger('click');
       });
       
       // 2D position

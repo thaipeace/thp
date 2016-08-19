@@ -136,6 +136,8 @@ main.layout-3col__full {
   height: 80px;
   vertical-align: bottom;
   padding: 0 0 105px 0;
+  z-index: 1;
+  position: relative;
 }
 
 #block-block-2 .block-wrapper > div > div {
@@ -187,12 +189,12 @@ main.layout-3col__full {
 #block-block-2 .block-wrapper div.menu1 > div .img-hover {
   background: url('../images/01_nhamay.png') center center no-repeat;
   background-size: 440px 150px;
-  width: 490px;
+  width: 445px;
   height: 183px;
   transition: all 0.5s ease-in-out;
   position: absolute;
   right: 0px;
-  top: 154px;
+  top: 127px;
 }
 
 #block-block-2 .block-wrapper div.menu1 > div:hover .img-hover {
@@ -207,6 +209,7 @@ main.layout-3col__full {
   transition: all 0.5s ease-in-out;
   position: absolute;
   right: 0;
+  top: 30px;
 }
 
 #block-block-2 .block-wrapper div.menu2 > div:hover .img-hover {
@@ -224,38 +227,46 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu2 > div:hover .boom {
-  animation: boom 0.5s ease-in-out forwards;
+  animation: simplefadein 0.5s ease-in-out forwards;
 }
 
 #block-block-2 .block-wrapper div.menu2 > div .nv2 {
-  top: 80px;
-  left: -5px;
+  top: 0px;
+  left: 72px;
+  width: 53px;
+  height: auto;
 }
 
 #block-block-2 .block-wrapper div.menu2 > div .nv3 {
-  top: -15px;
-  left: 25px;
+  top: 160px;
+  left: 210px;
 }
 
 #block-block-2 .block-wrapper div.menu2 > div .nv4 {
-  top: -10px;
-  left: 130px;
+  top: 85px;
+  left: 15px;
+  width: 47px;
+  height: auto;
 }
 
 #block-block-2 .block-wrapper div.menu2 > div .nv5 {
-  top: 40px;
-  left: 205px;
+  top: 70px;
+  left: 235px;
+  width: 53px;
+  height: auto;
 }
 
 #block-block-2 .block-wrapper div.menu2 > div .nv6 {
-  top: 130px;
-  left: 230px;
+  top: 0px;
+  left: 175px;
+  width: 56px;
+  height: auto;
 }
 
 #block-block-2 .block-wrapper div.menu3 > div .img-hover {
   background: url('../images/03_lamphoichai.png') center center no-repeat;
-  background-size: 459px 222.6px;
-  width: 420px;
+  background-size: 300px 144px;
+  width: 370px;
   height: 290px;
   transition: all 0.5s ease-in-out;
   position: absolute;
@@ -264,21 +275,22 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu3 > div:hover .img-hover {
-  background-size: 499px 242px;
+  background-size: 340px 164px;
 }
 
 #block-block-2 .block-wrapper div.menu4 > div .img-hover {
   background: url('../images/mayinannhanchai.png') center center no-repeat;
-  background-size: 318px 257.6px;
-  width: 390px;
+  background-size: 286px 232px;
+  width: 380px;
   height: 300px;
   transition: all 0.5s ease-in-out;
   position: absolute;
   right: 0;
+  top: 50px;
 }
 
 #block-block-2 .block-wrapper div.menu4 > div:hover .img-hover {
-  background-size: 358px 290px;
+  background-size: 320px 259px;
 }
 
 #block-block-2 .block-wrapper > div .label {
@@ -308,14 +320,17 @@ main.layout-3col__full {
   margin: 0 0 20px 0;
   padding: 30px 0 0 0;
   font-size: 80%;
-  opacity: 0;
 }
 
 #block-block-2 .block-wrapper > div .view {
   border: 1.5px solid #FFFFFF;
   display: block;
-  opacity: 0;
   float: left;
+  opacity: 0;
+}
+
+#block-block-2 .block-wrapper > div:hover .view {
+  animation: thpfadeinwait 1s linear forwards;
 }
 
 #block-block-2 .block-wrapper > div .view a {
@@ -704,11 +719,13 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .field-name-field-description {
   position: absolute;
-  right: 22%;
+  right: 33%;
   top: 33%;
-  width: 468px;
-  padding: 0 0 0 200px;
+  width: 300px;
+  padding: 0 0 0 6%;
   z-index: 1;
+  font-size: 80%;
+  text-align: left;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .field-name-field-description .field-items {
@@ -717,11 +734,11 @@ article.node-4.active {
 
 .line {
   height: 1px;
-  width: 140px;
+  width: 70px;
   background: #FFFFFF;
   position: absolute;
   top: 37px;
-  left: 60px;
+  left: 10px;
   opacity: 0;
 }
 
@@ -744,8 +761,6 @@ article.node-4.active {
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next {
-  width: 175px;
-  height: 37px;
   position: absolute;
   right: 10%;
   top: 40%;
@@ -756,8 +771,7 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next div {
   background: url('../images/white-arrow.png') 85% center no-repeat;
-  padding: 10px 50px 5px 20px;
-  text-transform: uppercase;
+  padding: 10px 20px 5px;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next div:hover {
@@ -766,6 +780,8 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img {
   opacity: 0;
+  width: 400px;
+  height: auto;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity:first-child .field-name-field-image img {

@@ -1,7 +1,7 @@
 /*** Zoom out item to a small offset ***/
 @keyframes makezoomout {
   0% {
-    width: 500px;
+    width: 400px;
     height: auto;
     opacity: 1;
   }
@@ -28,7 +28,7 @@
     height: auto;
   }
   100% {
-    width: 500px;
+    width: 400px;
     height: auto;
     opacity: 1;
   }
@@ -65,14 +65,8 @@
   0% {
     opacity: 0;
   }
-  45% {
+  40% {
     opacity: 0;
-  }
-  70% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.4;
   }
   100% {
     opacity: 1;
@@ -128,6 +122,15 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes simplefadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
