@@ -4,6 +4,13 @@
  * and open the template in the editor.
  */
 
+//Odometer counter
+//window.odometerOptions = {
+//  format: '(.ddd),dd'
+//};
+//setTimeout(function(){
+//  $('.odometer').html(423234234);
+//}, 5000);
 
 (function ($, Drupal, window, document) {
 
@@ -12,6 +19,7 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.home = {
     attach: function (context, settings) {
+      
       $(".ubl_img").hover(function(){
         if ($(this).parent().parent().css('z-index') === '0') {
           $('.pnt').css('opacity', 0);
@@ -20,8 +28,6 @@
           $(this).parent().parent().find('.pnt').css('opacity', 1);
           $(this).parent().parent().css('z-index', 1);
         }
-      }, function(){
-        
       });
 
       $('.cloud_topLeft').animate({left:"-200", opacity:"0.5"}, 3000);
@@ -64,6 +70,12 @@
       $('.wp_experience').append(pathAnimate('M480 500 L548 500 L548 474', style, 768, screen.height));
       $('.wp_experience').append(pathAnimate('M650 350 L667 350 L667 295', style, 768, screen.height));
       //$('.wp_experience').append(pathAnimate('M768 330 L667 330 L667 295', style, 768, screen.height));
+      
+      // Click from factory page
+      $('.pnt').click(function(){
+        window.location = 'experience-instruction-landing?rel=' + $(this).attr('rel');
+      });
+      
     }
   };
 

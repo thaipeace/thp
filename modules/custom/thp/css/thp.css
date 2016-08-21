@@ -111,7 +111,7 @@ main.layout-3col__full {
   margin: 0 0 0 56px;
   position: absolute;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   width: calc(100% - 56px);
   display: none;
 }
@@ -468,6 +468,7 @@ body.page-node-3 {
   top: 0;
   right: 0;
   background-color: #d11212;
+  z-index: 2;
 }
 
 #block-views-aseptic-block-1 p {
@@ -554,7 +555,7 @@ body.page-node-3 {
 }
 
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title {
-  animation: seconds 7s linear 1;
+  animation: simplefadeout 5s linear 1;
 }
 
 #block-views-aseptic-block,
@@ -562,6 +563,14 @@ body.page-node-3 {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 0;
+  display: none;
+}
+
+#block-views-aseptic-block.active,
+#block-views-aseptic-block-2.active {
+  z-index: 1;
+  display: block;
 }
 
 #block-views-aseptic-block .views-row,
@@ -760,6 +769,10 @@ article.node-4.active {
   z-index: 1;
 }
 
+#block-views-aseptic-block .views-row.views-row-last.active .views-field-body {
+  display: block;
+}
+
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next {
   position: absolute;
   right: 10%;
@@ -782,9 +795,10 @@ article.node-4.active {
   opacity: 0;
   width: 400px;
   height: auto;
+  animation: makezoomout 0.5s ease-in-out forwards;
 }
 
-#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity:first-child .field-name-field-image img {
+#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity.active .field-name-field-image img {
   animation: makezoomin 0.5s ease-in-out forwards;
 }
 
@@ -875,6 +889,11 @@ article.node-4.active {
   background: #FFFFFF;
 }
 
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.extra:hover,
+#block-views-aseptic-block-2 .views-row .views-field-nothing .field-name-field-title.extra:hover {
+  background: none;
+}
+
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title .field-items .field-item,
 #block-views-aseptic-block-2 .views-row .views-field-nothing .field-name-field-title .field-items .field-item {
   position: absolute;
@@ -899,6 +918,11 @@ article.node-4.active {
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover .field-items .field-item,
 #block-views-aseptic-block-2 .views-row .views-field-nothing .field-name-field-title:hover .field-items .field-item {
   display: block;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.extra:hover .field-items .field-item,
+#block-views-aseptic-block-2 .views-row .views-field-nothing .field-name-field-title.extra:hover .field-items .field-item {
+  display: none;
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title .field-items,
@@ -934,12 +958,24 @@ article.node-4.active {
 #block-views-aseptic-block-2 .views-row .views-field-field-parts .entity {
   position: absolute;
   z-index: 1;
-  right: -632px;
+  right: -694px;
   height: 100vh;
-  width: 632px;
+  width: 694px;
   padding: 0 94px 0 0;
   background: #f1a001;
   animation: itemlideout 0.5s ease-in-out forwards;
+}
+
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity.data,
+#block-views-aseptic-block-2 .views-row .views-field-field-parts .entity.data {
+  position: absolute;
+  z-index: 0;
+  right: 0px;
+  height: auto;
+  width: auto;
+  padding: 0;
+  background: none;
+  animation: none;
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity.active,
@@ -955,23 +991,136 @@ article.node-4.active {
   width: 100%;
 }
 
-#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2),
-#block-views-aseptic-block-2 .views-row .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image {
   display: block;
   position: absolute;
   right: 565px;
   top: 165px;
+  width: 694px;
+  height: 377px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .dash-line {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-items {
+  position: relative;
+  z-index: 1;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item {
+  position: absolute;
   opacity: 0;
-  width: 100%;
 }
 
-#block-views-aseptic-block .views-row.active:not(.views-row-first) .views-field-field-parts .entity.active:first-child .field-name-field-image .field-item:nth-child(2),
-#block-views-aseptic-block-2 .views-row.active .views-field-field-parts .entity.active:first-child .field-name-field-image .field-item:nth-child(2) {
-  animation: thpfadeinwait 2s ease-in-out forwards;
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item img {
+  width: 80px;
+  height: auto;
 }
 
-#block-views-aseptic-block .views-row.active:not(.views-row-first) .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2),
-#block-views-aseptic-block-2 .views-row.active .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(1) img {
+  width: auto;
+  height: auto; 
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(1) {
+  top: 0px;
+  left: 170px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(1) {
+  animation: fadein 0s ease-in 0.5s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+  top: 209px;
+  left: 420px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(2) {
+  animation: fadein 0s ease-in 0.5s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(3) {
+  top: 209px;
+  left: 323px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(3) {
+  animation: fadein 0s ease-in 0.75s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(4) {
+  top: 209px;
+  left: 226px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(4) {
+  animation: fadein 0s ease-in 1.5s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(5) {
+  top: 209px;
+  left: 128px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(5) {
+  animation: fadein 0s ease-in 1.75s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(6) {
+  top: 209px;
+  left: 30px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(6) {
+  animation: fadein 0s ease-in 2s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(7) {
+  top: 328px;
+  left: 76px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(7) {
+  animation: fadein 0s ease-in 3s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(8) {
+  top: 328px;
+  left: 175px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(8) {
+  animation: fadein 0s ease-in 3.25s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(9) {
+  top: 328px;
+  left: 272px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(9) {
+  animation: fadein 0s ease-in 3.75s forwards;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(10) {
+  top: 328px;
+  left: 368px;
+}
+
+#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image .field-item:nth-child(10) {
+  animation: fadein 0s ease-in 4.25s forwards;
+}
+
+#block-views-aseptic-block .views-row.active.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image {
+  animation: thpfadeinwait 1.5s ease-in-out forwards;
+}
+
+#block-views-aseptic-block .views-row.active.views-row-10 .views-field-field-parts .entity .field-name-field-image {
   opacity: 0;
 }
 
@@ -994,27 +1143,27 @@ article.node-4.active {
 
 .field-name-field-description {
   text-align: center;
-  padding: 40px 40px 20px;
+  padding: 20px;
 }
 
 .field-name-field-description .label {
   text-transform: uppercase;
-  font-size: 150%;
+  font-size: 120%;
 }
 
 .field-name-field-description .title {
   text-transform: uppercase;
-  font-size: 250%;
-  padding: 40px 0;
-  line-height: 50px;
+  font-size: 170%;
+  padding: 10px 0;
+  line-height: 40px;
 }
 
-.field-name-field-description .desc {
-  
+.field-name-field-description .desc p {
+  margin: 10px 0;
 }
 
 .field-name-field-description .bnt {
-  margin: 40px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 .field-name-field-description .bnt span {
@@ -1030,4 +1179,120 @@ article.node-4.active {
 
 .field-name-field-position {
   display: none;
+}
+
+#block-views-aseptic-block .nid-7 table td {
+  text-align: left;
+  vertical-align: top;
+}
+
+#block-views-aseptic-block .nid-7 table {
+  margin: 10px 0;
+  border-top: 1px solid #FFF;
+}
+
+#block-views-aseptic-block .nid-7 table td:nth-child(2n+1) {
+  font-weight: bold;
+  font-size: 120%;
+  padding: 11px 5px 0 10px;
+}
+
+#block-views-aseptic-block .nid-7 table td:nth-child(2n) {
+  padding: 10px 10px 0 0;
+}
+
+#block-views-aseptic-block .nid-7 table td:nth-child(3) {
+  border-left: 1px solid #FFF;
+}
+
+#block-views-aseptic-block .nid-7 table td:nth-child(4) {
+  border-right: 1px solid #FFF;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-9 .views-field-field-parts .entity.data {
+  right: 640px;
+  top: 380px;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-9 .views-field-field-parts .entity.data .field-name-field-description {
+  text-align: left;
+  position: relative;
+  width: 460px;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-9 .views-field-field-parts .entity.data .field-name-field-description .i1 {
+  width: 150px;
+  float: left;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-9 .views-field-field-parts .entity.data .field-name-field-description .i2 {
+  float: right;
+  text-transform: uppercase;
+  position: relative;
+  height: 125px;
+  width: 245px;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-9 .views-field-field-parts .entity.data .field-name-field-description .iCounter {
+  font-size: 500%;
+  line-height: 120%;
+  position: absolute;
+  background: -webkit-linear-gradient(#fffa12, #ffb701);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-9 .views-field-field-parts .entity.data .field-name-field-description .i23 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#block-views-aseptic-block .views-field-body .bnt,
+#block-views-aseptic-block-2 .views-field-body .bnt {
+  position: absolute;
+  padding: 7px 15px 5px;
+  background: #f0a001;
+  right: 10%;
+  top: 40%;
+  z-index: 1;
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .field-name-field-description {
+  text-align: left;
+  position: relative;
+  width: 460px;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data {
+  right: 200px;
+  top: 420px;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i2 {
+  font-size: 300%;
+  color: #f0a001;
+  line-height: 120%;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i3 table {
+  width: 160px;
+  margin: 0;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i3 td:nth-child(3) {
+  font-size: 150%;
+  vertical-align: bottom;
+  height: 40px;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i3 td:nth-child(2) {
+  font-size: 250%;
+  vertical-align: middle;
+}
+
+#block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i3 td:nth-child(1) {
+  vertical-align: top
 }

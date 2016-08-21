@@ -17,6 +17,9 @@
       $('.views-field-field-background-360-images .field-content').hide();
       
       $('#block-views-aseptic-block-1 .views-row').click(function() {
+        $('#block-views-aseptic-block').addClass('active');
+        $('#block-views-aseptic-block-2').removeClass('active');
+        
         var index = $(this).index();
         var asepticBlock = $('#block-views-aseptic-block .views-row').get(index);
         
@@ -42,6 +45,7 @@
         if ($('.views-field-field-background-360-images canvas').length > 0) {
           $('.views-field-field-background-360-images canvas').remove();
         }
+        
         $('.views-field-field-background-360-images', asepticBlock).attr('id', 'three-' + index);
         var materialPaths = $('.views-field-field-background-360-images .field-content', asepticBlock).text();
         if (materialPaths.length > 0) {
@@ -55,10 +59,60 @@
         var index = $(this).index();
         var step = $(this).parents('.views-row');
         
-        $('.views-field-field-parts', step).addClass('active');
-        $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
+        if (!$(this).hasClass('extra')) {
+          $('.views-field-field-parts', step).addClass('active');
+          $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
+        }else {
+          if ($(this).hasClass('data')) {
+            return false;
+          }else if ($(this).hasClass('video')) {
+            
+          }
+        }
+        
       });
       
+      // Click to step
+      $('#block-views-aseptic-block').addClass('active');
+      $('.bnt span').click(function(){
+        var step = $(this).attr('rel');
+        if (step.indexOf('#block-views-aseptic-block-1') !== -1) {
+          
+          $('#block-views-aseptic-block').addClass('active');
+          $('#block-views-aseptic-block-2').removeClass('active');
+          $(step).trigger('click');
+          
+        }else {
+          
+          $('#block-views-aseptic-block').removeClass('active');
+          $('#block-views-aseptic-block-2').addClass('active');
+          
+          $('#block-views-aseptic-block-2 .views-row').removeClass('active');
+          $(step).addClass('active');
+          
+          // Fix background
+          if ($('.views-field-field-fix-background', step).length > 0) {
+            var imageUrl = $('.views-field-field-fix-background .field-content', step).text();
+            $(step).css({
+              'background': 'url("'+ imageUrl +'") center center no-repeat',
+              'background-size': 'cover'
+            });
+          }
+          
+          // Background 360 build
+          if ($('.views-field-field-background-360-images canvas', step).length > 0) {
+            $('.views-field-field-background-360-images canvas', step).remove();
+          }
+          
+          $('.views-field-field-background-360-images', step).attr('id', 'threeExt-' + step[40]);
+          var materialPaths = $('.views-field-field-background-360-images .field-content', step).text();
+          if (materialPaths.length > 0) {
+            var container = 'threeExt-' + step[40];
+            build360Img(container, materialPaths.split(","));
+          }
+        }
+        
+      });
     }
   };
 
@@ -106,7 +160,7 @@ function build360Img(container, materialPaths) {
 		var context = texture_placeholder.getContext( '2d' );
 		context.fillStyle = 'rgb( 200, 200, 200 )';
 		context.fillRect( 0, 0, texture_placeholder.width, texture_placeholder.height );
-
+    
 		var materials = [];
 		for (i = 0; i < materialPaths.length; i++) {
 		    materials.push(loadTexture(materialPaths[i]));
@@ -115,8 +169,8 @@ function build360Img(container, materialPaths) {
 		mesh = new THREE.Mesh( new THREE.BoxGeometry( 300, 300, 300, 7, 7, 7 ), new THREE.MultiMaterial( materials ) );
 		mesh.scale.x = - 1;
     mesh.name = 'wall';
-		scene.add(mesh);
-
+    scene.add(mesh);
+    
 		for ( var i = 0, l = mesh.geometry.vertices.length; i < l; i ++ ) {
 
 			var vertex = mesh.geometry.vertices[ i ];
@@ -164,12 +218,13 @@ function build360Img(container, materialPaths) {
     });
     
     // Add word
-    var spritey = makeTextSprite(
-                "World!",
-                {fontsize: 32, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0}}
-              );
-      spritey.position.set(190,50,450);
-      scene.add(spritey);
+//    var spritey = makeTextSprite(
+//                "World!",
+//                {fontsize: 32, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0}}
+//              );
+//      spritey.position.set(190,50,450);
+      // @Todo for hover
+      //scene.add(spritey);
 	}
 
 	//-----------------//
@@ -233,8 +288,57 @@ function build360Img(container, materialPaths) {
     // if there is one (or more) intersections
     if ( intersects.length > 0 ) {
       jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).trigger('click');
+      
+      jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').remove();
+      if (jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').length < 1) {
+        var nineType = run9Type();
+        jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image').prepend(nineType);
+      }
     }
 	}
+  
+  /*
+   * path String: html5 path format. Ex. M200 0 L40 25 L100 200
+   */
+  function pathAnimate(path, style) {
+    var defaultStyle = [
+      "fill:none",
+      "stroke-width:1",
+      "stroke-linejoin:round",
+      "stroke-linecap:round",
+      "stroke-dasharray: 1000",
+      "animation: dash 7s linear forwards",
+      "stroke:#FFFFFF"
+    ];
+    
+    if (pathAnimate.arguments.length === 2) {
+      defaultStyle = style;
+    }
+    
+    var pathTag = '';
+    pathTag = "<path d='" + path + "' style='" + defaultStyle.join(";") + "' />";
+
+    return pathTag;
+  }
+  
+  function run9Type() {
+    var style = [
+      "fill:none",
+      "stroke-width:1",
+      "stroke-linejoin:round",
+      "stroke-linecap:round",
+      "stroke-dasharray: 1500, 1500",
+      "animation: dash 5s ease-in-out forwards",
+      "stroke:#FFFFFF"
+    ];
+    var path = 'M694 5 L470 5 L470 252 L2 252 L2 370 L389 370';
+    var pathTag = pathAnimate(path, style);
+    var svgLine = "<svg class='dash-line' width='694px' height='377px' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
+    svgLine += pathTag;
+    svgLine += "</svg>";
+    
+    return svgLine;
+  }
 
 	//-----------------------//
 	function onDocumentMouseMove(event) {

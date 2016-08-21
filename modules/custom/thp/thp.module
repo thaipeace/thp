@@ -10,7 +10,7 @@ function thp_preprocess_page(&$vars) {
     
     if (isset($vars['node'])) {
       if ($vars['node']->nid == 4) {
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/draggable_background.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/countUp.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
@@ -19,6 +19,7 @@ function thp_preprocess_page(&$vars) {
       }
     }
     
+    drupal_add_css(drupal_get_path('module', 'thp') . '/css/odometer-theme-default.css');
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/keyframes.css');
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/tam.css');
     drupal_add_js(drupal_get_path('module', 'thp') . '/js/tam.js');
@@ -32,18 +33,6 @@ function thp_preprocess_page(&$vars) {
     drupal_add_js(drupal_get_path('module', 'thp') . '/js/intro.js');
   }
 }
-
-/*
- * Implement hook_preprocess_node
- */
-//function thp_views_pre_render(&$vars) {
-//  dpm($vars->display['block']);
-//  
-//  $view = $vars->handler->view;
-//  if ($view->name == 'aseptic' && $view->current_display == 'block') {
-//    
-//  }
-//}
 
 /**
  * Implements template_preprocess_views_view_unformatted.

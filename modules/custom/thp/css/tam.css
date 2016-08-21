@@ -93,7 +93,7 @@
 /* ------node 3 factory-map------------*/
 
 body.page-node-3  {
-	background: url('../../../../files/bg_factory_map.png') no-repeat center center ;
+	background: url('../../../../files/factory_bg.jpg') no-repeat center center ;
 	width: 100%;
 	height: 100%;
 }
@@ -170,6 +170,7 @@ body.page-node-3  {
   width: 220px;
   padding: 10px;
   opacity: 0;
+  cursor: pointer;
 }
 
 .points .ubl {
@@ -274,8 +275,13 @@ body.page-node-3  {
 .ubl > span {
   font-size: 14px;
   position: absolute;
-  top: -6px;
-  left: 106px;
+  top: 5px;
+  left: 85px;
+  z-index: 2;
+  font-weight: bold;
+  display: block;
+  width: 50px;
+  text-align: center;
 }
 
 #wp_cloud {
@@ -306,6 +312,45 @@ body.page-node-3  {
 	margin-bottom: -1%;
 }
 
+#pnt1 {
+  background: url('../images/gd1.png') center bottom no-repeat;
+}
+
+#pnt2 {
+  background: url('../images/gd2.png') center bottom no-repeat;
+}
+
+#pnt3 {
+  background: url('../images/gd3.png') center bottom no-repeat;
+}
+
+#pnt4 {
+  background: url('../images/gd4.png') center bottom no-repeat;
+}
+
+#pnt5 {
+  background: url('../images/gd5.png') center bottom no-repeat;
+}
+
+#pnt6 {
+  background: url('../images/gd6.png') center bottom no-repeat;
+}
+
+#pnt7 {
+  background: url('../images/gd7.png') center bottom no-repeat;
+}
+
+#pnt8 {
+  background: url('../images/gd8.png') center bottom no-repeat;
+}
+
+#pnt9 {
+  background: url('../images/gd9.png') center bottom no-repeat;
+}
+
+#pnt10 {
+  background: url('../images/gd10.png') center bottom no-repeat;
+}
 /*---pag-node-4 ----experience intruction--*/
 body.page-node-4 {
 	background-color: #919191;
@@ -461,7 +506,7 @@ body.page-node-4 {
 .btn_process1 {
 	text-align: center;
   border: 2px solid #ffffff;
-  padding: 6px 30px;
+  padding: 7px 15px 5px;
   position: absolute;
   left: auto;
   right: 137px;
@@ -474,6 +519,7 @@ body.page-node-4 {
 .btn_process1 >span, .btn_process1 >img {
 	font-size: 14px;
 	display: inline-block;
+  padding: 0 5px;
 }
 
 .btn_process1:hover {
