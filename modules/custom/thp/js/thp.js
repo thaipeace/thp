@@ -50,7 +50,7 @@
               var counter = $($('#block-views-aseptic-block .views-row').get(ind)).find('.iCounter');
               
               if ($(counter[0]).attr('id')) {
-                countNumber($(counter[0]).attr('id'), parseInt(($(counter[0]).text()).replace('.','')), 5);
+                countNumber($(counter[0]).attr('id'), parseInt(($(counter[0]).text()).replace('.','')), 2);
               }
             }
           }
@@ -70,6 +70,7 @@
       }
       
       // Reorder parts title, position
+      // Draw line
       if ($('#block-views-aseptic-block .views-row').length > 0) {
         var titleExtraType = ['data', 'video'];
         $('#block-views-aseptic-block .views-row').each(function(index, element) {
@@ -79,6 +80,8 @@
               if (titleExtraType.indexOf(title) !== -1) {
                 $('.field-name-field-title', elem).addClass(titleExtraType[titleExtraType.indexOf(title)] + ' extra');
                 $(elem).addClass(titleExtraType[titleExtraType.indexOf(title)] + ' extra');
+                
+                $('.field-name-field-video .field-item', elem).append('<div class="close"></div>');
               } else {
                 $(elem).append('<div class="close"></div>');
               }
@@ -110,6 +113,7 @@
       // Close click
       $('.close').on('click', function(){
         $('.views-field-field-parts .entity').removeClass('active');
+        $('.views-field-field-parts .entity').parent().find('.active').removeClass('active');
         
         setTimeout(function() {
           $('.views-field-field-parts').removeClass('active');
@@ -276,6 +280,39 @@
               left: arr_po[0] + 'px',
               top: arr_po[1] + 'px'
             });
+            
+            // Draw line animate
+            if ($($('.views-field-nothing .field-name-field-title', element).get(ind)).text() === 'data') {
+              // Line animate for nid-9
+              if ($(element).hasClass('nid-9')) {
+                var pathTag = pathAnimate('M769 49 V133 H530 M350 133 H150 V100');
+                var svgLine = "<svg class='dash-line' width='770' height='160' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
+                svgLine += pathTag;
+                svgLine += "</svg>";
+                
+                $($('.views-field-field-parts .entity', element).get(ind)).append(svgLine);
+                $($('.views-field-field-parts .entity', element).get(ind)).css({
+                  'left': (arr_po[0] - $($('.views-field-field-parts .entity', element).get(ind)).width() + 101) + 'px',
+                  'top': (arr_po[1] + 161) + 'px'
+                });
+                
+              }
+              
+              // Line animate for nid-9
+              if ($(element).hasClass('nid-12')) {
+                var pathTag = pathAnimate('M0 40 V150 H170');
+                var svgLine = "<svg class='dash-line' width='770' height='360' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
+                svgLine += pathTag;
+                svgLine += "</svg>";
+                
+                $($('.views-field-field-parts .entity', element).get(ind)).append(svgLine);
+                $($('.views-field-field-parts .entity', element).get(ind)).css({
+                  'left': (arr_po[0] + 101) + 'px',
+                  'top': (arr_po[1] + 161) + 'px'
+                });
+                
+              }
+            }
           });
         }
       });
@@ -322,7 +359,7 @@
   
   function countNumber(tagId, countTo, duration) {
     var options = {
-      useEasing : true, 
+      useEasing : false, 
       useGrouping : true, 
       separator : '.', 
       decimal : ',', 

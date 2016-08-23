@@ -51,7 +51,16 @@
         if (materialPaths.length > 0) {
           var container = 'three-' + index;
           build360Img(container, materialPaths.split(","));
+          
+          if (jQuery(asepticBlock).hasClass('nid-10')) {
+            jQuery('.views-field-field-parts .entity.data', asepticBlock).fadeIn();
+          }
+          if (jQuery(asepticBlock).hasClass('nid-11')) {
+            jQuery('.views-field-field-parts .entity.data', asepticBlock).fadeIn();
+          } 
+
         }
+        
       });
       
       // Point clicked
@@ -66,7 +75,12 @@
           if ($(this).hasClass('data')) {
             return false;
           }else if ($(this).hasClass('video')) {
+            var part = $($('.views-field-field-parts .entity', step));
+            $('.views-field-field-parts', step).addClass('active');
+            $('.field-name-field-video', part).addClass('active');
+            $('video', part)[0].play();
             
+            //$('.field-item', part).append('<div class="close"></div>');
           }
         }
         
@@ -197,24 +211,27 @@ function build360Img(container, materialPaths) {
 
 		window.addEventListener( 'resize', onWindowResize, false );
     
-    jQuery('.views-field-nothing .field-name-field-position', jQuery(container).parent()).each(function(index, element){
-      var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
-      var pointGeometry = new THREE.PlaneGeometry(50, 50);
-      point = new THREE.Mesh(pointGeometry, pointMaterial);
-      
-      var str_po = jQuery(element).text();
-      var arr_po = str_po.split(',').map(function(item) {
-        return parseInt(item, 10);
-      });
-      
-      point.position.x = arr_po[0];
-      point.position.y = arr_po[1];
-      point.position.z = arr_po[2];
-      
-      point.name = index;
-      scene.add(point);
+    var element = jQuery(container).parent();
+    jQuery('.views-field-nothing .field-name-field-position', element).each(function(ind, elem) {
+      if (jQuery(jQuery('.views-field-nothing .field-name-field-title', element).get(ind)).text() !== 'data') {
+        var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
+        var pointGeometry = new THREE.PlaneGeometry(50, 50);
+        point = new THREE.Mesh(pointGeometry, pointMaterial);
 
-      targetList.push(point);
+        var str_po = jQuery(elem).text();
+        var arr_po = str_po.split(',').map(function(item) {
+          return parseInt(item, 10);
+        });
+
+        point.position.x = arr_po[0];
+        point.position.y = arr_po[1];
+        point.position.z = arr_po[2];
+
+        point.name = ind;
+        scene.add(point);
+
+        targetList.push(point);
+      }
     });
     
     // Add word
@@ -289,6 +306,7 @@ function build360Img(container, materialPaths) {
     if ( intersects.length > 0 ) {
       jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).trigger('click');
       
+      // Add 9 type line  
       jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').remove();
       if (jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').length < 1) {
         var nineType = run9Type();
@@ -296,30 +314,6 @@ function build360Img(container, materialPaths) {
       }
     }
 	}
-  
-  /*
-   * path String: html5 path format. Ex. M200 0 L40 25 L100 200
-   */
-  function pathAnimate(path, style) {
-    var defaultStyle = [
-      "fill:none",
-      "stroke-width:1",
-      "stroke-linejoin:round",
-      "stroke-linecap:round",
-      "stroke-dasharray: 1000",
-      "animation: dash 7s linear forwards",
-      "stroke:#FFFFFF"
-    ];
-    
-    if (pathAnimate.arguments.length === 2) {
-      defaultStyle = style;
-    }
-    
-    var pathTag = '';
-    pathTag = "<path d='" + path + "' style='" + defaultStyle.join(";") + "' />";
-
-    return pathTag;
-  }
   
   function run9Type() {
     var style = [
@@ -369,6 +363,16 @@ function build360Img(container, materialPaths) {
 
 	function onDocumentMouseUp( event ) {
 		isUserInteracting = false;
+    
+    // Fade data when camera turn around
+    var l = (lon-90)%360;
+    if (l > -20 && l < 20) {
+      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data').fadeIn();
+      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data').fadeIn();
+    }else {
+      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data').fadeOut();
+      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data').fadeOut();
+    }
 	}
 
 	//----------------------------//
@@ -538,6 +542,29 @@ function build360Img(container, materialPaths) {
     ctx.fill();
     ctx.stroke();   
   }
+}
 
 
+/*
+* path String: html5 path format. Ex. M200 0 L40 25 L100 200
+*/
+function pathAnimate(path, style) {
+ var defaultStyle = [
+   "fill:none",
+   "stroke-width:1",
+   "stroke-linejoin:round",
+   "stroke-linecap:round",
+   "stroke-dasharray: 1000",
+   "animation: dash 7s linear forwards",
+   "stroke:#FFFFFF"
+ ];
+
+ if (pathAnimate.arguments.length === 2) {
+   defaultStyle = style;
+ }
+
+ var pathTag = '';
+ pathTag = "<path d='" + path + "' style='" + defaultStyle.join(";") + "' />";
+
+ return pathTag;
 }
