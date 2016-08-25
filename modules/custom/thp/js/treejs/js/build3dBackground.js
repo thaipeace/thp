@@ -90,42 +90,45 @@
       $('#block-views-aseptic-block').addClass('active');
       $('.bnt span').click(function(){
         var step = $(this).attr('rel');
-        if (step.indexOf('#block-views-aseptic-block-1') !== -1) {
+        if (step !== 'external') {
+          if (step.indexOf('#block-views-aseptic-block-1') !== -1) {
           
-          $('#block-views-aseptic-block').addClass('active');
-          $('#block-views-aseptic-block-2').removeClass('active');
-          $(step).trigger('click');
-          
+            $('#block-views-aseptic-block').addClass('active');
+            $('#block-views-aseptic-block-2').removeClass('active');
+            $(step).trigger('click');
+
+          }else {
+
+            $('#block-views-aseptic-block').removeClass('active');
+            $('#block-views-aseptic-block-2').addClass('active');
+
+            $('#block-views-aseptic-block-2 .views-row').removeClass('active');
+            $(step).addClass('active');
+
+            // Fix background
+            if ($('.views-field-field-fix-background', step).length > 0) {
+              var imageUrl = $('.views-field-field-fix-background .field-content', step).text();
+              $(step).css({
+                'background': 'url("'+ imageUrl +'") center center no-repeat',
+                'background-size': 'cover'
+              });
+            }
+
+            // Background 360 build
+            if ($('.views-field-field-background-360-images canvas', step).length > 0) {
+              $('.views-field-field-background-360-images canvas', step).remove();
+            }
+
+            $('.views-field-field-background-360-images', step).attr('id', 'threeExt-' + step[40]);
+            var materialPaths = $('.views-field-field-background-360-images .field-content', step).text();
+            if (materialPaths.length > 0) {
+              var container = 'threeExt-' + step[40];
+              build360Img(container, materialPaths.split(","));
+            }
+          }
         }else {
-          
-          $('#block-views-aseptic-block').removeClass('active');
-          $('#block-views-aseptic-block-2').addClass('active');
-          
-          $('#block-views-aseptic-block-2 .views-row').removeClass('active');
-          $(step).addClass('active');
-          
-          // Fix background
-          if ($('.views-field-field-fix-background', step).length > 0) {
-            var imageUrl = $('.views-field-field-fix-background .field-content', step).text();
-            $(step).css({
-              'background': 'url("'+ imageUrl +'") center center no-repeat',
-              'background-size': 'cover'
-            });
-          }
-          
-          // Background 360 build
-          if ($('.views-field-field-background-360-images canvas', step).length > 0) {
-            $('.views-field-field-background-360-images canvas', step).remove();
-          }
-          
-          $('.views-field-field-background-360-images', step).attr('id', 'threeExt-' + step[40]);
-          var materialPaths = $('.views-field-field-background-360-images .field-content', step).text();
-          if (materialPaths.length > 0) {
-            var container = 'threeExt-' + step[40];
-            build360Img(container, materialPaths.split(","));
-          }
+          window.location = $(this).attr('href');
         }
-        
       });
     }
   };
