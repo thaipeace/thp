@@ -76,6 +76,25 @@
         window.location = 'experience-instruction-landing?rel=' + $(this).attr('rel');
       });
       
+      // Click from menu
+      $('.menu').click(function(){
+        window.location = 'bottle-landing-page?rel=' + $(this).attr('rel');
+      });
+      
+      // View interview video
+      $('.view-video').click(function(){
+        $('.video-outer').addClass('active');
+        $('.video-outer video')[0].play();
+      });
+      // Close video
+      $('.video-outer .close').click(function(){
+        $('.video-outer').removeClass('active');
+        $('.video-outer video')[0].pause();
+      });
+      // Return to home
+      $('.home-return').click(function(){
+        window.location = './home';
+      });
     }
   };
 

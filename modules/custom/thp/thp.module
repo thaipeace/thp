@@ -17,6 +17,22 @@ function thp_preprocess_page(&$vars) {
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground.js');
       }
+      if ($vars['node']->nid == 21) {
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/countUp.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground_bottle.js');
+      }
+      if ($vars['node']->nid == 22) {
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/countUp.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
+        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground_label.js');
+      }
     }
     
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/odometer-theme-default.css');
@@ -25,12 +41,13 @@ function thp_preprocess_page(&$vars) {
     drupal_add_js(drupal_get_path('module', 'thp') . '/js/tam.js');
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/thp.css');
     drupal_add_js(drupal_get_path('module', 'thp') . '/js/thp.js');
+    drupal_add_js(drupal_get_path('module', 'thp') . '/js/custom.js');
     
-  }
-  
-  if ($vars['is_front']) {
-    drupal_add_css(drupal_get_path('module', 'thp') . '/css/intro.css');
-    drupal_add_js(drupal_get_path('module', 'thp') . '/js/intro.js');
+    
+    if ($vars['is_front']) {
+      drupal_add_css(drupal_get_path('module', 'thp') . '/css/intro.css');
+      drupal_add_js(drupal_get_path('module', 'thp') . '/js/intro.js');
+    }
   }
 }
 
@@ -39,7 +56,9 @@ function thp_preprocess_page(&$vars) {
  */
 function thp_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
-  if ($view->name == 'aseptic' && ($view->current_display == 'block' || $view->current_display == 'block_2')) {
+  if ($view->name == 'aseptic' && ($view->current_display == 'block' || $view->current_display == 'block_2') 
+          || $view->name == 'bottle' && ($view->current_display == 'block')
+          || $view->name == 'label' && ($view->current_display == 'block' || $view->current_display == 'block_2')) {
     $classes_array = $vars['classes_array'];
     $types = ['field_fix_background', 'field_drag_background', 'field_background_360_images'];
     foreach($classes_array as $key => $classes) {

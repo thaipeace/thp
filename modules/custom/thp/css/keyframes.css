@@ -99,7 +99,7 @@
 /*** Item slide in ***/
 @keyframes itemlidein {
   0% {
-    right: -632px;
+    right: -719px;
   }
   100% {
     right: 0;
@@ -112,7 +112,27 @@
     right: 0;
   }
   100% {
-    right: -632px;
+    right: -719px;
+  }
+}
+
+/*** Item slide in ***/
+@keyframes itemlideinnotright {
+  0% {
+    right: -719px;
+  }
+  100% {
+    right: -94px;
+  }
+}
+
+/*** Item slide out ***/
+@keyframes itemlideoutnotright {
+  0% {
+    right: -94px;
+  }
+  100% {
+    right: -719px;
   }
 }
 
