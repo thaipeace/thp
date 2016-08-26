@@ -11,11 +11,14 @@ function thp_preprocess_page(&$vars) {
     if (isset($vars['node'])) {
       if ($vars['node']->nid == 4) {
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/countUp.js');
+//        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.min.js');
+//        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three80.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground.js');
+//        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threeRender80.js');
       }
       if ($vars['node']->nid == 21) {
         drupal_add_js(drupal_get_path('module', 'thp') . '/js/countUp.js');

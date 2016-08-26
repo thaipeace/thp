@@ -10,44 +10,49 @@
 }
 
 @font-face {
-    font-family: 'utm_neo_sans_intelregular';
-    src: url('utm_neo_sans_intel.woff2') format('woff2'),
-         url('utm_neo_sans_intel.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'utm_neo_sans_intelitalic';
-    src: url('utm_neo_sans_intel_italic.woff2') format('woff2'),
-         url('utm_neo_sans_intel_italic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'utm_neo_sans_intelbold';
-    src: url('utm_neo_sans_intelbold.woff2') format('woff2'),
-         url('utm_neo_sans_intelbold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'utm_neo_sans_intelbold_italic';
-    src: url('utm_neo_sans_intelbold_italic.woff2') format('woff2'),
-         url('utm_neo_sans_intelbold_italic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'utm_bebasregular';
     src: url('utm_bebas.woff2') format('woff2'),
          url('utm_bebas.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+	font-family: 'UTM Neo Sans Intel';
+	src: url('subset-UTMNeoSansIntel.eot');
+	src: url('subset-UTMNeoSansIntel.eot?#iefix') format('embedded-opentype'),
+		url('subset-UTMNeoSansIntel.woff') format('woff'),
+		url('subset-UTMNeoSansIntel.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'UTM Neo Sans Intel';
+	src: url('subset-UTMNeoSansIntel-Italic.eot');
+	src: url('subset-UTMNeoSansIntel-Italic.eot?#iefix') format('embedded-opentype'),
+		url('subset-UTMNeoSansIntel-Italic.woff') format('woff'),
+		url('subset-UTMNeoSansIntel-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'UTM Neo Sans Intel';
+	src: url('subset-UTMNeoSansIntel-BoldItalic.eot');
+	src: url('subset-UTMNeoSansIntel-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('subset-UTMNeoSansIntel-BoldItalic.woff') format('woff'),
+		url('subset-UTMNeoSansIntel-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'UTM Neo Sans Intel';
+	src: url('subset-UTMNeoSansIntelBold.eot');
+	src: url('subset-UTMNeoSansIntelBold.eot?#iefix') format('embedded-opentype'),
+		url('subset-UTMNeoSansIntelBold.woff') format('woff'),
+		url('subset-UTMNeoSansIntelBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
 }

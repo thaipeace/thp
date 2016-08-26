@@ -30,8 +30,11 @@
       
       // Aseptic Menu click
       if ($('#block-views-aseptic-block-1 .views-row').length > 0) {
+        var preInd;
         $('#block-views-aseptic-block-1 .views-row').click(function(){
           if (!$(this).hasClass('active')) {
+            preInd = $('#block-views-aseptic-block-1').find('.active').index();
+            
             $('#block-views-aseptic-block-1 .views-row').removeClass('active');
             $(this).addClass('active');
 
@@ -55,6 +58,15 @@
             }
           }
           
+          // Close button on aseptic process page
+          if (preInd !== -1) {
+            $('#block-views-aseptic-block .views-row.views-row-first .views-field-body .bnt.close span').css('display','block').click(function(){
+              if (preInd !== 0) {
+                $('#block-views-aseptic-block-1 .views-row.views-row-' + (preInd+1)).trigger('click');
+              }
+            });
+            
+          }
         });
         
         $('#block-views-aseptic-block-1 .views-row.views-row-first').trigger('click');
@@ -236,7 +248,7 @@
         
         if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
           var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
-          autoClick(items, 2000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1'); 
+          autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1'); 
         }
         
         // Active first child when load
@@ -375,7 +387,7 @@
               
               // Line animate for nid-9
               if ($(element).hasClass('nid-12')) {
-                var pathTag = pathAnimate('M0 40 V150 H170');
+                var pathTag = pathAnimate('M0 40 V150 H165');
                 var svgLine = "<svg class='dash-line' width='770' height='360' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
                 svgLine += pathTag;
                 svgLine += "</svg>";

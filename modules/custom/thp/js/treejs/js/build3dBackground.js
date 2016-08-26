@@ -14,7 +14,7 @@
     attach: function (context, settings) {  
       
       // Build 360image
-      $('.views-field-field-background-360-images .field-content').hide();
+      $('.views-field-field-270-background .field-content').hide();
       
       $('#block-views-aseptic-block-1 .views-row').click(function() {
         $('#block-views-aseptic-block').addClass('active');
@@ -42,15 +42,15 @@
         }
         
         // Background 360 build
-        if ($('.views-field-field-background-360-images canvas').length > 0) {
-          $('.views-field-field-background-360-images canvas').remove();
+        if ($('.views-field-field-270-background canvas').length > 0) {
+          $('.views-field-field-270-background canvas').remove();
         }
         
-        $('.views-field-field-background-360-images', asepticBlock).attr('id', 'three-' + index);
-        var materialPaths = $('.views-field-field-background-360-images .field-content', asepticBlock).text();
-        if (materialPaths.length > 0) {
+        $('.views-field-field-270-background', asepticBlock).attr('id', 'three-' + index);
+        var materialPath = $('.views-field-field-270-background .field-content', asepticBlock).text();
+        if (materialPath.length > 0) {
           var container = 'three-' + index;
-          build360Img(container, materialPaths.split(","));
+          build360Img(container, materialPath);
           
           if (jQuery(asepticBlock).hasClass('nid-10')) {
             jQuery('.views-field-field-parts .entity.data', asepticBlock).fadeIn();
@@ -115,15 +115,15 @@
             }
 
             // Background 360 build
-            if ($('.views-field-field-background-360-images canvas', step).length > 0) {
-              $('.views-field-field-background-360-images canvas', step).remove();
+            if ($('.views-field-field-270-background canvas', step).length > 0) {
+              $('.views-field-field-270-background canvas', step).remove();
             }
 
-            $('.views-field-field-background-360-images', step).attr('id', 'threeExt-' + step[40]);
-            var materialPaths = $('.views-field-field-background-360-images .field-content', step).text();
-            if (materialPaths.length > 0) {
+            $('.views-field-field-270-background', step).attr('id', 'threeExt-' + step[40]);
+            var materialPath = $('.views-field-field-270-background .field-content', step).text();
+            if (materialPath.length > 0) {
               var container = 'threeExt-' + step[40];
-              build360Img(container, materialPaths.split(","));
+              build360Img(container, materialPath);
             }
           }
         }else {
@@ -135,7 +135,7 @@
 
 })(jQuery, Drupal, this, this.document);
 
-function build360Img(container, materialPaths) {
+function build360Img(container, materialPath) {
 
 	var container1 = document.getElementById(container);
 
@@ -153,19 +153,19 @@ function build360Img(container, materialPaths) {
 	theta = 0,
 	target = new THREE.Vector3();
   var targetList = [];
-	init(container1, materialPaths);
+	init(container1, materialPath);
   var projector, mouse = { x: 0, y: 0 };
 	animate();
 
 	//-----------------//
 
-	function init(container, materialPaths) {
+	function init(container, materialPath) {
     
 		var container, mesh;
     var point = {};
 
-		camera = new THREE.PerspectiveCamera( 110, window.innerWidth / window.innerHeight, 1, 1100 );
-		camera.fov = (120*8) * 0.05;
+		camera = new THREE.PerspectiveCamera( 160, window.innerWidth / window.innerHeight, 1, 1100 );
+		camera.fov = 48;
 		camera.updateProjectionMatrix();
     
 		scene = new THREE.Scene();
@@ -178,14 +178,15 @@ function build360Img(container, materialPaths) {
 		context.fillStyle = 'rgb( 200, 200, 200 )';
 		context.fillRect( 0, 0, texture_placeholder.width, texture_placeholder.height );
     
-		var materials = [];
-		for (i = 0; i < materialPaths.length; i++) {
-		    materials.push(loadTexture(materialPaths[i]));
-		}
+    var geometry = new THREE.SphereGeometry( 800, 60, 40 );
+    geometry.scale( - 1, 1, 1 );
 
-		mesh = new THREE.Mesh( new THREE.BoxGeometry( 300, 300, 300, 7, 7, 7 ), new THREE.MultiMaterial( materials ) );
-		mesh.scale.x = - 1;
-    mesh.name = 'wall';
+    var material = new THREE.MeshBasicMaterial( {
+      map: new THREE.TextureLoader().load(materialPath)
+    } );
+
+    mesh = new THREE.Mesh( geometry, material );
+    
     scene.add(mesh);
     
 		for ( var i = 0, l = mesh.geometry.vertices.length; i < l; i ++ ) {
@@ -197,7 +198,8 @@ function build360Img(container, materialPaths) {
 
 		}
 
-		renderer = new THREE.CanvasRenderer();
+		//renderer = new THREE.CanvasRenderer();
+    renderer = new THREE.WebGLRenderer();
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( window.innerWidth, window.innerHeight );
 		container.appendChild( renderer.domElement );
@@ -206,7 +208,7 @@ function build360Img(container, materialPaths) {
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 		document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-		//document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
+		document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
 		document.addEventListener( 'MozMousePixelScroll', onDocumentMouseWheel, false);
 
 		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
@@ -261,7 +263,7 @@ function build360Img(container, materialPaths) {
 	function loadTexture( path ) {
 
 		var texture = new THREE.Texture( texture_placeholder );
-		var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5, side: THREE.DoubleSide } );
+		var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5, side: THREE.DoubleSide, transparent: true} );
 
 		var image = new Image();
 		image.onload = function () {
@@ -341,7 +343,23 @@ function build360Img(container, materialPaths) {
 	function onDocumentMouseMove(event) {
 		if (isUserInteracting === true) {
 			lon = (onPointerDownPointerX - event.clientX) * 0.1 + onPointerDownLon;
+      
+      var turn = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+      if (turn >= -25 && turn <= 18) {
+        lat = turn;
+      }
 		}
+    
+    var panoItems = [
+      '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
+      '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
+    ];
+    
+    // Pano show and hide
+    jQuery.each(panoItems, function(index, panoItem){
+      hideShowPano(panoItem);
+    });
+    
     // update the mouse variable
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -367,16 +385,26 @@ function build360Img(container, materialPaths) {
 	function onDocumentMouseUp( event ) {
 		isUserInteracting = false;
     
+    var panoItems = [
+      '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
+      '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
+    ];
+    
+    jQuery.each(panoItems, function(index, panoItem){
+      hideShowPano(panoItem);
+    });
+    
+	}
+  
+  var hideShowPano = function(panoItem) {
     // Fade data when camera turn around
     var l = (lon-90)%360;
     if (l > -20 && l < 20) {
-      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data').fadeIn();
-      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data').fadeIn();
+      jQuery(panoItem).fadeIn();
     }else {
-      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data').fadeOut();
-      jQuery('#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data').fadeOut();
+      jQuery(panoItem).fadeOut();
     }
-	}
+  };
 
 	//----------------------------//
 
@@ -388,20 +416,18 @@ function build360Img(container, materialPaths) {
 		camera.fov -= event.wheelDeltaY * 0.05;
 
 		// Opera / Explorer 9
-
 		} else if ( event.wheelDelta ) {
-
 			camera.fov -= event.wheelDelta * 0.05;
 
 		// Firefox
-
 		} else if ( event.detail ) {
-
 			camera.fov -= event.detail * 0.05;
-
 		}
-
-		camera.updateProjectionMatrix();
+    
+    camera.fov = (camera.fov < 66)?66:camera.fov;
+    camera.fov = (camera.fov > 24)?24:camera.fov;
+    
+    camera.updateProjectionMatrix();
 
 	}
 
@@ -461,11 +487,13 @@ function build360Img(container, materialPaths) {
 		phi = THREE.Math.degToRad( 90 - lat );
 		theta = THREE.Math.degToRad( lon );
 
-		target.x = 500 * Math.sin( phi ) * Math.cos( theta );
-		//target.y = 500 * Math.cos( phi );
+//		target.x = 500 * Math.sin( phi ) * Math.cos( theta );
+//		target.y = -92.8;
+//		target.z = 500 * Math.sin( phi ) * Math.sin( theta );
     
-		target.y = -92.8;
-		target.z = 500 * Math.sin( phi ) * Math.sin( theta );
+    target.x = 500 * Math.sin( phi ) * Math.cos( theta );
+    target.y = 500 * Math.cos( phi );
+    target.z = 500 * Math.sin( phi ) * Math.sin( theta );
 
 		camera.position.copy( target ).negate();
 		camera.lookAt( target );

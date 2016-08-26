@@ -68,6 +68,7 @@
           if (counter === 0) $('.node-2 .bnt-try .img_exper1 a img').css('opacity','1');
         })();
       }
+
     }
   }
 

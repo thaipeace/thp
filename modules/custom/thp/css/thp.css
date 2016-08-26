@@ -9,11 +9,11 @@ and open the template in the editor.
 */
 html,body {
   height:100%;
-  font-family: 'utm_neo_sans_intelregular';
+  font-family: 'Open Sans', sans-serif;
 }
 
 body.no-sidebars {
-  font-family: 'utm_neo_sans_intelregular';
+  font-family: 'Open Sans', sans-serif;
   color: #FFFFFF;
   line-height: 20px;
 }
@@ -487,7 +487,8 @@ body.page-node-3 {
   cursor: pointer;
 }
 
-#block-views-aseptic-block-1 .views-row-first:hover {
+#block-views-aseptic-block-1 .views-row-first:hover,
+#block-views-aseptic-block-1 .views-row-first.active {
   background: #f0a001 url(../../../../files/line_center_r.jpg) repeat-x left bottom;
 }
 
@@ -532,7 +533,7 @@ body.page-node-3 {
 }
 
 #block-views-aseptic-block-1 .views-row .views-field-field-menu-icon .field-content,
-#block-views-aseptic-block-1 .views-row.views-row-first .views-field-title .field-content{
+#block-views-aseptic-block-1 .views-row.views-row-first .views-field-title .field-content {
   display: table-cell;
   vertical-align: middle;
 }
@@ -544,7 +545,7 @@ body.page-node-3 {
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content,
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content {
-  background: url('../../../../files/icon_Preparation_Fuel.png') no-repeat center center;
+  background: url('../../../../files/icon_preparation_fuel.png') no-repeat center center;
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon .field-content img,
@@ -881,27 +882,27 @@ article.node-4.active {
   z-index: -1;
 }
 
-#block-views-aseptic-block .views-row .views-field-field-background-360-images,
-#block-views-aseptic-block-2 .views-row .views-field-field-background-360-images,
-#block-views-bottle-block .views-row .views-field-field-background-360-images,
-#block-views-label-block .views-row .views-field-field-background-360-images,
-#block-views-label-block-2 .views-row .views-field-field-background-360-images {
+#block-views-aseptic-block .views-row .views-field-field-270-background,
+#block-views-aseptic-block-2 .views-row .views-field-field-270-background,
+#block-views-bottle-block .views-row .views-field-field-270-background,
+#block-views-label-block .views-row .views-field-field-270-background,
+#block-views-label-block-2 .views-row .views-field-field-270-background {
   position: absolute;
   top: 0;
   width: 100vw;
   height: 100vw;
 }
 
-#block-views-aseptic-block .views-row .views-field-field-background-360-images ul,
-#block-views-aseptic-block .views-row .views-field-field-background-360-images li,
-#block-views-aseptic-block-2 .views-row .views-field-field-background-360-images ul,
-#block-views-aseptic-block-2 .views-row .views-field-field-background-360-images li,
-#block-views-bottle-block .views-row .views-field-field-background-360-images ul,
-#block-views-bottle-block .views-row .views-field-field-background-360-images li,
-#block-views-label-block .views-row .views-field-field-background-360-images ul,
-#block-views-label-block .views-row .views-field-field-background-360-images li,
-#block-views-label-block-2 .views-row .views-field-field-background-360-images ul,
-#block-views-label-block-2 .views-row .views-field-field-background-360-images li {
+#block-views-aseptic-block .views-row .views-field-field-270-background ul,
+#block-views-aseptic-block .views-row .views-field-field-270-background li,
+#block-views-aseptic-block-2 .views-row .views-field-field-270-background ul,
+#block-views-aseptic-block-2 .views-row .views-field-field-270-background li,
+#block-views-bottle-block .views-row .views-field-field-270-background ul,
+#block-views-bottle-block .views-row .views-field-field-270-background li,
+#block-views-label-block .views-row .views-field-field-270-background ul,
+#block-views-label-block .views-row .views-field-field-270-background li,
+#block-views-label-block-2 .views-row .views-field-field-270-background ul,
+#block-views-label-block-2 .views-row .views-field-field-270-background li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -926,10 +927,12 @@ article.node-4.active {
   position: absolute;
   width: 200px;
   height: 200px;
-  border-radius: 200px;
   overflow: visible;
   cursor: pointer;
+  /*
   color: #000000;
+  border-radius: 200px;
+  */
 }
 
 #block-views-aseptic-block .views-row.field_background_360_images:not(.views-row-first) .views-field-nothing .field-name-field-title,
@@ -953,7 +956,7 @@ article.node-4.active {
 #block-views-bottle-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover,
 #block-views-label-block .views-row .views-field-nothing .field-name-field-title:hover,
 #block-views-label-block-2 .views-row .views-field-nothing .field-name-field-title:hover {
-  background: #FFFFFF;
+  /*background: #FFFFFF;*/
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.extra:hover,
@@ -982,6 +985,7 @@ article.node-4.active {
 #block-views-bottle-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title .field-items .field-item::after,
 #block-views-label-block .views-row .views-field-nothing .field-name-field-title .field-items .field-item::after,
 #block-views-label-block-2 .views-row .views-field-nothing .field-name-field-title .field-items .field-item::after {
+  /*
   content: "Chi tiết";
   display: block;
   margin: 10px 0;
@@ -989,6 +993,7 @@ article.node-4.active {
   text-align: center;
   background: url('../images/black-arrow.png') 68% center no-repeat;
   font-weight: bold;
+  */
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover .field-items .field-item,
@@ -996,7 +1001,7 @@ article.node-4.active {
 #block-views-bottle-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover .field-items .field-item,
 #block-views-label-block .views-row .views-field-nothing .field-name-field-title:hover .field-items .field-item,
 #block-views-label-block-2 .views-row .views-field-nothing .field-name-field-title:hover .field-items .field-item {
-  display: block;
+  /*display: block;*/
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.extra:hover .field-items .field-item,
@@ -1590,13 +1595,17 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i3 td:nth-child(1) {
   vertical-align: top;
+  padding: 10px 0 0 0;
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i3 td:nth-child(2) {
-  font-size: 500%;
-  vertical-align: bottom;
-  height: 63px;
-  line-height: 60%;
+  font-size: 690%;
+  line-height: 70%;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#f1e601, #f1c701);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'iciel_novecento_sansnormal';
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-12 .views-field-field-parts .entity.data .i3 td:nth-child(3) {
@@ -1733,6 +1742,21 @@ article.node-4.active {
   top: -60px;
   right: 0;
   border: none;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-body .bnt.close {
+  background: none;
+  padding: 0;
+  top: -60px;
+  right: 95px;
+  border: none;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-body .bnt.close span {
+  display: none;
+  width: 51px;
+  height: 51px;
+  background: url('../images/phoichaiclose.jpg') 0 0 no-repeat;
 }
 
 #block-views-bottle-block .views-row-first .bnt span {
