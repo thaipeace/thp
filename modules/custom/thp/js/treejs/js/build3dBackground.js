@@ -72,7 +72,17 @@
       $('.field-name-field-title').click(function(){
         var index = $(this).index();
         var step = $(this).parents('.views-row');
-        var stepInd = $(step).index();
+        var stepInd;
+        if (step.hasClass('follow')) {
+          //Array all class
+          var clArr = step.attr('class').split(" ");
+          //Remove "follow" string
+          var followId = clArr[6].substring(7);
+          stepInd = $('#block-views-aseptic-block .' + followId).index();
+        }else {
+          stepInd = $(step).index();
+        }
+        
         
         if (!$(this).hasClass('extra')) {
           $('.views-field-field-parts', step).addClass('active');

@@ -223,7 +223,16 @@
         
         // Reshow tootip left menu
         var step = $(this).parents('.views-row');
-        var stepInd = $(step).index();
+        var stepInd;
+        if (step.hasClass('follow')) {
+          //Array all class
+          var clArr = step.attr('class').split(" ");
+          //Remove "follow" string
+          var followId = clArr[6].substring(7);
+          stepInd = $('#block-views-aseptic-block .' + followId).index();
+        }else {
+          stepInd = $(step).index();
+        }
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).show();
       });
       
