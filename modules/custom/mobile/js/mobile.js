@@ -21,6 +21,7 @@
         var $logo = $('img.header__logo-image');
         var $fbBtn = $('#fb-bnt');
         var $questionBtn= $('#question-bnt');
+        var $volume = $('#volume-bnt');
 
         //Behavior for menu button
         if($block2.attr('class') && $block2.attr('class').indexOf('active') === -1 ){
@@ -30,6 +31,7 @@
           $logo.addClass('active');
           $fbBtn.addClass('active');
           $questionBtn.addClass('active');
+          $volume.addClass('active');
         }
         else{
           //Collapse menu
@@ -38,6 +40,7 @@
           $logo.removeClass('active');
           $fbBtn.removeClass('active');
           $questionBtn.removeClass('active');
+          $volume.removeClass('active');
         }
 
 
