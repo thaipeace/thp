@@ -51,14 +51,6 @@ function thp_preprocess_page(&$vars) {
     }
   }
   
-//  if ($vars['directory'] == 'sites/default/themes/mobile') {
-//    dsm($vars);
-//    if ($vars['is_front']) {
-//      drupal_goto('home');
-//    }
-//    
-//    
-//  }
 }
 
 /**
