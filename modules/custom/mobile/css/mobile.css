@@ -176,7 +176,7 @@ html, body {
 #block-block-2 .block-wrapper > div > div {
   display: table;
   height: 100%;
-  /*padding: 80px 0 0 80px;*/
+  padding: 0;
   width: 100%;
   position: relative;
 }
@@ -203,6 +203,7 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: black;
 }
 
 #block-block-2 .block-wrapper div.menu3 {
@@ -211,6 +212,7 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: black;
 }
 
 #block-block-2 .block-wrapper div.menu4 {
@@ -347,7 +349,7 @@ html, body {
   text-transform: uppercase;
   font-size: 12px;
   margin-top: 20px;
-  margin-bottom: -12px;
+  /*margin-bottom: -12px;*/
 }
 
 #block-block-2 .block-wrapper > div .title {
@@ -355,13 +357,13 @@ html, body {
   font-weight: bold;
   padding: 0;
   font-size: 58%;
-  line-height: 20px;
+  line-height: 18px;
   width: 120px;
   margin-bottom: 10px;
 }
 
 #block-block-2 .block-wrapper > div .desc-view {
-  overflow: hidden;
+  overflow: visible;
   animation: shorter 0.5s ease-in-out forwards;
   height: 100px;
 }
@@ -381,7 +383,8 @@ html, body {
   border: 2.5px solid #FFFFFF;
   display: block;
   float: left;
-  height: 25%;
+  /*height: 25%;*/
+  opacity: 1;
 }
 
 #block-block-2 .block-wrapper > div:hover .view {
@@ -425,6 +428,7 @@ html, body {
   height: 56px;
   opacity: 0;
   left: -56px;
+  bottom: 0;
   transition: .5s;
 }
 #question-bnt.active{
@@ -439,6 +443,7 @@ html, body {
   height: 56px;
   opacity: 0;
   left: -56px;
+  bottom: 0;
   transition: .5s;
   /*transition-delay: .5s;*/
 }
@@ -479,6 +484,20 @@ html, body {
   padding: 0 0 0 10px;
   color: #FFFFFF;
   font-size: 70%;
+}
+#volume-bnt{
+  background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+  bottom: 0;
+  height: 56px;
+  left: -56px;
+  opacity: 0;
+  transition: .5s;
+}
+#volume-bnt.active{
+  opacity: 1;
+  left: 168px;
+  transition: .5s;
+  transition-delay: .5s;
 }
 
 .left-item {
