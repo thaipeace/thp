@@ -77,8 +77,6 @@
         }
         
         $('#block-views-label-block-1').fadeOut(100);
-        var indexStep = step.index();
-        //$('#block-views-aseptic-block-1')
         
       });
       

@@ -77,7 +77,12 @@
           //Array all class
           var clArr = step.attr('class').split(" ");
           //Remove "follow" string
+          
           var followId = clArr[6].substring(7);
+          if (followId === "") {
+            // In case of views-row last
+            followId = clArr[7].substring(7);
+          } 
           stepInd = $('#block-views-aseptic-block .' + followId).index();
         }else {
           stepInd = $(step).index();
