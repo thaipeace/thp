@@ -41,23 +41,28 @@
           });
         }
         
-        // Background 360 build
+        /** Background 360 build **/
+        // Remove unsee canvas
         if ($('.views-field-field-270-background canvas').length > 0) {
           $('.views-field-field-270-background canvas').remove();
         }
         
+        // @TODO Reload it count to 6 time click
+
         $('.views-field-field-270-background', asepticBlock).attr('id', 'three-' + index);
         var materialPath = $('.views-field-field-270-background .field-content', asepticBlock).text();
         if (materialPath.length > 0) {
+          $('.views-field-nothing', asepticBlock).css('cursor', 'pointer');
           var container = 'three-' + index;
           build360Img(container, materialPath);
-          
+
+          // Appear some special data
           if (jQuery(asepticBlock).hasClass('nid-10')) {
             jQuery('.views-field-field-parts .entity.data', asepticBlock).fadeIn();
           }
           if (jQuery(asepticBlock).hasClass('nid-11')) {
             jQuery('.views-field-field-parts .entity.data', asepticBlock).fadeIn();
-          } 
+          }
 
         }
         
@@ -67,6 +72,7 @@
       $('.field-name-field-title').click(function(){
         var index = $(this).index();
         var step = $(this).parents('.views-row');
+        var stepInd = $(step).index();
         
         if (!$(this).hasClass('extra')) {
           $('.views-field-field-parts', step).addClass('active');
@@ -75,7 +81,7 @@
           if ($(this).hasClass('data')) {
             return false;
           }else if ($(this).hasClass('video')) {
-            var part = $($('.views-field-field-parts .entity', step));
+            var part = $($('.views-field-field-parts .entity', step).get(index));
             $('.views-field-field-parts', step).addClass('active');
             $('.field-name-field-video', part).addClass('active');
             $('video', part)[0].play();
@@ -83,6 +89,8 @@
             //$('.field-item', part).append('<div class="close"></div>');
           }
         }
+        
+        $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).hide();
         
       });
       
@@ -141,8 +149,8 @@ function build360Img(container, materialPath) {
 
 	//------------------------------//
 	var camera, scene, renderer;
-	var texture_placeholder,
-	isUserInteracting = false,
+	var texture_placeholder;
+	var isUserInteracting = false,
 	onMouseDownMouseX = 0,
 	onMouseDownMouseY = 0,
 	lon = 90,
@@ -158,15 +166,16 @@ function build360Img(container, materialPath) {
 	animate();
 
 	//-----------------//
-
 	function init(container, materialPath) {
     
 		var container, mesh;
+    var element = jQuery(container).parent();
     var point = {};
-
-		camera = new THREE.PerspectiveCamera( 160, window.innerWidth / window.innerHeight, 1, 1100 );
-		camera.fov = 48;
-		camera.updateProjectionMatrix();
+    
+    camera = new THREE.PerspectiveCamera(1130, window.innerWidth / window.innerHeight, 1, 1100 );
+		camera.fov = 42;
+    
+    camera.updateProjectionMatrix();
     
 		scene = new THREE.Scene();
     
@@ -180,10 +189,18 @@ function build360Img(container, materialPath) {
     
     var geometry = new THREE.SphereGeometry( 800, 60, 40 );
     geometry.scale( - 1, 1, 1 );
-
-    var material = new THREE.MeshBasicMaterial( {
-      map: new THREE.TextureLoader().load(materialPath)
-    } );
+    
+    var map = new THREE.TextureLoader().load(materialPath);
+    THREE.DefaultLoadingManager.onProgress = function ( map, loaded, total ) {
+      if (loaded !== total) {
+        jQuery(container).addClass('loading');
+      }else {
+        jQuery(container).removeClass('loading');
+      }
+    };
+    var material = new THREE.MeshBasicMaterial({
+      map: map
+    });
 
     mesh = new THREE.Mesh( geometry, material );
     
@@ -216,7 +233,6 @@ function build360Img(container, materialPath) {
 
 		window.addEventListener( 'resize', onWindowResize, false );
     
-    var element = jQuery(container).parent();
     jQuery('.views-field-nothing .field-name-field-position', element).each(function(ind, elem) {
       if (jQuery(jQuery('.views-field-nothing .field-name-field-title', element).get(ind)).text() !== 'data') {
         var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
@@ -231,11 +247,13 @@ function build360Img(container, materialPath) {
         point.position.x = arr_po[0];
         point.position.y = arr_po[1];
         point.position.z = arr_po[2];
+        point.rotateY(arr_po[3]?arr_po[3]:0);
 
         point.name = ind;
         scene.add(point);
 
         targetList.push(point);
+  
       }
     });
     
@@ -247,6 +265,7 @@ function build360Img(container, materialPath) {
 //      spritey.position.set(190,50,450);
       // @Todo for hover
       //scene.add(spritey);
+    
 	}
 
 	//-----------------//
@@ -350,6 +369,8 @@ function build360Img(container, materialPath) {
       }
 		}
     
+    /*** TODO it's not good yet ***/
+    /*
     var panoItems = [
       '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
       '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
@@ -359,6 +380,7 @@ function build360Img(container, materialPath) {
     jQuery.each(panoItems, function(index, panoItem){
       hideShowPano(panoItem);
     });
+    */
     
     // update the mouse variable
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
@@ -375,7 +397,7 @@ function build360Img(container, materialPath) {
     if (intersects.length > 0) {
       
     }else {
-      //console.log('b');
+      
       
     }
 	}
@@ -412,22 +434,22 @@ function build360Img(container, materialPath) {
 
 	// WebKit
 
-	if ( event.wheelDeltaY ) {
-		camera.fov -= event.wheelDeltaY * 0.05;
+    if ( event.wheelDeltaY ) {
+      camera.fov -= event.wheelDeltaY * 0.05;
 
-		// Opera / Explorer 9
-		} else if ( event.wheelDelta ) {
-			camera.fov -= event.wheelDelta * 0.05;
+    // Opera / Explorer 9
+    } else if ( event.wheelDelta ) {
+      camera.fov -= event.wheelDelta * 0.05;
 
-		// Firefox
-		} else if ( event.detail ) {
-			camera.fov -= event.detail * 0.05;
-		}
+    // Firefox
+    } else if ( event.detail ) {
+      camera.fov -= event.detail * 0.05;
+    }
     
-    camera.fov = (camera.fov < 66)?66:camera.fov;
-    camera.fov = (camera.fov > 24)?24:camera.fov;
+    if (camera.fov > 24 && camera.fov < 66) {
+      camera.updateProjectionMatrix();
+    }
     
-    camera.updateProjectionMatrix();
 
 	}
 
@@ -465,39 +487,55 @@ function build360Img(container, materialPath) {
 	}
 
 	//--------------------------//
-
+  function twSetup(far) {
+    var tw1, tw2;
+    jQuery.each(targetList, function(index, point){
+      tw1 = new TWEEN.Tween(point.position).to({
+            x: point.position.x,
+            y: point.position.y + far,
+            z: point.position.z}, 1500 )
+  
+      tw2 = new TWEEN.Tween(point.position).to({
+            x: point.position.x,
+            y: point.position.y - far,
+            z: point.position.z}, 1500 )
+      
+      tw1.chain(tw2);
+      tw2.chain(tw1);
+      
+      tw1.start();
+    });
+  }
+  
+  twSetup(5);
+  
 	function animate() {
-
-		requestAnimationFrame( animate );
+    requestAnimationFrame(animate); // keep looping
+    TWEEN.update();
 		update();
-
 	}
 
 	//----------------------------------//
 
 	function update() {
-
 		if ( isUserInteracting === false ) {
-
 			//lon += 0.1;
-
 		}
 
 		lat = Math.max( - 85, Math.min( 85, lat ) );
 		phi = THREE.Math.degToRad( 90 - lat );
 		theta = THREE.Math.degToRad( lon );
-
-//		target.x = 500 * Math.sin( phi ) * Math.cos( theta );
-//		target.y = -92.8;
-//		target.z = 500 * Math.sin( phi ) * Math.sin( theta );
     
     target.x = 500 * Math.sin( phi ) * Math.cos( theta );
     target.y = 500 * Math.cos( phi );
     target.z = 500 * Math.sin( phi ) * Math.sin( theta );
-
-		camera.position.copy( target ).negate();
-		camera.lookAt( target );
-
+    
+		camera.position.copy(target).negate();
+    camera.position.y = target.y + 220;
+    
+    target.y = target.y + 50;
+		camera.lookAt(target);
+    
 		renderer.render( scene, camera );
 
 	}

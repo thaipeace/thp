@@ -50,14 +50,7 @@
         if (materialPath.length > 0) {
           var container = 'three-' + index;
           build360Img(container, materialPath);
-          
-          if (jQuery(asepticBlock).hasClass('nid-10')) {
-            jQuery('.views-field-field-parts .entity.data', asepticBlock).fadeIn();
-          }
-          if (jQuery(asepticBlock).hasClass('nid-11')) {
-            jQuery('.views-field-field-parts .entity.data', asepticBlock).fadeIn();
-          } 
-
+          $('.views-field-nothing', asepticBlock).css('cursor', 'pointer'); 
         }
         
       });
@@ -74,7 +67,7 @@
           if ($(this).hasClass('data')) {
             return false;
           }else if ($(this).hasClass('video')) {
-            var part = $($('.views-field-field-parts .entity', step));
+            var part = $($('.views-field-field-parts .entity', step).get(index));
             $('.views-field-field-parts', step).addClass('active');
             $('.field-name-field-video', part).addClass('active');
             $('video', part)[0].play();
@@ -202,7 +195,7 @@ function build360Img(container, materialPath) {
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 		document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-		//document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
+		document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
 		document.addEventListener( 'MozMousePixelScroll', onDocumentMouseWheel, false);
 
 		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
@@ -226,6 +219,7 @@ function build360Img(container, materialPath) {
         point.position.x = arr_po[0];
         point.position.y = arr_po[1];
         point.position.z = arr_po[2];
+        point.rotateY(arr_po[3]?arr_po[3]:0);
 
         point.name = ind;
         scene.add(point);
@@ -367,7 +361,9 @@ function build360Img(container, materialPath) {
 
 		}
 
-		camera.updateProjectionMatrix();
+		if (camera.fov > 24 && camera.fov < 66) {
+      camera.updateProjectionMatrix();
+    }
 
 	}
 
@@ -405,10 +401,32 @@ function build360Img(container, materialPath) {
 	}
 
 	//--------------------------//
-
+  function twSetup(far) {
+    var tw1, tw2;
+    jQuery.each(targetList, function(index, point){
+      tw1 = new TWEEN.Tween(point.position).to({
+            x: point.position.x,
+            y: point.position.y + far,
+            z: point.position.z}, 1000 )
+  
+      tw2 = new TWEEN.Tween(point.position).to({
+            x: point.position.x,
+            y: point.position.y - far,
+            z: point.position.z}, 1000 )
+      
+      tw1.chain(tw2);
+      tw2.chain(tw1);
+      
+      tw1.start();
+    });
+  }
+  
+  twSetup(10);
+  
 	function animate() {
 
 		requestAnimationFrame( animate );
+    TWEEN.update();
 		update();
 
 	}
@@ -434,6 +452,9 @@ function build360Img(container, materialPath) {
 		target.z = 500 * Math.sin( phi ) * Math.sin( theta );
 
 		camera.position.copy( target ).negate();
+    camera.position.y = target.y + 220;
+    
+    target.y = target.y + 50;
 		camera.lookAt( target );
 
 		renderer.render( scene, camera );

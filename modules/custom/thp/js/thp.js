@@ -16,16 +16,18 @@
       var url = window.location.href;
       
       // Left Menu click
-      if ($('#menu-bnt').length > 0) {
-        $('#menu-bnt').click(function(){
-          if ($('#block-block-2.active').length < 1) {
-            $('#block-block-2').addClass('active').show("slide", {direction: "left" }, 300);
-            $(this).addClass('active');
-          }else {
-            $('#block-block-2').removeClass('active').hide("slide", {direction: "left" }, 300);
-            $(this).removeClass('active');
-          }
-        });
+      if (!isMobile()) {
+        if ($('#menu-bnt').length > 0) {
+          $('#menu-bnt').click(function(){
+            if ($('#block-block-2.active').length < 1) {
+              $('#block-block-2').addClass('active').show("slide", {direction: "left" }, 300);
+              $(this).addClass('active');
+            }else {
+              $('#block-block-2').removeClass('active').hide("slide", {direction: "left" }, 300);
+              $(this).removeClass('active');
+            }
+          });
+        }
       }
       
       // Aseptic Menu click
@@ -41,7 +43,7 @@
             var ind = $(this).index();
             $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
             $($('#block-views-aseptic-block .views-row').get(ind)).addClass('active');
-            
+
             clearTimeout(stopTimeout);
             
             if ($(this).hasClass('views-row-first')) {
@@ -63,9 +65,9 @@
             $('#block-views-aseptic-block .views-row.views-row-first .views-field-body .bnt.close span').css('display','block').click(function(){
               if (preInd !== 0) {
                 $('#block-views-aseptic-block-1 .views-row.views-row-' + (preInd+1)).trigger('click');
+                
               }
             });
-            
           }
         });
         
@@ -171,23 +173,33 @@
       var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block'];
       $(blocks).each(function(indBlock, block){
         if ($(block + ' .views-row').length > 0) {
-          var titleExtraType = ['data', 'video', 'link'];
+          var titleExtraTypes = ['data', 'video'];
           $(block + ' .views-row').each(function(index, element) {
             if ($('.views-field-field-parts .entity', element).length > 0) {
+              
               $('.views-field-field-parts .entity', element).each(function(ind, elem){
                 var title = $('.field-name-field-title', elem).text();
-                if (titleExtraType.indexOf(title) !== -1) {
-                  $('.field-name-field-title', elem).addClass(titleExtraType[titleExtraType.indexOf(title)] + ' extra');
-                  $(elem).addClass(titleExtraType[titleExtraType.indexOf(title)] + ' extra');
-
-                  $('.field-name-field-video .field-item', elem).append('<div class="close"></div>');
+                var titleIndex = titleExtraTypes.indexOf(title);
+                
+                if (titleIndex !== -1) {
+                  $('.field-name-field-title', elem).addClass(titleExtraTypes[titleIndex] + ' extra');
+                  $(elem).addClass(titleExtraTypes[titleIndex] + ' extra');
+                  if (titleIndex === 0) {
+                    $('.field-name-field-title', elem).hide();
+                  }
+                  if (titleIndex === 1) {
+                    $('.field-name-field-video .field-item', elem).append('<div class="close"></div>');
+                  }
+                  
                 } else {
                   $(elem).append('<div class="close"></div>');
                 }
 
                 $('.views-field-nothing .field-content', element).append($('.field-name-field-title', elem));
                 $('.views-field-nothing', element).append($('.field-name-field-position', elem));
+                
               });
+              
             }
           });
         }
@@ -198,12 +210,22 @@
         $('.views-field-field-parts .entity').removeClass('active');
         $('.views-field-field-parts .entity').parent().find('.active').removeClass('active');
         
+        var video = $(this).parent().find('video');
+        if (video.length !== 0) {
+          $(video)[0].pause();
+        }
+        
         setTimeout(function() {
           $('.views-field-field-parts').removeClass('active');
         }, 300);
         
         //Show label menu process
         $('#block-views-label-block-1').fadeIn(1200);
+        
+        // Reshow tootip left menu
+        var step = $(this).parents('.views-row');
+        var stepInd = $(step).index();
+        $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).show();
       });
       
       // Summary aseptic process
@@ -248,7 +270,7 @@
         
         if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
           var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
-          autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1'); 
+          autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1');
         }
         
         // Active first child when load
@@ -313,7 +335,7 @@
         (function next() {
           if (counter++ >= items.length+1) {
             $(disable).css('pointer-events','auto');
-            $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').css('pointer-events','auto');
+            //$('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').css('pointer-events','auto');
             return;
           }else {
             if (url.indexOf('experience-instruction-landing') !== -1) {
@@ -321,7 +343,7 @@
               if ((!$.isEmptyObject(args) && args.rel === 'auto') || $.isEmptyObject(args)) {
                 $(document).ready(function(){
                   $(disable).css('pointer-events','none');
-                  $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').css('pointer-events','none');
+                  //$('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').css('pointer-events','none');
                 });
               }
             }
@@ -330,7 +352,12 @@
           stopTimeout = setTimeout(function() {
             $(items[counter]).trigger('click'); 
             next();
-            if (counter == items.length+2) $(nextpage).trigger('click');
+            if (counter == items.length+2) {
+              //more time in the end
+              setTimeout(function() {
+                $(nextpage).trigger('click');
+              }, 2000)
+            }
           }, speed, nextpage);
         })();
       }
@@ -362,32 +389,53 @@
             var arr_po = str_po.split(',').map(function(item) {
               return parseInt(item, 10);
             });
-
-            $($(elem).parent().find('.field-name-field-title').get(ind)).css({
+            
+            var title = $($(elem).parent().find('.field-name-field-title').get(ind));
+            title.css({
               left: arr_po[0] + 'px',
               top: arr_po[1] + 'px'
             });
             
             // Draw line animate
-            if ($($('.views-field-nothing .field-name-field-title', element).get(ind)).text() === 'data') {
+            if (title.text() === 'data') {
+              var style = [
+                    "fill:none",
+                    "stroke:black",
+                    "stroke-width:1",
+                    "stroke-linejoin:round",
+                    "stroke-linecap:round",
+                    "stroke-dasharray:1000",
+                    "animation: dash 3s ease-in-out forwards",
+                    "stroke:#000000"
+                  ];
               // Line animate for nid-9
               if ($(element).hasClass('nid-9')) {
-                var pathTag = pathAnimate('M769 49 V133 H530 M350 133 H150 V100');
+                var pathTag = pathAnimate('M748 49 V153 H720 M530 153 H150 V140', style);
                 var svgLine = "<svg class='dash-line' width='770' height='160' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
                 svgLine += pathTag;
                 svgLine += "</svg>";
                 
                 $($('.views-field-field-parts .entity', element).get(ind)).append(svgLine);
                 $($('.views-field-field-parts .entity', element).get(ind)).css({
-                  'left': (arr_po[0] - $($('.views-field-field-parts .entity', element).get(ind)).width() + 101) + 'px',
-                  'top': (arr_po[1] + 161) + 'px'
+                  'left': (arr_po[0] - $($('.views-field-field-parts .entity', element).get(ind)).width() + 79) + 'px',
+                  'top': (arr_po[1] + 185) + 'px'
                 });
                 
               }
               
-              // Line animate for nid-9
+              // Line animate for nid-12
+              style = [
+                "fill:none",
+                "stroke:black",
+                "stroke-width:1",
+                "stroke-linejoin:round",
+                "stroke-linecap:round",
+                "stroke-dasharray:1000",
+                "animation: dash 3s ease-in-out forwards",
+                "stroke:#f1e601"
+              ];
               if ($(element).hasClass('nid-12')) {
-                var pathTag = pathAnimate('M0 40 V150 H165');
+                var pathTag = pathAnimate('M0 40 V150 H190', style);
                 var svgLine = "<svg class='dash-line' width='770' height='360' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
                 svgLine += pathTag;
                 svgLine += "</svg>";
@@ -399,12 +447,24 @@
                 });
                 
               }
+            }else {
+              goTop(title, arr_po[1], 5);
             }
           });
         }
       });
     }
   };
+  
+  function goTop(element, cur, far) {
+    $(element).animate( {top: cur+far},
+                        {duration: 1000,
+                          complete: function() {
+                            goTop(element, cur, -far);
+                          }
+                        }
+                      );
+  }
   
   function getUrlVars() {
     var vars = {};
@@ -418,17 +478,19 @@
   /*
    * path String: html5 path format. Ex. M200 0 L40 25 L100 200
    */
-  function pathAnimate(path) {
-    var style = [
-      "fill:none",
-      "stroke:black",
-      "stroke-width:1",
-      "stroke-linejoin:round",
-      "stroke-linecap:round",
-      "stroke-dasharray:1000",
-      "animation: dash 3s ease-in-out forwards",
-      "stroke:#FFFFFF"
-    ];
+  function pathAnimate(path, style) {
+    if (!style) {
+      style = [
+        "fill:none",
+        "stroke:black",
+        "stroke-width:1",
+        "stroke-linejoin:round",
+        "stroke-linecap:round",
+        "stroke-dasharray:1000",
+        "animation: dash 3s ease-in-out forwards",
+        "stroke:#FFFFFF"
+      ];
+    }
     
     var pathTag = '';
     pathTag = "<path d='" + path + "' style='" + style.join(";") + "' />";
@@ -455,6 +517,10 @@
     };
     var counter = new CountUp(tagId, 0, countTo, 0, duration, options);
     counter.start();
+  }
+  
+  function isMobile(){
+    return (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino|android|ipad|playbook|silk/i.test(navigator.userAgent||navigator.vendor||window.opera)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test((navigator.userAgent||navigator.vendor||window.opera).substr(0,4)));
   }
   
 })(jQuery, Drupal, this, this.document);

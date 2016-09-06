@@ -20,6 +20,19 @@
   Drupal.behaviors.home = {
     attach: function (context, settings) {
       
+      // Path default style
+      var style = [
+        "fill:none",
+        "stroke:black",
+        "stroke-width:1",
+        "stroke-linejoin:round",
+        "stroke-linecap:round",
+        "stroke-dasharray:1000",
+        "animation: dash 5s 1 linear forwards",
+        "stroke:#FFFFFF"
+      ];
+      
+      
       $(".ubl_img").hover(function(){
         if ($(this).parent().parent().css('z-index') === '0') {
           $('.pnt').css('opacity', 0);
@@ -28,6 +41,10 @@
           $(this).parent().parent().find('.pnt').css('opacity', 1);
           $(this).parent().parent().css('z-index', 1);
         }
+      });
+      
+      $(".ubl_img").click(function(){
+        $(this).parent().parent().find('.pnt').trigger('click');
       });
 
       $('.cloud_topLeft').animate({left:"-200", opacity:"0.5"}, 3000);
@@ -45,6 +62,39 @@
       $('.wp_p9').animate({top: screen.height/2.75}, 300);
       $('.wp_p10').animate({top: screen.height/2.65}, 100);
       
+      //Build connect line
+      Pace.on('done', function(){
+        setTimeout(buildFactoryLine,2000);
+      });
+      
+      function buildFactoryLine() {
+        var pathConect = '';
+        var pathArr = $('.node-3 .points > div').get().reverse();
+        $.each(pathArr, function(index, element){
+          var offset = $(element).offset();
+          if (index === 0) {
+            pathConect += 'M' + (offset.left + 110) + ' ' + (offset.top + 195);
+          }else {
+            pathConect += ' L' + (offset.left + 110) + ' ' + (offset.top + 195);
+          }
+        });
+        
+        //
+        var styleConect = [
+          "fill:none",
+          "stroke:black",
+          "stroke-width:4",
+          "stroke-linejoin:round",
+          "stroke-linecap:round",
+          "stroke-dasharray:1000",
+          "animation: dash 5s 1 linear forwards",
+          "stroke:#f1e601"
+        ];
+        var svgConect = pathAnimate(pathConect, styleConect, screen.width, screen.height);
+        $('.page-node-3').append(svgConect);
+      }
+      
+      
       function pathAnimate(path, style, width, height) {
         var svg = '';
         svg = "<svg width='" + width + "' height='" + height + "' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
@@ -54,17 +104,6 @@
         return svg;
       }
       
-      var style = [
-        "fill:none",
-        "stroke:black",
-        "stroke-width:1",
-        "stroke-linejoin:round",
-        "stroke-linecap:round",
-        "stroke-dasharray:1000",
-        "animation: dash 5s 1 linear forwards",
-        "stroke:#ffffff"
-      ];
-      
       $('.wp_experience').append(pathAnimate('M289 500 L100 500 L100 304', style, 768, screen.height));
       $('.wp_experience').append(pathAnimate('M270 540 L232 540 L232 475', style, 768, screen.height));
       $('.wp_experience').append(pathAnimate('M480 500 L548 500 L548 474', style, 768, screen.height));
@@ -73,7 +112,13 @@
       
       // Click from factory page
       $('.pnt').click(function(){
-        window.location = 'experience-instruction-landing?rel=' + $(this).attr('rel');
+        var rel = $(this).attr('rel');
+        if (['bottle', 'label'].indexOf(rel) === -1) {
+          window.location = 'experience-instruction-landing?rel=' + rel;
+        }else {
+          rel==='bottle'?window.location = 'bottle-landing-page':false;
+          rel==='label'?window.location = 'label-landing-page':false;
+        }
       });
       
       // Click from menu

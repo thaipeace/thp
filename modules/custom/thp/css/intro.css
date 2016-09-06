@@ -28,7 +28,7 @@ body {
 
 #btn_skip {
   cursor: pointer;
-  width: 116px;
+  color: #FFFFFF;
   height: 11px;
   display: block;
   margin: 0 auto;
@@ -65,7 +65,7 @@ body {
 
 .skip-wrapper {
   position: absolute;
-  bottom: 12%;
+  bottom: 19%;
   text-align: center;
   width: 100%;
   display: none;

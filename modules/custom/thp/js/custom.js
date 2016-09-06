@@ -24,13 +24,9 @@
         }
         
         $('.node-2 .bnt-try .img_exper1').hover(function(){
-          setTimeout(function(){
-            tryAnimateForward(49, 10);
-          }, 100);
+          tryAnimateForward(49, 10);
         }, function(){
-          setTimeout(function(){
-            tryAnimateBack(49, 3);
-          }, 100);
+          tryAnimateBack(49, 3);
         });
       }
       
@@ -68,7 +64,15 @@
           if (counter === 0) $('.node-2 .bnt-try .img_exper1 a img').css('opacity','1');
         })();
       }
-
+      
+      // Loading bar
+      Pace.on('start', function(){
+        $('body').hide();
+      });
+      Pace.on('done', function(){
+        $('body').show();
+      });
+      
     }
   }
 
