@@ -83,7 +83,6 @@
           stepInd = $(step).index();
         }
         
-        
         if (!$(this).hasClass('extra')) {
           $('.views-field-field-parts', step).addClass('active');
           $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
