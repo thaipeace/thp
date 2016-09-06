@@ -13,8 +13,19 @@
   Drupal.behaviors.custom = {
     attach: function (context, settings) {
       //Init fix some styles
-      $($('.breadcrumb__item').children()[0]).html('<img src="sites/default/files/logodrthanh_0.png" alt="Home" class="header__logo-image">');
-      $('#block-block-2 .block-wrapper .menu1 .title').html('nhà máy <br/> tân hiệp phát');
+      if($('.breadcrumb__item')){
+        $($('.breadcrumb__item').children()[0]).html('<img src="sites/default/files/logodrthanh_0.png" alt="Home" class="header__logo-image">');
+      }
+
+      if($('#block-block-2 .block-wrapper .menu1 .title')){
+        $('#block-block-2 .block-wrapper .menu1 .title').html('nhà máy <br/> tân hiệp phát');
+      }
+
+      //Init display pnt1
+      if($('.pnt.point1')){
+        $('.pnt.point1').addClass('active');
+      }
+
 
       $('#menu-bnt').click(function(){
         var $block2 = $('#block-block-2');
@@ -45,6 +56,68 @@
 
 
       });
+
+      //Display preview of steps
+      $('.ubl_img').click(function(){
+        var parent = $(this).parent()[0];
+        onublClick(parent);
+      });
+
+      $('.ubl>span').click(function(){
+        var parent = $(this).parent()[0];
+        onublClick(parent);
+      });
+
+
+      // Click from factory page
+      $('.pnt').click(function(){
+        var rel = $(this).attr('rel');
+        if (['bottle', 'label'].indexOf(rel) === -1) {
+          window.location = 'experience-instruction-landing?rel=' + rel;
+        }else {
+          rel==='bottle'?window.location = 'bottle-landing-page':false;
+          rel==='label'?window.location = 'label-landing-page':false;
+        }
+      });
+
+      $('.wp_p1').animate({top: 4}, 2100);
+      $('.wp_p2').animate({top: 4}, 1800);
+      $('.wp_p3').animate({top: 4}, 1500);
+      $('.wp_p4').animate({top: 4}, 1300);
+      $('.wp_p5').animate({top: 4}, 1100);
+      $('.wp_p6').animate({top: 4}, 900);
+      $('.wp_p7').animate({top: 4}, 700);
+      $('.wp_p8').animate({top: 4},500);
+      $('.wp_p9').animate({top: 4}, 300);
+      $('.wp_p10').animate({top: 4}, 100);
+      // $('.wp_p1').animate({top: screen.height/2.8}, 2100);
+      // $('.wp_p2').animate({top: screen.height/2.65}, 1800);
+      // $('.wp_p3').animate({top: screen.height/2.8}, 1500);
+      // $('.wp_p4').animate({top: screen.height/2.95}, 1300);
+      // $('.wp_p5').animate({top: screen.height/2.95}, 1100);
+      // $('.wp_p6').animate({top: screen.height/2.8}, 900);
+      // $('.wp_p7').animate({top: screen.height/2.95}, 700);
+      // $('.wp_p8').animate({top: screen.height/3}, 500);
+      // $('.wp_p9').animate({top: screen.height/2.75}, 300);
+      // $('.wp_p10').animate({top: screen.height/2.65}, 100);
+
+
+      //Helper functions
+      function onublClick(parent){
+        var parentId = $(parent).attr('id');
+        var idArr = parentId.split('');
+        idArr.splice(0,3);
+        var id = idArr.join('');
+
+        removeUblActive();
+        $('.pnt.point'+id).addClass('active');
+      }
+
+      function removeUblActive(){
+        for(var i = 1; i <= 10; i++){
+          $('.pnt.point'+i).removeClass('active');
+        }
+      }
     }
 
 
