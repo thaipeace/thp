@@ -505,4 +505,293 @@ html, body {
   position: absolute;
 }
 /** End Menu ***/
-/* Menu*/
+
+
+/* Factory */
+body.page-node-3  {
+	background: url('../../../../files/factory_bg.jpg') no-repeat center bottom;
+	width: 100%;
+	height: 100%;
+  background-size: 115%;
+}
+.node-3 .field-items {
+	display: block;
+}
+
+.fac-logo {
+	text-align: center;
+  margin-top: 85px;
+}
+.fac-logo img{
+  width: 80%;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.fac-desc {
+	text-align: center;
+  display: none;
+}
+
+.nav_wapper {
+	text-align: center;
+}
+.nav_wapper nav{
+  display: none;
+}
+.process {
+	padding: 6px 5px 5px 5px;
+	display: inline-block;
+	border: 2px solid #ffffff;
+	border-radius: 50px 50px;
+	height: 39px;
+}
+
+.process a {
+	font-size: 14px;
+	text-decoration: none;
+  color: #ffffff;
+  width: 100%;
+  border-left: 1px solid #ffffff;
+  padding: 8px 8px 5px 13px;
+}
+
+.process a:hover {
+  color: #000000;
+}
+
+.process a#process1 {
+	border-left: none;
+}
+
+.process a:active {
+    color: #000 !important;
+}
+
+.process a > span {
+	position: relative;
+	top: -3px;
+}
+
+.process a > img {
+	position: relative;
+	top: 2px;
+	left: -3px;
+}
+.points {
+	display: inline-flex;
+  position: fixed;
+  bottom: 238px;
+  left: -55px;
+}
+
+.points > div {
+	position: absolute;
+	display: block;
+  top: -183px;
+  width: 0;
+  z-index: 0;
+}
+
+.points .pnt {
+  text-align: center;
+  border: 3px solid #f4f4f4;
+  border-radius: 4px;
+  background: #c71e1e;
+  height: 30%;
+  width: 86%;
+  padding: 10px;
+  opacity: 0;
+  cursor: pointer;
+  position: fixed;
+  top: 32%;
+  left: 7%;
+  background-size: cover !important;
+}
+
+.points .pnt.active{
+  opacity: 1;
+}
+
+.points .ubl {
+  text-align: center;
+  color: #000000;
+  position: relative;
+  margin-top: 144px;
+}
+
+.points .ubl img {
+  position: relative;
+  top: -10px;
+  cursor: pointer;
+  left:85px;
+  max-width: inherit;
+  z-index: 1;
+  width: 20px;
+}
+
+.points .title {
+	display: block;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: utm_neo_sans_intelbold;
+	color: #ffffff;
+}
+
+.points .desc {
+	font-family: utm_neo_sans_intel;
+	font-size: 14px;
+	display: block;
+	color: #ffffff;
+  padding: 10px 0;
+}
+.points .btn_fct {
+	display: inline-block;
+	font-size: 14px;
+	background-color: #ffc507;
+	border-radius: 25px;
+	border: 3px solid #ff8400;
+	width: 115px;
+	height: 40px;
+}
+
+.points .wapper_btnfct > a {
+	font-size: 14px;
+	text-decoration: none;
+  line-height: 36px;
+}
+
+.points .wapper_btnfct > a:active {
+	color: #000;
+}
+
+.points .btn_fct img#img_arrow {
+	margin: 0 auto;
+  position: relative;
+  top: 3px;
+  right: -14px;
+}
+
+.wp_p10 {
+  left: calc(100vw / 8.04175);
+}
+
+.wp_p9 {
+  left: calc(100vw / 4.4);
+}
+
+.wp_p8 {
+  left: calc(100vw / 3.8);
+}
+
+.wp_p7 {
+  left: calc(100vw / 3.3);
+}
+
+.wp_p6 {
+  left: calc(100vw / 2.5);
+}
+
+.wp_p5 {
+  left: calc(100vw / 2.28);
+}
+
+.wp_p4 {
+  left: calc(100vw / 2.1);
+}
+
+.wp_p3 {
+  left: calc(100vw / 1.9);
+}
+
+.wp_p2 {
+  left: calc(100vw / 1.775);
+}
+
+.wp_p1 {
+  left: calc(100vw / 1.65);
+}
+
+.ubl > span {
+  font-size: 10px;
+  position: absolute;
+  top: -11px;
+  left: 89px;
+  z-index: 2;
+  font-weight: bold;
+  display: block;
+  width: 11px;
+  text-align: center;
+}
+
+#wp_cloud {
+	position: relative;
+	height: 100%;
+	z-index: 1;
+}
+
+.cloud_topLeft {
+	position: absolute;
+	top:0;
+	left: 0;
+	opacity: 1;
+}
+
+.cloud_topRight {
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 1;
+}
+
+.cloud_bottomLeft {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	opacity: 1;
+	margin-bottom: -1%;
+}
+
+#pnt1 {
+  background: url('../images/gd1.png') center bottom no-repeat;
+}
+
+#pnt2 {
+  background: url('../images/gd2.png') center bottom no-repeat;
+}
+
+#pnt3 {
+  background: url('../images/gd3.png') center bottom no-repeat;
+}
+
+#pnt4 {
+  background: url('../images/gd4.png') center bottom no-repeat;
+}
+
+#pnt5 {
+  background: url('../images/gd5.png') center bottom no-repeat;
+}
+
+#pnt6 {
+  background: url('../images/gd6.png') center bottom no-repeat;
+}
+
+#pnt7 {
+  background: url('../images/gd7.png') center bottom no-repeat;
+}
+
+#pnt8 {
+  background: url('../images/gd8.png') center bottom no-repeat;
+}
+
+#pnt9 {
+  background: url('../images/gd9.png') center bottom no-repeat;
+}
+
+#pnt10 {
+  background: url('../images/gd10.png') center bottom no-repeat;
+}
+#wp_cloud{
+  display: none;
+}
+/* End factory */
