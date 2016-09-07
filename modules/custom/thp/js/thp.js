@@ -282,10 +282,13 @@
           }
         });
         
-        if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
-          var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
-          autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1');
-        }
+        Pace.on('done', function(){
+          if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
+            var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
+            //Auto click after the page loaded
+            autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1');
+          }
+        });
         
         // Active first child when load
         $('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity:first-child').addClass('active');

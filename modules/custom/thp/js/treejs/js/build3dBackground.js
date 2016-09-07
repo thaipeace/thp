@@ -82,7 +82,7 @@
           if (followId === "") {
             // In case of views-row last
             followId = clArr[7].substring(7);
-          } 
+          }
           stepInd = $('#block-views-aseptic-block .' + followId).index();
         }else {
           stepInd = $(step).index();
@@ -205,13 +205,6 @@ function build360Img(container, materialPath) {
     geometry.scale( - 1, 1, 1 );
     
     var map = new THREE.TextureLoader().load(materialPath);
-    THREE.DefaultLoadingManager.onProgress = function ( map, loaded, total ) {
-      if (loaded !== total) {
-        jQuery(container).addClass('loading');
-      }else {
-        jQuery(container).removeClass('loading');
-      }
-    };
     var material = new THREE.MeshBasicMaterial({
       map: map
     });
@@ -236,6 +229,13 @@ function build360Img(container, materialPath) {
 		container.appendChild( renderer.domElement );
     
     projector = new THREE.Projector();
+    
+    var three9 = document.getElementById('three-9');
+    console.log(three9);
+    three9.addEventListener( 'click', function(){
+      alert('aaaaa');
+    });
+    
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 		document.addEventListener( 'mouseup', onDocumentMouseUp, false );
@@ -283,7 +283,10 @@ function build360Img(container, materialPath) {
 	}
 
 	//-----------------//
-
+  function onPointClick() {
+    console.log('aabbcc');
+  }
+  
 	function onWindowResize() {
 
 		camera.aspect = window.innerWidth / window.innerHeight;

@@ -478,9 +478,10 @@ body.page-node-4 {
 }
 
 .person_experience {
-	background: url('../../../../files/person_experience.png') no-repeat bottom center fixed;
+	background: url('../images/nhanvien.png') no-repeat 567px bottom fixed;
 	text-align: center;
-    height: 100vh;
+  height: 100vh;
+  background-size: 21%;
 }
 
 .hexagon.p1 >.icon_ex {
@@ -530,7 +531,7 @@ body.page-node-4 {
 .wp_experience > svg {
 	position: absolute;
 	top: 10px;
-	z-index: -1;
+	z-index: 1;
 }
 
 @media (max-width: 1200px) {
