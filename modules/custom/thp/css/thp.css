@@ -434,6 +434,10 @@ main.layout-3col__full {
   height: 56px;
 }
 
+#volume-bnt.active {
+  background: #f0a001 url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+}
+
 #volume-bnt span {
   background: url('../images/volume.png') 12px center no-repeat;
   display: block;
@@ -562,6 +566,8 @@ body.page-node-3 {
   height: 56px;
   text-align: center;
   display: table;
+  line-height: 15px;
+  padding: 0 1px;
 }
 
 #block-views-aseptic-block-1 .views-row .views-field-field-menu-icon .field-content,
@@ -880,9 +886,17 @@ article.node-4.active {
   font-size: 170%;
 }
 
-#block-views-aseptic-block .views-row.views-row-first .views-field-title,
+/*#block-views-aseptic-block .views-row.views-row-first .views-field-title,*/
 #block-views-bottle-block .views-row.views-row-first .views-field-title {
   display: block;
+}
+
+#block-views-aseptic-block .views-row.views-row-first .views-field-body .title_alt {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 150%;
+  line-height: 130%;
 }
 
 #block-views-aseptic-block .views-row,

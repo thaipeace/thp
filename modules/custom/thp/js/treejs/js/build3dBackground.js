@@ -98,8 +98,10 @@
             var part = $($('.views-field-field-parts .entity', step).get(index));
             $('.views-field-field-parts', step).addClass('active');
             $('.field-name-field-video', part).addClass('active');
-            $('video', part)[0].play();
             
+            if (step.hasClass('active')) {
+              $('video', part)[0].play();
+            }            
             //$('.field-item', part).append('<div class="close"></div>');
           }
         }
@@ -229,12 +231,6 @@ function build360Img(container, materialPath) {
 		container.appendChild( renderer.domElement );
     
     projector = new THREE.Projector();
-    
-    var three9 = document.getElementById('three-9');
-    console.log(three9);
-    three9.addEventListener( 'click', function(){
-      alert('aaaaa');
-    });
     
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );

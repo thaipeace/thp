@@ -12,16 +12,7 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.intro = {
     attach: function (context, settings) {
-      
-      var introVideo = document.getElementById('videoskip1');
-      introVideo.ontimeupdate = function(){
-        console.log(introVideo.currentTime);
-        if (introVideo.currentTime === 5) {
-          introVideo.currentTime = 1;
-        }
-      };
-      
-      
+
       function timeOut(){
         $('.skip-wrapper').fadeIn('fast');
 			};

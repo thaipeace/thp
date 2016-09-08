@@ -73,6 +73,37 @@
         $('body').show();
       });
       
+      /*
+      // Sound pending
+      if ($('.page-node-4, .page-node-21, .page-node-22').length > 0) {
+        var audio = new Audio('./sites/default/modules/custom/thp/js/ventilation_loop.wav');
+        audio.loop = true;
+        if ($('.page-node-4').length < 1) {
+          audio.play();
+          $('#volume-bnt').addClass('active');
+        }
+        
+        $('#volume-bnt').click(function(){
+          $(this).toggleClass('active');
+          if ($(this).hasClass('active')) {
+            audio.play();
+          }else {
+            audio.pause();
+          }
+        });
+        
+        $('.page-node-4 #block-views-aseptic-block-1 .views-row').on('click', function(){
+          
+          if ($(this).hasClass('views-row-9') || $(this).hasClass('views-row-first') || $(this).hasClass('views-row-last')) {
+            audio.pause();
+            $('#volume-bnt').removeClass('active').css('pointer-events','none');
+          }else {
+            audio.play();
+            $('#volume-bnt').addClass('active').css('pointer-events','inherit');
+          }
+          
+        });
+      }*/
     }
   }
 
