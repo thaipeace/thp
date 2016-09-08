@@ -36,7 +36,6 @@ function thp_preprocess_page(&$vars) {
       }
     }
     
-    drupal_add_css(drupal_get_path('module', 'thp') . '/css/odometer-theme-default.css');
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/keyframes.css');
     drupal_add_css(drupal_get_path('module', 'thp') . '/css/tam.css');
     drupal_add_js(drupal_get_path('module', 'thp') . '/js/tam.js');
