@@ -632,7 +632,7 @@ body.page-node-3  {
   transform: scale(1);
 }
 .points .ubl img.active{
-  -webkit-animation: popout .7s 1; /* Chrome, Safari, Opera */
+  -webkit-animation: popout .7s 1;
     animation: popout .7s 1;
     animation-fill-mode:forwards;
     -webkit-animation-fill-mode: forwards;
@@ -840,5 +840,378 @@ body.page-node-3  {
   height: 100vh;
   width: 100vw;
   left: 100vw;
-  display: none;
+  /*display: none;*/
 }
+
+/* Aseptic */
+body.page-node-4 {
+	background-color: #919191;
+}
+.wp_experience {
+	margin: 0 auto;
+	position: relative;
+	width: 768px;
+}
+
+.hexagon {
+  position: relative;
+  width: 200px;
+  height: 130px;
+  background-color: #eeeeee;
+  margin: 86.60px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 60px solid #eeeeee;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top:60px solid #eeeeee;
+}
+
+.hexagon.p1 {
+	position: absolute;
+  left: 0;
+  top: 37px;
+  opacity: 0;
+
+  -webkit-animation: fadein 5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: fadein 5s forwards;
+  animation-delay: 1.9s;
+}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.hexagon.p2 {
+	position: absolute;
+	left: 132px;
+  top: 208px;
+	opacity: 0;
+
+  -webkit-animation: fadein 5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: fadein 5s forwards;
+  animation-delay: 0.8s;
+}
+
+.hexagon.p3 {
+	right: 0;
+  top: 28px;
+  position: absolute;
+  opacity: 0;
+
+  -webkit-animation: fadein 5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: fadein 5s forwards;
+  animation-delay: 0.8s;
+}
+
+.hexagon.p4 {
+	position: absolute;
+	right: 120px;
+  top: 207px;
+	opacity: 0;
+
+  -webkit-animation: fadein 5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: fadein 5s forwards;
+  animation-delay: 0.8s;
+}
+
+.hexagon:hover {
+	background-color: #f1e601;
+}
+
+.hexagon:hover:before {
+    bottom: 100%;
+    border-bottom: 60px solid #f1e601;
+}
+
+.hexagon:hover:after {
+	top: 100%;
+	width: 0;
+	border-top:60px solid #f1e601;
+}
+
+.hexagon >.desc_hexagon {
+	color: #000000;
+	font-size: 14px;
+	text-align: center;
+	position: relative;
+	margin: 25% 0 0 0;
+  line-height: 20px;
+}
+
+.hexagon:hover >.desc_hexagon {
+	color: #000000;
+}
+
+.person_experience {
+	background: url('../images/nhanvien.png') no-repeat 567px bottom fixed;
+	text-align: center;
+  height: 100vh;
+  background-size: 21%;
+}
+
+.hexagon.p1 >.icon_ex {
+	position: absolute;
+	margin: -13px 0 24px 74px;
+}
+
+.hexagon.p2 >.icon_ex {
+	position: absolute;
+	margin: -13px 0 0 44px;
+}
+
+.hexagon.p3 >.icon_ex {
+	position: absolute;
+	margin: -10px 0 0 80px;
+
+}
+
+.hexagon.p4 >.icon_ex {
+	position: absolute;
+	margin: -2px 0 0 80px;
+}
+
+.btn_process1 {
+	text-align: center;
+  border: 2px solid #ffffff;
+  padding: 7px 15px 5px;
+  position: absolute;
+  left: auto;
+  right: 137px;
+  top: 320px;
+  opacity: 0.5;
+	transition:all 0.1s ease-in;
+	cursor: pointer;
+}
+
+.btn_process1 >span, .btn_process1 >img {
+	font-size: 14px;
+	display: inline-block;
+  padding: 0 5px;
+}
+
+.btn_process1:hover {
+	opacity: 1.5;
+}
+
+.wp_experience > svg {
+	position: absolute;
+	top: 10px;
+	z-index: 1;
+}
+
+@media (max-width: 1200px) {
+	.btn_process1 {
+		display: none;
+	}
+}
+
+#block-block-3 {
+height: 100vh;
+width: 94px;
+position: absolute;
+top: 0;
+right: 0;
+background-color: #d11212;
+}
+.r_item_header {
+ text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    height: 62px;
+    line-height: 14px;
+}
+
+.r_item_header>span {
+ position: relative;
+    top: 15px;
+    margin: 0px;
+}
+
+.r_item_header:hover {
+ background: #f1a001;
+}
+
+.wp_r_item {
+ width: 100%;
+    height: 56px;
+}
+.wp_r_item > a .r_item {
+ width: 100%;
+ height: 56px;
+}
+
+.wp_r_item > a {
+ display: block;
+}
+
+.wp_r_item:hover {
+ width: 100%;
+    height: 56px;
+    background: url('../../../../files/icon_Preparation_Fuel.png') no-repeat center center;
+    background-color: #a20202;
+}
+
+.tooltip_item {
+ position: relative;
+ display: inline-block;
+}
+
+.tooltip_item .tooltip_item_text {
+ visibility: hidden;
+ background-color: #eeeeee;
+ font-size: 12px;
+ border-radius: 3px;
+ padding: 5px 10px;
+ color: #000000;
+ position: absolute;
+ top: 15px;
+    right: 100px;
+ width: auto;
+ white-space: nowrap;
+}
+
+.tooltip_item_text:after {
+ content: '';
+ background: url('../../../../files/arrow_r.png')no-repeat;
+ position: absolute;
+ top: 7px;
+ right: -30px;
+ width: 14px;
+ height: 14px;
+}
+
+.tooltip_item:hover .tooltip_item_text {
+ visibility: visible;
+}
+.tooltipClass_r_item {
+ border: 0 solid #eeeeee;
+ padding: 5px 10px;
+ background-color: #eeeeee;
+}
+
+.r_item1 {
+ background: url('../../../../files/icon_bottled_check.png') no-repeat center center;
+}
+
+.r_item2 {
+ background: url('../../../../files/icon_Filling_sterile.png') no-repeat center center;
+}
+
+.r_item3 {
+ background: url('../../../../files/icon_mixing.png') no-repeat center center;
+}
+
+.r_item4 {
+ background: url('../../../../files/icon_heat_treatment.png') no-repeat center center;
+}
+
+.r_item5 {
+ background: url('../../../../files/icon_extraction.png') no-repeat center center;
+}
+
+.r_item6 {
+ background: url('../../../../files/icon_centrifugal_filter.png') no-repeat center center;
+}
+
+.r_item7 {
+ background: url('../../../../files/icon_extraction.png') no-repeat center center;
+}
+
+.r_item8 {
+ background: url('../../../../files/icon_testingProcess.png') no-repeat center center;
+}
+
+.r_item9 {
+ background: url('../../../../files/icon_Preparation_Fuel.png') no-repeat center center;
+}
+
+.r_item10 {
+ background: url('../../../../files/icon_sound.png') no-repeat center center;
+}
+.r_item9:after, .r_item_header:after {
+    content: '';
+    background: url('../../../../files/line_center_r.jpg')repeat-x;
+    width: 94px;
+    height: 2px;
+    top: 62px;
+    left: 0;
+    position: absolute;
+  }
+
+
+#block-views-aseptic-block-1 .views-row-2 {
+  position: absolute;
+  top: calc(56px * 9);
+}
+
+#block-views-aseptic-block-1 .views-row-2 {
+  position: absolute;
+  top: calc(56px * 9);
+}
+
+#block-views-aseptic-block-1 .views-row-3 {
+  position: absolute;
+  top: calc(56px * 8);
+}
+
+#block-views-aseptic-block-1 .views-row-4 {
+  position: absolute;
+  top: calc(56px * 7);
+}
+
+#block-views-aseptic-block-1 .views-row-5 {
+  position: absolute;
+  top: calc(56px * 6);
+}
+
+#block-views-aseptic-block-1 .views-row-6 {
+  position: absolute;
+  top: calc(56px * 5);
+}
+
+#block-views-aseptic-block-1 .views-row-7 {
+  position: absolute;
+  top: calc(56px * 4);
+}
+
+#block-views-aseptic-block-1 .views-row-8 {
+  position: absolute;
+  top: calc(56px * 3);
+}
+
+#block-views-aseptic-block-1 .views-row-9 {
+  position: absolute;
+  top: calc(56px * 2);
+}
+
+#block-views-aseptic-block-1 .views-row-10 {
+  position: absolute;
+  top: 56px;
+}
+
+/* End Aseptic */
