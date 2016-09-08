@@ -1214,4 +1214,19 @@ background-color: #d11212;
   top: 56px;
 }
 
+#block-views-aseptic-block-1 {
+    right: -100px;
+}
+#block-views-aseptic-block .views-field-body .bnt span{
+  display: none;
+}
+#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity.active .field-name-field-image img{
+  margin-top: 70%;
+}
+.field-item.even p{
+  margin-top: -70px;
+}
+.field-name-field-description .line{
+  display: none;
+}
 /* End Aseptic */
