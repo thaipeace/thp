@@ -24,15 +24,19 @@
       //Init display pnt1
       if($('.pnt.point1')){
         $('.pnt.point1').addClass('active');
+        $('#ubl1 img').addClass('active');
       }
 
-      //Init add back and next button to factory page
-      // if($('.node-3')){
-      //   $('.node-3').append('<div class="next-back-wrapper"><img class="btn_next" src="sites/default/modules/custom/mobile/images/btn_next.png"><img class="btn_back" src="sites/default/modules/custom/mobile/images/btn_back.png"><div>');
-      // }
-
+      // Init add back and next button to factory page
+      if($('.node-3')){
+        $('.node-3').append('<div class="next-back-wrapper"><img class="btn_next" src="sites/default/modules/custom/mobile/images/btn_next.png"><img class="btn_back" src="sites/default/modules/custom/mobile/images/btn_back.png"><div>');
+      }
+      // $('#block-views-label-block-1 .views-row').click(function(){
+      //   console.log('a');
+      // })
 
       $('#menu-bnt').click(function(){
+        console.log('menu-btn');
         var $block2 = $('#block-block-2');
         var $logo = $('img.header__logo-image');
         var $fbBtn = $('#fb-bnt');
@@ -73,6 +77,33 @@
         onublClick(parent);
       });
 
+      $('.btn_next').click(function(){
+        var $currentActive = $('.pnt.active');
+        var currentPrId = $currentActive.attr('id');
+        var idArr = currentPrId.split('');
+        idArr.splice(0,3);
+        var id = idArr.join('');
+        id = +id +1;
+        if(id < 11){
+          removeUblActive();
+          $('.pnt.point'+id).addClass('active');
+          $('#ubl'+id+' img').addClass('active')
+        }
+      })
+      $('.btn_back').click(function(){
+        var $currentActive = $('.pnt.active');
+        var currentPrId = $currentActive.attr('id');
+        var idArr = currentPrId.split('');
+        idArr.splice(0,3);
+        var id = idArr.join('');
+        id = +id -1;
+        if(id > 0){
+          removeUblActive();
+          $('.pnt.point'+id).addClass('active');
+          $('#ubl'+id+' img').addClass('active');
+        }  
+      })
+
 
       // Click from factory page
       $('.pnt').click(function(){
@@ -106,9 +137,9 @@
       // $('.wp_p9').animate({top: screen.height/2.75}, 300);
       // $('.wp_p10').animate({top: screen.height/2.65}, 100);
 
-      $("body").on("swiperight",function(){
-        console.log('a');
-      });
+      // $("body").on("swiperight",function(){
+      //   console.log('a');
+      // });
       //Helper functions
       function onublClick(parent){
         var parentId = $(parent).attr('id');
