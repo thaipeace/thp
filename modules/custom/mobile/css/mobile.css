@@ -831,17 +831,6 @@ body.page-node-3  {
 }
 /* End factory */
 
-#block-views-aseptic-block .views-row,
-#block-views-aseptic-block-2 .views-row,
-#block-views-bottle-block .views-row,
-#block-views-label-block .views-row {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  left: 100vw;
-  /*display: none;*/
-}
 
 /* Aseptic */
 body.page-node-4 {
@@ -856,12 +845,13 @@ body.page-node-4 {
 .hexagon {
   position: relative;
   width: 200px;
-  height: 130px;
+  height: 200px;
   background-color: #eeeeee;
   margin: 86.60px 0;
+  border-radius: 50%;
 }
 
-.hexagon:before,
+/*.hexagon:before,
 .hexagon:after {
   content: "";
   position: absolute;
@@ -879,7 +869,7 @@ body.page-node-4 {
   top: 100%;
   width: 0;
   border-top:60px solid #eeeeee;
-}
+}*/
 
 .hexagon.p1 {
 	position: absolute;
@@ -959,7 +949,7 @@ body.page-node-4 {
 	font-size: 14px;
 	text-align: center;
 	position: relative;
-	margin: 25% 0 0 0;
+	margin: 40% 0 0 0;
   line-height: 20px;
 }
 
@@ -976,23 +966,23 @@ body.page-node-4 {
 
 .hexagon.p1 >.icon_ex {
 	position: absolute;
-	margin: -13px 0 24px 74px;
+	margin: 13px 0 24px 74px;
 }
 
 .hexagon.p2 >.icon_ex {
 	position: absolute;
-	margin: -13px 0 0 44px;
+	margin: 13px 0 0 44px;
 }
 
 .hexagon.p3 >.icon_ex {
 	position: absolute;
-	margin: -10px 0 0 80px;
+	margin: 13px 0 0 80px;
 
 }
 
 .hexagon.p4 >.icon_ex {
 	position: absolute;
-	margin: -2px 0 0 80px;
+	margin: 20px 0 0 80px;
 }
 
 .btn_process1 {
@@ -1215,7 +1205,14 @@ background-color: #d11212;
 }
 
 #block-views-aseptic-block-1 {
-    right: -100px;
+    right: 0;
+    overflow: hidden;
+    /* TODO */
+    transition: .5s;
+}
+#block-views-aseptic-block-1.active{
+  width:92px;
+  transition: .5s;
 }
 #block-views-aseptic-block .views-field-body .bnt span{
   display: none;
@@ -1229,4 +1226,44 @@ background-color: #d11212;
 .field-name-field-description .line{
   display: none;
 }
+.view.view-aseptic.view-id-aseptic.view-display-id-block{
+  /*display: none;*/
+}
+/*#block-views-aseptic-block .views-row,*/
+#block-views-aseptic-block-2 .views-row,
+#block-views-bottle-block .views-row,
+#block-views-label-block .views-row {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  left: 100vw;
+  display: none;
+}
+#block-views-aseptic-block .views-row,
+#block-views-aseptic-block-2 .views-row,
+#block-views-bottle-block .views-row
+#block-views-label-block .views-row,
+#block-views-label-block-2 .views-row
+{
+  left: 0;
+  opacity: 1;
+  width: 0px;
+  overflow: hidden;
+}
+#block-views-aseptic-block .views-row.active,
+#block-views-aseptic-block-2 .views-row.active,
+#block-views-bottle-block .views-row.active
+#block-views-label-block .views-row.active,
+#block-views-label-block-2 .views-row.active {
+  width: 100vw;
+}
+.wp_experience{
+  width: 100%;
+}
 /* End Aseptic */
+
+/* Disable jQuery mobile loading text */
+.ui-loading .ui-loader { display: block; }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
+/* End - Disable jQuery mobile loading text */

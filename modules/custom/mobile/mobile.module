@@ -5,10 +5,10 @@
  */
 function mobile_preprocess_page(&$vars) {
   if ($vars['directory'] == 'sites/default/themes/mobile') {
-    
+
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery.min.js', 'external');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery-ui.min.js', 'external');
-    
+
     if (isset($vars['node'])) {
       if ($vars['node']->nid == 4) {
         drupal_add_js(drupal_get_path('module', 'mobile') . '/js/countUp.js');
@@ -36,22 +36,23 @@ function mobile_preprocess_page(&$vars) {
         drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/build3dBackground_label.js');
       }
     }
-    
+
     drupal_add_css(drupal_get_path('module', 'mobile') . '/css/keyframes.css');
     drupal_add_css(drupal_get_path('module', 'mobile') . '/css/tam.css');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/tam.js');
     drupal_add_css(drupal_get_path('module', 'mobile') . '/css/thp.css');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/thp.js');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/custom.js');
-    
+
     drupal_add_css(drupal_get_path('module', 'mobile') . '/css/mobile.css');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/mobile.js');
-    
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery.mobile-1.4.5.min.js');
+
     if ($vars['is_front']) {
       drupal_goto('home');
     }
-    
-    
+
+
   }
 }
 
@@ -60,7 +61,7 @@ function mobile_preprocess_page(&$vars) {
  */
 function mobile_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
-  if ($view->name == 'aseptic' && ($view->current_display == 'block' || $view->current_display == 'block_2') 
+  if ($view->name == 'aseptic' && ($view->current_display == 'block' || $view->current_display == 'block_2')
           || $view->name == 'bottle' && ($view->current_display == 'block')
           || $view->name == 'label' && ($view->current_display == 'block' || $view->current_display == 'block_2')) {
     $classes_array = $vars['classes_array'];
@@ -78,7 +79,7 @@ function mobile_preprocess_views_view_unformatted(&$vars) {
                 . ' aseptic nid-' . $view->result[$key]->_field_data['nid']['entity']->nid
                 . ' follow follow-nid-' . $view->result[$key]->_field_data['nid']['entity']->field_follow_with['und'][0]['target_id']
                 . ' ' . $bg_type;
-      } 
+      }
       else {
         $vars['classes_array'][$key] = $classes . ' aseptic nid-' . $view->result[$key]->_field_data['nid']['entity']->nid . ' ' . $bg_type;
       }

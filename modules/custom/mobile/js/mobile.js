@@ -106,7 +106,9 @@
       // $('.wp_p9').animate({top: screen.height/2.75}, 300);
       // $('.wp_p10').animate({top: screen.height/2.65}, 100);
 
-
+      $("body").on("swiperight",function(){
+        console.log('a');
+      });
       //Helper functions
       function onublClick(parent){
         var parentId = $(parent).attr('id');

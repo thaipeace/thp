@@ -362,148 +362,7 @@ body.page-node-4 {
 	width: 768px;
 }
 
-.hexagon {
-  position: relative;
-  width: 200px; 
-  height: 130px;
-  background-color: #eeeeee;
-  margin: 86.60px 0;
-}
-
-.hexagon:before,
-.hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-}
-
-.hexagon:before {
-  bottom: 100%;
-  border-bottom: 60px solid #eeeeee;
-}
-
-.hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top:60px solid #eeeeee;
-}
-
-.hexagon.p1 {
-	position: absolute;
-  left: 0;
-  top: 37px;
-  opacity: 0;
-  
-  -webkit-animation: fadein 5s forwards; /* Chrome, Safari, Opera */
-  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-  animation: fadein 5s forwards;
-  animation-delay: 1.9s;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-.hexagon.p2 {
-	position: absolute;
-	left: 132px;
-  top: 208px;
-	opacity: 0;
-  
-  -webkit-animation: fadein 5s forwards; /* Chrome, Safari, Opera */
-  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-  animation: fadein 5s forwards;
-  animation-delay: 0.8s;
-}
-
-.hexagon.p3 {
-	right: 0;
-  top: 28px;
-  position: absolute;
-  opacity: 0;
-  
-  -webkit-animation: fadein 5s forwards; /* Chrome, Safari, Opera */
-  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-  animation: fadein 5s forwards;
-  animation-delay: 0.8s;
-}
-
-.hexagon.p4 {
-	position: absolute;
-	right: 120px;
-  top: 207px;
-	opacity: 0;
-  
-  -webkit-animation: fadein 5s forwards; /* Chrome, Safari, Opera */
-  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-  animation: fadein 5s forwards;
-  animation-delay: 0.8s;
-}
-
-.hexagon:hover {
-	background-color: #f1e601;
-}
-
-.hexagon:hover:before {
-    bottom: 100%;
-    border-bottom: 60px solid #f1e601;
-}
-
-.hexagon:hover:after {
-	top: 100%;
-	width: 0;
-	border-top:60px solid #f1e601;
-}
-
-.hexagon >.desc_hexagon {
-	color: #000000;
-	font-size: 14px;
-	text-align: center;
-	position: relative;
-	margin: 25% 0 0 0;
-  line-height: 20px;
-}
-
-.hexagon:hover >.desc_hexagon {
-	color: #000000;
-}
-
-.person_experience {
-	background: url('../images/nhanvien.png') no-repeat 567px bottom fixed;
-	text-align: center;
-  height: 100vh;
-  background-size: 21%;
-}
-
-.hexagon.p1 >.icon_ex {
-	position: absolute;
-	margin: -13px 0 24px 74px;
-}
-
-.hexagon.p2 >.icon_ex {
-	position: absolute;
-	margin: -13px 0 0 44px;
-}
-
-.hexagon.p3 >.icon_ex {
-	position: absolute;
-	margin: -10px 0 0 80px;
-
-}
-
-.hexagon.p4 >.icon_ex {
-	position: absolute;
-	margin: -2px 0 0 80px;
-}
+/* Hexagon */
 
 .btn_process1 {
 	text-align: center;
@@ -629,15 +488,15 @@ background-color: #d11212;
 }
 
 .r_item2 {
- background: url('../../../../files/icon_Filling_sterile.png') no-repeat center center; 
+ background: url('../../../../files/icon_Filling_sterile.png') no-repeat center center;
 }
 
 .r_item3 {
- background: url('../../../../files/icon_mixing.png') no-repeat center center;  
+ background: url('../../../../files/icon_mixing.png') no-repeat center center;
 }
 
 .r_item4 {
- background: url('../../../../files/icon_heat_treatment.png') no-repeat center center; 
+ background: url('../../../../files/icon_heat_treatment.png') no-repeat center center;
 }
 
 .r_item5 {
@@ -672,7 +531,7 @@ background-color: #d11212;
     left: 0;
     position: absolute;
   }
-  
+
 /** Reorder menu asectic **/
 
 #block-views-aseptic-block-1 .views-row-2 {
