@@ -6,43 +6,43 @@
 function mobile_preprocess_page(&$vars) {
   if ($vars['directory'] == 'sites/default/themes/mobile') {
     
-    drupal_add_js(drupal_get_path('module', 'thp') . '/js/jquery.min.js', 'external');
-    drupal_add_js(drupal_get_path('module', 'thp') . '/js/jquery-ui.min.js', 'external');
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery.min.js', 'external');
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery-ui.min.js', 'external');
     
     if (isset($vars['node'])) {
       if ($vars['node']->nid == 4) {
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/countUp.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Tween.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/countUp.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/three.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/Projector.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/CanvasRenderer.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/threex.domevents.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/Tween.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/build3dBackground.js');
       }
       if ($vars['node']->nid == 21) {
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Tween.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground_bottle.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/three.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/Projector.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/CanvasRenderer.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/threex.domevents.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/Tween.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/build3dBackground_bottle.js');
       }
       if ($vars['node']->nid == 22) {
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/three.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Projector.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/CanvasRenderer.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/threex.domevents.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/Tween.js');
-        drupal_add_js(drupal_get_path('module', 'thp') . '/js/treejs/js/build3dBackground_label.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/three.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/Projector.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/CanvasRenderer.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/threex.domevents.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/Tween.js');
+        drupal_add_js(drupal_get_path('module', 'mobile') . '/js/treejs/js/build3dBackground_label.js');
       }
     }
     
-    drupal_add_css(drupal_get_path('module', 'thp') . '/css/keyframes.css');
-    drupal_add_css(drupal_get_path('module', 'thp') . '/css/tam.css');
-    drupal_add_js(drupal_get_path('module', 'thp') . '/js/tam.js');
-    drupal_add_css(drupal_get_path('module', 'thp') . '/css/thp.css');
-    drupal_add_js(drupal_get_path('module', 'thp') . '/js/thp.js');
-    drupal_add_js(drupal_get_path('module', 'thp') . '/js/custom.js');
+    drupal_add_css(drupal_get_path('module', 'mobile') . '/css/keyframes.css');
+    drupal_add_css(drupal_get_path('module', 'mobile') . '/css/tam.css');
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/tam.js');
+    drupal_add_css(drupal_get_path('module', 'mobile') . '/css/thp.css');
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/thp.js');
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/custom.js');
     
     drupal_add_css(drupal_get_path('module', 'mobile') . '/css/mobile.css');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/mobile.js');
