@@ -12,6 +12,7 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.custom = {
     attach: function (context, settings) {
+      var mouseX, mouseY;
       //Init fix some styles
       if($('.breadcrumb__item')){
         $($('.breadcrumb__item').children()[0]).html('<img src="sites/default/files/logodrthanh_0.png" alt="Home" class="header__logo-image">');
@@ -34,6 +35,17 @@
       // $('#block-views-label-block-1 .views-row').click(function(){
       //   console.log('a');
       // })
+
+      //Init title for aseptic
+      if($('#block-views-aseptic-block')){
+        $('#block-views-aseptic-block').append('<h3 class="introduce-title">Tổng quan quy trình</h3>');
+        $('#block-views-aseptic-block').append('<h3 class="swipe-title">Trượt ngang để xem tổng quan</h3>');
+        $('#block-views-aseptic-block').append('<div class="aseptic-process active" id="process1">01. Hạt nhựa pet</div><div class="aseptic-process" id="process2">02. Phôi chai</div><div class="aseptic-process" id="process3">03. Chai nhựa</div><div class="aseptic-process" id="process4">04. Quy trình Aseptic</div><div class="aseptic-process" id="process5">05. Sản phẩm hoàn tất</div>');
+        $($('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw')[0]).trigger('click');
+      }
+
+
+
 
       $('#menu-bnt').click(function(){
         console.log('menu-btn');
@@ -101,10 +113,114 @@
           removeUblActive();
           $('.pnt.point'+id).addClass('active');
           $('#ubl'+id+' img').addClass('active');
-        }  
+        }
       })
 
+      $('.entity.entity-field-collection-item ').on('swipeleft', function(){
+        onSwipeleft();
+      })
+      $('.entity.entity-field-collection-item ').on('swiperight', function(){
+        onSwiperight();
+      })
+       function onSwipeleft(){
+         var $items = $('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw');
+         var currentIndex = -1;
+         for(var i=0; i<$items.length; i++){
+           if($($items[i]).attr('class').indexOf('active') != -1){
+             currentIndex = i;
+           }
+         }
+           if(currentIndex < ($items.length - 1)){
+             $($items[currentIndex + 1]).trigger('click');
+             var temp = currentIndex + 1;
+             $('#process' + temp).removeClass('active');
+             temp += 1;
+             $('#process' + temp).addClass('active');
+           }
+           else{
+             $('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix.active').removeClass('active');
+             $(".introduce-title").addClass('hidden');
+             $(".swipe-title").addClass('hidden');
+             $('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw').removeClass('active');
+             $('.aseptic-process').removeClass('active');
+             $('#block-views-aseptic-block .views-row-last').addClass('active');
+             $('#block-views-aseptic-block .views-row-last .views-field-body').show();
+             $('#block-views-aseptic-block .hexagon.p1').addClass('active');
+             $('#block-views-aseptic-block .wp_experience').append('<img class="guide-emp" src="sites/default/modules/custom/mobile/images/nhanvien1.png">');
+           }
+       }
+       function onSwiperight(){
+         var $items = $('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw');
+         var currentIndex = 0;
+         for(var i=0; i<$items.length; i++){
+           if($($items[i]).attr('class').indexOf('active') != -1){
+             currentIndex = i;
+           }
+         }
+         if(currentIndex > 0){
+           $($items[currentIndex - 1]).trigger('click');
+           var temp = currentIndex + 1;
+           $('#process' + temp).removeClass('active');
+           $('#process' + currentIndex).addClass('active');
+         }
 
+       }
+
+       $('#block-views-aseptic-block .wp_experience').on('swipeleft',function(){
+         var $hexagons = $('#block-views-aseptic-block .hexagon');
+         var hexaIndex = 0;
+         for(var i=0; i<$hexagons.length; i++){
+           if($($hexagons[i]).attr('class').indexOf('active') != -1){
+             hexaIndex = i;
+           }
+         }
+         if(hexaIndex < $hexagons.length - 1){
+           var temp = hexaIndex + 1;
+           $('#block-views-aseptic-block .hexagon.p' + temp).removeClass('active');
+           temp += 1;
+           $('#block-views-aseptic-block .hexagon.p' + temp).addClass('active');
+         }
+       })
+
+       $('#block-views-aseptic-block .wp_experience').on('swiperight',function(){
+         var $hexagons = $('#block-views-aseptic-block .hexagon');
+         var hexaIndex = 0;
+         for(var i=0; i<$hexagons.length; i++){
+           if($($hexagons[i]).attr('class').indexOf('active') != -1){
+             hexaIndex = i;
+           }
+         }
+         if(hexaIndex > 0){
+           var temp = hexaIndex + 1;
+           $('#block-views-aseptic-block .hexagon.p' + temp).removeClass('active');
+           $('#block-views-aseptic-block .hexagon.p' + hexaIndex).addClass('active');
+         }
+       })
+
+       $('#block-views-aseptic-block .views-row-first .views-field-body .next').click(function(){
+        //  $('#block-views-aseptic-block-1 .views-row-last').trigger('click');
+         $('#block-views-aseptic-block .views-row-last .views-field-body').show();
+
+         $('#block-views-aseptic-block-1').css('pointer-events','auto');
+         $('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').css('pointer-events','auto');
+       });
+
+
+       $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw').click(function() {
+         if (!$(this).hasClass('active')) {
+           var ind = $(this).index();
+
+           $('.svg-circle .pw').removeClass('active');
+           $(this).addClass('active');
+
+           $('.svg-circle .pw .point').hide();
+           $('.point', this).show();
+
+           var element = $($('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity').get(ind));
+           $('#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity').removeClass('active');
+           element.addClass('active');
+         }
+       });
       // Click from factory page
       $('.pnt').click(function(){
         var rel = $(this).attr('rel');
@@ -159,6 +275,10 @@
         }
         $('.ubl_img').removeClass('active');
       }
+
+
+
+
     }
 
 
