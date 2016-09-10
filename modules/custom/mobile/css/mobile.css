@@ -1363,6 +1363,9 @@ background-color: #d11212;
   font-weight: 400;
   z-index: 3;
 }
+.wp-next-aseptic img{
+  width: 25px;
+}
 /* End Aseptic */
 
 /* Label */

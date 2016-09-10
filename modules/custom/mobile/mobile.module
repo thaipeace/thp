@@ -8,6 +8,8 @@ function mobile_preprocess_page(&$vars) {
 
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery.min.js', 'external');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery-ui.min.js', 'external');
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/mobileinit.js');
+    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery.mobile-1.4.5.min.js', 'external');
 
     if (isset($vars['node'])) {
       if ($vars['node']->nid == 4) {
@@ -45,8 +47,9 @@ function mobile_preprocess_page(&$vars) {
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/custom.js');
 
     drupal_add_css(drupal_get_path('module', 'mobile') . '/css/mobile.css');
+    // drupal_add_css(drupal_get_path('module', 'mobile') . '/css/jquery.mobile-1.4.5.min.css');
     drupal_add_js(drupal_get_path('module', 'mobile') . '/js/mobile.js');
-    drupal_add_js(drupal_get_path('module', 'mobile') . '/js/jquery.mobile-1.4.5.min.js');
+
 
     if ($vars['is_front']) {
       drupal_goto('home');
