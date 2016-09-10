@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 26-Jul-2016, 10:24:31
     Author     : April
 */
@@ -363,7 +363,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 > div > div {
-  
+
 }
 
 #block-block-1 {
@@ -404,18 +404,18 @@ main.layout-3col__full {
   display: block;
 }
 
-#fb-bnt { 
+#fb-bnt {
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
   bottom: 112px;
   height: 56px;
 }
 
-#fb-bnt a { 
+#fb-bnt a {
   background: url('../images/icon_fb.png') 19px center no-repeat;
   display: block;
   height: 56px;
 }
-  
+
 #youtube-bnt {
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
   bottom: 56px;
@@ -435,7 +435,7 @@ main.layout-3col__full {
 }
 
 #volume-bnt.active {
-  background: #f0a001 url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+  background: transparent url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
 }
 
 #volume-bnt span {
@@ -579,7 +579,7 @@ body.page-node-3 {
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon,
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon {
-  
+
 }
 
 #block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content {
@@ -761,7 +761,7 @@ article.node-4.active {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0 94px 0 56px;
+  padding: 0 56px 0 56px;
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity.active .field-name-field-description .field-items,
@@ -864,7 +864,7 @@ article.node-4.active {
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img,
 #block-views-bottle-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img {
   opacity: 0;
-  width: 400px;
+  width: 300px;
   height: auto;
   animation: makezoomout 0.5s ease-in-out forwards;
 }
@@ -912,7 +912,7 @@ article.node-4.active {
 #block-views-bottle-block .views-row.active,
 #block-views-label-block .views-row.active,
 #block-views-label-block-2 .views-row.active {
-  animation: thpfadeinwait 1s ease-in-out forwards;
+  animation: thpfadeinwait .3s ease-in-out forwards;
 }
 
 #block-views-aseptic-block-1 .views-row-last {
@@ -997,7 +997,7 @@ article.node-4.active {
 #block-views-bottle-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title.hide,
 #block-views-label-block .views-row .views-field-nothing .field-name-field-title.hide,
 #block-views-label-block-2 .views-row .views-field-nothing .field-name-field-title.hide {
-  
+
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:hover,
@@ -1217,7 +1217,7 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(1) img {
   width: auto;
-  height: auto; 
+  height: auto;
 }
 
 #block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts .entity:first-child .field-name-field-image .field-item:nth-child(1) {
@@ -1556,7 +1556,7 @@ article.node-4.active {
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data .i12 .iCounter {
-  
+
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data .i12 > span:nth-child(2) {
@@ -1939,7 +1939,7 @@ article.node-4.active {
 #block-views-label-block-1 .block-wrapper .views-row-3:hover {
   background-position: 47px 5px;
 }
-  
+
 #block-views-label-block-1 .block-wrapper .views-row-1 {
   margin: 0 0 0 20px;
 }

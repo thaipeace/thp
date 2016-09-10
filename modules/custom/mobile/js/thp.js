@@ -129,7 +129,6 @@
       // Label Menu click
       if ($('#block-views-label-block-1 .views-row').length > 0) {
         $('#block-views-label-block-1 .views-row').click(function(){
-          console.log('a');
           if (!$(this).hasClass('active')) {
             $('#block-views-label-block-1 .views-row').removeClass('active');
             $(this).addClass('active');
@@ -270,7 +269,7 @@
 
         if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
           var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
-          autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1');
+          // autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1');
         }
 
         // Active first child when load
@@ -320,7 +319,7 @@
 
         if ($('#block-views-bottle-block .views-row.views-row-first.active').length > 0) {
           var items = $('#block-views-bottle-block .views-row.views-row-first .svg-circle .pw');
-          autoClick(items, 3000, '#block-views-bottle-block-1 .views-row.views-row-11', '#block-views-bottle-block-1');
+          // autoClick(items, 3000, '#block-views-bottle-block-1 .views-row.views-row-11', '#block-views-bottle-block-1');
         }
 
         // Active first child when load
