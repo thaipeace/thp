@@ -67,10 +67,10 @@
       
       // Loading bar
       Pace.on('start', function(){
-        $('body').hide();
+        $('body .layout-center').hide();
       });
       Pace.on('done', function(){
-        $('body').show();
+        $('body .layout-center').show();
       });
       
       /*
