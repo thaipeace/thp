@@ -30,6 +30,8 @@
         }
       }
 
+
+
       // Aseptic Menu click
       if ($('#block-views-aseptic-block-1 .views-row').length > 0) {
         var preInd;
@@ -41,6 +43,9 @@
             $('#block-views-aseptic-block-1 .views-row').removeClass('active');
             $(this).addClass('active');
 
+            //Hide aseptic menu after click - pho
+            $('#block-views-aseptic-block-1').removeClass('active');
+
             var ind = $(this).index();
             $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
             $($('#block-views-aseptic-block .views-row').get(ind)).addClass('active');
@@ -51,6 +56,15 @@
             $('.aseptic-process').removeClass('active');
             $('#block-views-aseptic-block .wp_experience').removeClass('active');
             clearTimeout(stopTimeout);
+            //Display text
+            if($(this).attr('class').indexOf('views-row-1') !== -1){
+              $('.aseptic-footer').removeClass('active');
+            }
+            else{
+              $('.aseptic-footer').addClass('active');
+              var text = $(this).find('.views-field-title').html();
+              $('.footer-text').html(text);
+            }
 
             if ($(this).hasClass('views-row-first')) {
               $('.svg-circle .pw:first-child').trigger('click');

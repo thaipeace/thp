@@ -228,7 +228,7 @@ function build360Img(container, materialPath) {
 		document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
 		document.addEventListener( 'MozMousePixelScroll', onDocumentMouseWheel, false);
 
-		// document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
 		document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
 		window.addEventListener( 'resize', onWindowResize, false );
@@ -459,7 +459,7 @@ function build360Img(container, materialPath) {
 
 		if ( event.touches.length == 1 ) {
 
-			event.preventDefault();
+			// event.preventDefault();
 
 			onPointerDownPointerX = event.touches[ 0 ].pageX;
 			onPointerDownPointerY = event.touches[ 0 ].pageY;

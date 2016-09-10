@@ -1219,14 +1219,13 @@ background-color: #d11212;
 #block-views-aseptic-block-1 {
     right: 0;
     overflow: hidden;
-    /* TODO */
-    width:92px;
+    width:0;
     transition: .5s;
-    z-index: 1000;
+    z-index: 1;
     margin-top: 56px;
 }
 #block-views-aseptic-block-1.active{
-  width:92px;
+  width:56px;
   transition: .5s;
 }
 #block-views-aseptic-block .views-field-body .bnt span{
@@ -1246,7 +1245,7 @@ background-color: #d11212;
   /*display: none;*/
 }
 /*#block-views-aseptic-block .views-row,*/
-#block-views-aseptic-block-2 .views-row,
+/*#block-views-aseptic-block-2 .views-row,
 #block-views-bottle-block .views-row,
 #block-views-label-block .views-row {
   position: absolute;
@@ -1255,7 +1254,7 @@ background-color: #d11212;
   width: 100vw;
   left: 100vw;
   display: none;
-}
+}*/
 #block-views-aseptic-block .views-row,
 #block-views-aseptic-block-2 .views-row,
 #block-views-bottle-block .views-row
@@ -1324,7 +1323,53 @@ background-color: #d11212;
 #block-views-aseptic-block .views-row .field-item.even img{
   width: 100%;
 }
+.aseptic-footer{
+  background-color: #d11212;
+  width: 100vw;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  transition: .5s;
+}
+.aseptic-footer.active{
+  height: 56px;
+  transition: .5s;
+}
+.footer-left-btn img{
+  width: 56px;
+}
+.footer-right-btn img{
+  width: 56px;
+}
+.footer-text{
+  width: calc(100vw - 112px);
+  padding-top: 18px;
+}
+.wp-next-aseptic{
+  text-transform: uppercase;
+  position: absolute;
+  right: 10px;
+  top: 48%;
+  text-align: right;
+  width: 86px;
+  font-size: 13px;
+  font-weight: 400;
+  z-index: 3;
+}
 /* End Aseptic */
+
+/* Label */
+.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix[about="/thpv1/field-collection/field-parts/49"]{
+  display: none;
+}
+/* Label */
 
 /* Disable jQuery mobile loading text */
 .ui-loading .ui-loader { display: block; }

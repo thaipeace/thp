@@ -12,6 +12,7 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.custom = {
     attach: function (context, settings) {
+      var url = window.location.href;
       var mouseX, mouseY;
       //Init fix some styles
       if($('.breadcrumb__item')){
@@ -32,9 +33,9 @@
       if($('.node-3')){
         $('.node-3').append('<div class="next-back-wrapper"><img class="btn_next" src="sites/default/modules/custom/mobile/images/btn_next.png"><img class="btn_back" src="sites/default/modules/custom/mobile/images/btn_back.png"><div>');
       }
-      // $('#block-views-label-block-1 .views-row').click(function(){
-      //   console.log('a');
-      // })
+
+      // console.log($('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix[about="/thpv1/field-collection/field-parts/49"]'));
+      // $('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix[about="/thpv1/field-collection/field-parts/49"]').css('display', 'none');
 
       //Init title for aseptic
       if($('#block-views-aseptic-block')){
@@ -45,12 +46,38 @@
       }
 
       $('#block-views-aseptic-block .wp_experience').addClass('active');
+      $('#block-views-aseptic-block .wp_experience').append('<div class="wp-next-aseptic">Bắt đầu trải nghiệm<div><img src="sites/default/modules/custom/mobile/images/right-arrow.png"/></div></div>');
+
+      $('.wp-next-aseptic').click(function(){
+        $('#block-views-aseptic-block-1 .views-row-10').trigger('click');
+        $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
+        $('#block-views-aseptic-block').addClass('active');
+        $('#block-views-aseptic-block .views-row-10').addClass('active');
+        $('#block-views-aseptic-block .views-row-10 .views-field-body').show();
+
+        $('.aseptic-footer').addClass('active');
+        var text = $('#block-views-aseptic-block .views-row-10 .views-field-title').html();
+        $('.footer-text').html(text);
+      })
 
 
+      //Add foooter
+      if($('body.page-node-4')){
+        $('body.page-node-4').append('<div class="aseptic-footer"><div class="footer-left-btn"><img src="sites/default/modules/custom/mobile/images/footer-left-btn.jpg"/></div><div class="footer-text"></div><div class="footer-right-btn"><img src="sites/default/modules/custom/mobile/images/footer-right-btn.jpg"</div></div>')
+      }
+
+      $('.footer-right-btn').click(function(){
+        if($('#block-views-aseptic-block-1').attr('class').indexOf('active') === -1){
+          $('#block-views-aseptic-block-1').addClass('active');
+        }
+        else{
+          $('#block-views-aseptic-block-1').removeClass('active');
+        }
+
+      })
 
 
       $('#menu-bnt').click(function(){
-        console.log('menu-btn');
         var $block2 = $('#block-block-2');
         var $logo = $('img.header__logo-image');
         var $fbBtn = $('#fb-bnt');
@@ -118,6 +145,7 @@
         }
       })
 
+      //Swipe to view steps
       $('.entity.entity-field-collection-item ').on('swipeleft', function(){
         onSwipeleft();
       })
@@ -278,7 +306,14 @@
         $('.ubl_img').removeClass('active');
       }
 
-
+      function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+        function(m,key,value) {
+          vars[key] = value;
+        });
+        return vars;
+      }
 
 
     }

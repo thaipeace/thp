@@ -625,15 +625,16 @@ body.page-node-3 {
   position: absolute;
   top: 0;
   height: 100vh;
-  width: 100vw;
-  left: 100vw;
+  width: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 #block-views-aseptic-block .views-row.active,
 #block-views-aseptic-block-2 .views-row.active,
 #block-views-bottle-block .views-row.active,
 #block-views-label-block .views-row.active {
-  left: 0;
+  width: 100vw;
 }
 
 #block-views-aseptic-block .views-row .views-field-field-fix-background,
@@ -975,8 +976,8 @@ article.node-4.active {
 #block-views-label-block .views-row .views-field-nothing .field-name-field-title,
 #block-views-label-block-2 .views-row .views-field-nothing .field-name-field-title {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 60px;
+  height: 60px;
   overflow: visible;
   cursor: pointer;
   /*
@@ -1107,7 +1108,6 @@ article.node-4.active {
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity,
 #block-views-aseptic-block-2 .views-row .views-field-field-parts .entity,
 #block-views-bottle-block .views-row:not(.views-row-first) .views-field-field-parts .entity,
-#block-views-label-block .views-row .views-field-field-parts .entity,
 #block-views-label-block-2 .views-row .views-field-field-parts .entity {
   position: absolute;
   z-index: 1;
@@ -1119,11 +1119,25 @@ article.node-4.active {
   animation: itemlideout 0.5s ease-in-out forwards;
   color: #000000;
 }
+#block-views-label-block .views-row .views-field-field-parts .entity{
+  position: absolute;
+  z-index: 1;
+  right: -719px;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  background: #f1e601;
+  animation: itemlideout 0.5s ease-in-out forwards;
+  color: #000000;
+}
+#block-views-label-block .field-item.even img{
+  width: 100%;
+}
 
 #block-views-bottle-block .views-row:not(.views-row-first) .views-field-field-parts div.entity,
 #block-views-label-block .views-row .views-field-field-parts div.entity,
 #block-views-label-block-2 .views-row .views-field-field-parts div.entity {
-  animation: itemlideoutnotright 0.5s ease-in-out forwards;
+  animation: itemlideout 0.5s ease-in-out forwards;
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity.data,
@@ -1151,7 +1165,7 @@ article.node-4.active {
 #block-views-label-block .views-row .views-field-field-parts .entity.active,
 #block-views-label-block-2 .views-row .views-field-field-parts .entity.active {
   display: block;
-  animation: itemlideinnotright 0.5s ease-in-out forwards;
+  animation: itemlidein 0.5s ease-in-out forwards;
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity .field-content,
@@ -1172,8 +1186,8 @@ article.node-4.active {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   background: url('../images/close.png') 0 0 no-repeat;
   cursor: pointer;
 }
@@ -1482,7 +1496,7 @@ article.node-4.active {
 #block-views-label-block-2 .views-field-body .bnt {
   position: absolute;
   background: #f0a001;
-  right: 10%;
+  right: 1%;
   top: 50%;
   z-index: 1;
   cursor: pointer;
@@ -1909,10 +1923,11 @@ article.node-4.active {
 
 #block-views-label-block-1 .block-wrapper {
   background: #FFFFFF url('../images/labelmenu.jpg') center 0 no-repeat;
-  width: 850px;
+  width: 0;
   height: 58px;
   margin: 0 auto;
   color: #000000;
+  overflow: hidden;
 }
 
 #block-views-label-block-1 .block-wrapper .views-row {
