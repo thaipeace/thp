@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,18 +11,18 @@
 
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.build360Bg = {
-    attach: function (context, settings) {  
-      
+    attach: function (context, settings) {
+
       // Build 360image
       $('.views-field-field-270-background .field-content').hide();
-      
+
       $('#block-views-aseptic-block-1 .views-row').click(function() {
         $('#block-views-aseptic-block').addClass('active');
         $('#block-views-aseptic-block-2').removeClass('active');
-        
+
         var index = $(this).index();
         var asepticBlock = $('#block-views-aseptic-block .views-row').get(index);
-        
+
         // Drag background
         if ($('.views-field-field-drag-background', asepticBlock).length > 0) {
           var imageUrl = $('.views-field-field-drag-background .field-content', asepticBlock).text();
@@ -31,7 +31,7 @@
           });
           $(asepticBlock).backgroundDraggable({axis: 'x'});
         }
-        
+
         // Fix background
         if ($('.views-field-field-fix-background', asepticBlock).length > 0) {
           var imageUrl = $('.views-field-field-fix-background .field-content', asepticBlock).text();
@@ -40,13 +40,13 @@
             'background-size': 'cover'
           });
         }
-        
+
         /** Background 360 build **/
         // Remove unsee canvas
         if ($('.views-field-field-270-background canvas').length > 0) {
           $('.views-field-field-270-background canvas').remove();
         }
-        
+
         // @TODO Reload it count to 6 time click
 
         $('.views-field-field-270-background', asepticBlock).attr('id', 'three-' + index);
@@ -65,15 +65,15 @@
           }
 
         }
-        
+
       });
-      
+
       // Point clicked
       $('.field-name-field-title').click(function(){
         var index = $(this).index();
         var step = $(this).parents('.views-row');
         var stepInd = $(step).index();
-        
+
         if (!$(this).hasClass('extra')) {
           $('.views-field-field-parts', step).addClass('active');
           $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
@@ -85,22 +85,22 @@
             $('.views-field-field-parts', step).addClass('active');
             $('.field-name-field-video', part).addClass('active');
             $('video', part)[0].play();
-            
+
             //$('.field-item', part).append('<div class="close"></div>');
           }
         }
-        
+
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).hide();
-        
+
       });
-      
+
       // Click to step
       $('#block-views-aseptic-block').addClass('active');
       $('.bnt span').click(function(){
         var step = $(this).attr('rel');
         if (step !== 'external') {
           if (step.indexOf('#block-views-aseptic-block-1') !== -1) {
-          
+
             $('#block-views-aseptic-block').addClass('active');
             $('#block-views-aseptic-block-2').removeClass('active');
             $(step).trigger('click');
@@ -167,18 +167,18 @@ function build360Img(container, materialPath) {
 
 	//-----------------//
 	function init(container, materialPath) {
-    
+
 		var container, mesh;
     var element = jQuery(container).parent();
     var point = {};
-    
+
     camera = new THREE.PerspectiveCamera(1130, window.innerWidth / window.innerHeight, 1, 1100 );
 		camera.fov = 42;
-    
+
     camera.updateProjectionMatrix();
-    
+
 		scene = new THREE.Scene();
-    
+
 		texture_placeholder = document.createElement( 'canvas' );
 		texture_placeholder.width = 128;
 		texture_placeholder.height = 128;
@@ -186,10 +186,10 @@ function build360Img(container, materialPath) {
 		var context = texture_placeholder.getContext( '2d' );
 		context.fillStyle = 'rgb( 200, 200, 200 )';
 		context.fillRect( 0, 0, texture_placeholder.width, texture_placeholder.height );
-    
+
     var geometry = new THREE.SphereGeometry( 800, 60, 40 );
     geometry.scale( - 1, 1, 1 );
-    
+
     var map = new THREE.TextureLoader().load(materialPath);
     THREE.DefaultLoadingManager.onProgress = function ( map, loaded, total ) {
       if (loaded !== total) {
@@ -203,9 +203,9 @@ function build360Img(container, materialPath) {
     });
 
     mesh = new THREE.Mesh( geometry, material );
-    
+
     scene.add(mesh);
-    
+
 		for ( var i = 0, l = mesh.geometry.vertices.length; i < l; i ++ ) {
 
 			var vertex = mesh.geometry.vertices[ i ];
@@ -220,7 +220,7 @@ function build360Img(container, materialPath) {
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( window.innerWidth, window.innerHeight );
 		container.appendChild( renderer.domElement );
-    
+
     projector = new THREE.Projector();
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -228,11 +228,11 @@ function build360Img(container, materialPath) {
 		document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
 		document.addEventListener( 'MozMousePixelScroll', onDocumentMouseWheel, false);
 
-		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+		// document.addEventListener( 'touchstart', onDocumentTouchStart, false );
 		document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
 		window.addEventListener( 'resize', onWindowResize, false );
-    
+
     jQuery('.views-field-nothing .field-name-field-position', element).each(function(ind, elem) {
       if (jQuery(jQuery('.views-field-nothing .field-name-field-title', element).get(ind)).text() !== 'data') {
         var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
@@ -253,10 +253,10 @@ function build360Img(container, materialPath) {
         scene.add(point);
 
         targetList.push(point);
-  
+
       }
     });
-    
+
     // Add word
 //    var spritey = makeTextSprite(
 //                "World!",
@@ -265,7 +265,7 @@ function build360Img(container, materialPath) {
 //      spritey.position.set(190,50,450);
       // @Todo for hover
       //scene.add(spritey);
-    
+
 	}
 
 	//-----------------//
@@ -300,7 +300,7 @@ function build360Img(container, materialPath) {
 	//----------------//
 
 	function onDocumentMouseDown( event ) {
-    
+
 		event.preventDefault();
 
 		isUserInteracting = true;
@@ -310,7 +310,7 @@ function build360Img(container, materialPath) {
 
 		onPointerDownLon = lon;
 		onPointerDownLat = lat;
-	
+
     // update the mouse variable
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -329,8 +329,8 @@ function build360Img(container, materialPath) {
     // if there is one (or more) intersections
     if ( intersects.length > 0 ) {
       jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).trigger('click');
-      
-      // Add 9 type line  
+
+      // Add 9 type line
       jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').remove();
       if (jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').length < 1) {
         var nineType = run9Type();
@@ -338,7 +338,7 @@ function build360Img(container, materialPath) {
       }
     }
 	}
-  
+
   function run9Type() {
     var style = [
       "fill:none",
@@ -354,7 +354,7 @@ function build360Img(container, materialPath) {
     var svgLine = "<svg class='dash-line' width='694px' height='377px' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
     svgLine += pathTag;
     svgLine += "</svg>";
-    
+
     return svgLine;
   }
 
@@ -362,30 +362,30 @@ function build360Img(container, materialPath) {
 	function onDocumentMouseMove(event) {
 		if (isUserInteracting === true) {
 			lon = (onPointerDownPointerX - event.clientX) * 0.1 + onPointerDownLon;
-      
+
       var turn = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
       if (turn >= -25 && turn <= 18) {
         lat = turn;
       }
 		}
-    
+
     /*** TODO it's not good yet ***/
     /*
     var panoItems = [
       '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
       '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
     ];
-    
+
     // Pano show and hide
     jQuery.each(panoItems, function(index, panoItem){
       hideShowPano(panoItem);
     });
     */
-    
+
     // update the mouse variable
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-    
+
     var vector = new THREE.Vector3(mouse.x, mouse.y, 1);
     projector.unprojectVector(vector, camera);
     var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
@@ -395,10 +395,10 @@ function build360Img(container, materialPath) {
 
     // if there is one (or more) intersections
     if (intersects.length > 0) {
-      
+
     }else {
-      
-      
+
+
     }
 	}
 
@@ -406,18 +406,18 @@ function build360Img(container, materialPath) {
 
 	function onDocumentMouseUp( event ) {
 		isUserInteracting = false;
-    
+
     var panoItems = [
       '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
       '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
     ];
-    
+
     jQuery.each(panoItems, function(index, panoItem){
       hideShowPano(panoItem);
     });
-    
+
 	}
-  
+
   var hideShowPano = function(panoItem) {
     // Fade data when camera turn around
     var l = (lon-90)%360;
@@ -445,11 +445,11 @@ function build360Img(container, materialPath) {
     } else if ( event.detail ) {
       camera.fov -= event.detail * 0.05;
     }
-    
+
     if (camera.fov > 24 && camera.fov < 66) {
       camera.updateProjectionMatrix();
     }
-    
+
 
 	}
 
@@ -494,21 +494,21 @@ function build360Img(container, materialPath) {
             x: point.position.x,
             y: point.position.y + far,
             z: point.position.z}, 1000 )
-  
+
       tw2 = new TWEEN.Tween(point.position).to({
             x: point.position.x,
             y: point.position.y - far,
             z: point.position.z}, 1000 )
-      
+
       tw1.chain(tw2);
       tw2.chain(tw1);
-      
+
       tw1.start();
     });
   }
-  
+
   twSetup(10);
-  
+
 	function animate() {
     requestAnimationFrame(animate); // keep looping
     TWEEN.update();
@@ -525,31 +525,31 @@ function build360Img(container, materialPath) {
 		lat = Math.max( - 85, Math.min( 85, lat ) );
 		phi = THREE.Math.degToRad( 90 - lat );
 		theta = THREE.Math.degToRad( lon );
-    
+
     target.x = 500 * Math.sin( phi ) * Math.cos( theta );
     target.y = 500 * Math.cos( phi );
     target.z = 500 * Math.sin( phi ) * Math.sin( theta );
-    
+
 		camera.position.copy(target).negate();
     camera.position.y = target.y + 220;
-    
+
     target.y = target.y + 50;
 		camera.lookAt(target);
-    
+
 		renderer.render( scene, camera );
 
 	}
-  
+
   function makeTextSprite( message, parameters ) {
     if ( parameters === undefined ) parameters = {};
 
-    var fontface = parameters.hasOwnProperty("fontface") ? 
+    var fontface = parameters.hasOwnProperty("fontface") ?
       parameters["fontface"] : "Arial";
 
-    var fontsize = parameters.hasOwnProperty("fontsize") ? 
+    var fontsize = parameters.hasOwnProperty("fontsize") ?
       parameters["fontsize"] : 18;
 
-    var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
+    var borderThickness = parameters.hasOwnProperty("borderThickness") ?
       parameters["borderThickness"] : 4;
 
     var borderColor = parameters.hasOwnProperty("borderColor") ?
@@ -557,9 +557,9 @@ function build360Img(container, materialPath) {
 
     var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
       parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
-      
+
     //var spriteAlignment = THREE.SpriteAlignment.topLeft;
-    
+
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
     context.font = "Bold " + fontsize + "px " + fontface;
@@ -585,14 +585,14 @@ function build360Img(container, materialPath) {
     context.fillText( message, borderThickness, fontsize + borderThickness);
 
     // canvas contents will be used for a texture
-    var texture = new THREE.Texture(canvas) 
+    var texture = new THREE.Texture(canvas)
     texture.needsUpdate = true;
 
-    var spriteMaterial = new THREE.SpriteMaterial( 
+    var spriteMaterial = new THREE.SpriteMaterial(
       { map: texture } );
     var sprite = new THREE.Sprite( spriteMaterial );
     sprite.scale.set(100,50,1.0);
-    return sprite;	
+    return sprite;
   }
 
   // function for drawing rounded rectangles
@@ -609,7 +609,7 @@ function build360Img(container, materialPath) {
     ctx.quadraticCurveTo(x, y, x+r, y);
     ctx.closePath();
     ctx.fill();
-    ctx.stroke();   
+    ctx.stroke();
   }
 }
 

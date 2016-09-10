@@ -34,6 +34,7 @@
       if ($('#block-views-aseptic-block-1 .views-row').length > 0) {
         var preInd;
         $('#block-views-aseptic-block-1 .views-row').click(function(){
+
           if (!$(this).hasClass('active')) {
             preInd = $('#block-views-aseptic-block-1').find('.active').index();
 
@@ -43,7 +44,12 @@
             var ind = $(this).index();
             $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
             $($('#block-views-aseptic-block .views-row').get(ind)).addClass('active');
-
+            //Remove title from steps
+            $('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix.active').removeClass('active');
+            $(".introduce-title").addClass('hidden');
+            $(".swipe-title").addClass('hidden');
+            $('.aseptic-process').removeClass('active');
+            $('#block-views-aseptic-block .wp_experience').removeClass('active');
             clearTimeout(stopTimeout);
 
             if ($(this).hasClass('views-row-first')) {
@@ -380,8 +386,10 @@
       });
 
       // 2D position
+
       $('.aseptic').each(function(index, element){
         if ($('.views-field-field-fix-background', element).length > 0) {
+          var counter = 0;
           $('.views-field-nothing .field-name-field-position', element).each(function(ind, elem){
 
             var str_po = $(elem).text();
@@ -391,9 +399,10 @@
 
             var title = $($(elem).parent().find('.field-name-field-title').get(ind));
             title.css({
-              left: arr_po[0] + 'px',
-              top: arr_po[1] + 'px'
+              left:Math.floor(Math.random() * 100*(counter+1)) + 100*counter + 'px',
+              top: Math.floor(Math.random() * 200*(counter+1)) + 200*(counter) + 100 + 'px'
             });
+            counter++;
 
             // Draw line animate
             if (title.text() === 'data') {

@@ -1321,6 +1321,9 @@ background-color: #d11212;
   top: 50vh;
   left: calc((100vw - 288px)/2);
 }
+#block-views-aseptic-block .views-row .field-item.even img{
+  width: 100%;
+}
 /* End Aseptic */
 
 /* Disable jQuery mobile loading text */

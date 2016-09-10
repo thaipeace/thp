@@ -670,6 +670,7 @@ article.node-4.active {
   height: 100vh;
   top: 0;
   left: 0;
+  padding-top: 80px;
 }
 
 #block-views-aseptic-block .views-row-first .views-field-nothing,
@@ -1068,7 +1069,8 @@ article.node-4.active {
 #block-views-label-block-2 .views-row .views-field-nothing .field-name-field-title .field-items {
   background: url('../images/icon_hxg.png') center bottom no-repeat;
   position: relative;
-  height: 212px;
+  height: 60px;
+  width: 60px;
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:nth-child(1),
@@ -1110,9 +1112,9 @@ article.node-4.active {
   position: absolute;
   z-index: 1;
   right: -719px;
-  height: 100vh;
-  width: 694px;
-  padding: 0 94px 0 0;
+  height: calc(100vh - 56px);
+  width: 100%;
+  padding: 0;
   background: #f1e601;
   animation: itemlideout 0.5s ease-in-out forwards;
   color: #000000;
@@ -1169,7 +1171,7 @@ article.node-4.active {
 #block-views-label-block-2 .views-row .views-field-field-parts .entity .close {
   position: absolute;
   bottom: 0;
-  right: 94px;
+  right: 0;
   width: 50px;
   height: 50px;
   background: url('../images/close.png') 0 0 no-repeat;
@@ -1347,9 +1349,10 @@ article.node-4.active {
 
 .aseptic .field-name-field-description .title {
   text-transform: uppercase;
-  font-size: 170%;
-  padding: 10px 0;
+  font-size: 115%;
+  /*padding: 10px 0;*/
   line-height: 32px;
+  font-size: 600;
 }
 
 .aseptic .field-name-field-description .desc p {
@@ -1740,7 +1743,7 @@ article.node-4.active {
 #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video.active {
   position: absolute;
   top: 0;
-  left: calc(-100vw - 96px);
+  left: -245vw;
   width: calc(100vw + 96px);
   height: 100vh;
   display: table;
@@ -1762,7 +1765,8 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video video,
 #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video video {
-  width: 768px;
+  max-width: 768px;
+  width: 100vw;
 }
 
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video .field-item .close,

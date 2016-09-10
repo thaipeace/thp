@@ -44,6 +44,8 @@
         $($('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw')[0]).trigger('click');
       }
 
+      $('#block-views-aseptic-block .wp_experience').addClass('active');
+
 
 
 
@@ -166,7 +168,7 @@
 
        }
 
-       $('#block-views-aseptic-block .wp_experience').on('swipeleft',function(){
+       $('#block-views-aseptic-block .wp_experience.active').on('swipeleft',function(){
          var $hexagons = $('#block-views-aseptic-block .hexagon');
          var hexaIndex = 0;
          for(var i=0; i<$hexagons.length; i++){
@@ -182,7 +184,7 @@
          }
        })
 
-       $('#block-views-aseptic-block .wp_experience').on('swiperight',function(){
+       $('#block-views-aseptic-block .wp_experience.active').on('swiperight',function(){
          var $hexagons = $('#block-views-aseptic-block .hexagon');
          var hexaIndex = 0;
          for(var i=0; i<$hexagons.length; i++){
