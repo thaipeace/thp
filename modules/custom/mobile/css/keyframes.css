@@ -1,16 +1,17 @@
 /*** Zoom out item to a small offset ***/
 @keyframes makezoomout {
   0% {
-    width: 400px;
+    width: 300px;
     height: auto;
     opacity: 1;
   }
   50% {
-    width: 280px;
+    width: 250px;
     height: auto;
+    opacity: 0.5;
   }
   100% {
-    width: 280px;
+    width: 200px;
     height: auto;
     opacity: 0;
   }
@@ -19,16 +20,17 @@
 /*** Zoom in item from a small offset ***/
 @keyframes makezoomin {
   0% {
-    width: 280px;
+    width: 200px;
     height: auto;
     opacity: 0;
   }
   50% {
-    width: 280px;
+    width: 250px;
     height: auto;
+    opacity: 0.5;
   }
   100% {
-    width: 400px;
+    width: 300px;
     height: auto;
     opacity: 1;
   }
@@ -48,7 +50,7 @@
 @keyframes seconds {
   0% {
     opacity: 1;
-  }  
+  }
   33% {
     opacity: 0.4;
   }

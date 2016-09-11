@@ -818,7 +818,7 @@ body.page-node-3  {
   width: 56px;
   height: 56px;
   position: relative;
-  z-index: 20;
+  z-index: 2;
   top: 100px;
   left: 319px;
   cursor: pointer;
@@ -827,7 +827,7 @@ body.page-node-3  {
   width: 56px;
   height: 56px;
   position: relative;
-  z-index: 20;
+  z-index: 2;
   top: 100px;
   left: -56px;
   cursor: pointer;
@@ -1231,7 +1231,7 @@ background-color: #d11212;
 #block-views-aseptic-block .views-field-body .bnt span{
   display: none;
 }
-#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity.active .field-name-field-image img{
+#block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img{
   margin-top: 70%;
   padding-right: 20%;
 }

@@ -78,9 +78,10 @@
           $('.views-field-field-parts', step).addClass('active');
           $($('.views-field-field-parts .entity', step).get(index)).addClass('active');
         }else {
-          if ($(this).hasClass('data')) {
-            return false;
-          }else if ($(this).hasClass('video')) {
+          // if ($(this).hasClass('data')) {
+          //   return false;
+          // }else
+          if ($(this).hasClass('video')) {
             var part = $($('.views-field-field-parts .entity', step).get(index));
             $('.views-field-field-parts', step).addClass('active');
             $('.field-name-field-video', part).addClass('active');
@@ -234,7 +235,7 @@ function build360Img(container, materialPath) {
 		window.addEventListener( 'resize', onWindowResize, false );
 
     jQuery('.views-field-nothing .field-name-field-position', element).each(function(ind, elem) {
-      if (jQuery(jQuery('.views-field-nothing .field-name-field-title', element).get(ind)).text() !== 'data') {
+      //if (jQuery(jQuery('.views-field-nothing .field-name-field-title', element).get(ind)).text() !== 'data') {
         var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
         var pointGeometry = new THREE.PlaneGeometry(50, 50);
         point = new THREE.Mesh(pointGeometry, pointMaterial);
@@ -254,7 +255,21 @@ function build360Img(container, materialPath) {
 
         targetList.push(point);
 
-      }
+      // }
+      // else{
+      //   // var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
+      //   var pointGeometry = new THREE.PlaneGeometry(50, 50);
+      //   point = new THREE.Mesh(pointGeometry, pointMaterial);
+      //
+      //   point.position.x = arr_po[0];
+      //   point.position.y = 435;
+      //   point.rotateY(arr_po[3]?arr_po[3]:0);
+      //
+      //   point.name = ind;
+      //   scene.add(point);
+      //
+      //   targetList.push(point);
+      // }
     });
 
     // Add word

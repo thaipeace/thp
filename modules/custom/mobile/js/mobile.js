@@ -253,7 +253,7 @@
        });
       // Click from factory page
       $('.pnt').click(function(){
-        var rel = $(this).attr('rel');
+        var rel = $($('.pnt.active')[0]).attr('rel');
         if (['bottle', 'label'].indexOf(rel) === -1) {
           window.location = 'experience-instruction-landing?rel=' + rel;
         }else {

@@ -1115,6 +1115,7 @@ article.node-4.active {
   height: calc(100vh - 56px);
   width: 100%;
   padding: 0;
+  padding-top: 56px;
   background: #f1e601;
   animation: itemlideout 0.5s ease-in-out forwards;
   color: #000000;
@@ -1350,7 +1351,7 @@ article.node-4.active {
 
 .aseptic .field-name-field-description {
   text-align: center;
-  padding: 20px 40px;
+  padding: 0 40px;
 }
 
 .aseptic .field-name-field-description .desc {
@@ -1365,7 +1366,7 @@ article.node-4.active {
   text-transform: uppercase;
   font-size: 115%;
   /*padding: 10px 0;*/
-  line-height: 32px;
+  line-height: 18px;
   font-size: 600;
 }
 
@@ -1785,8 +1786,8 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video .field-item .close,
 #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video .field-item .close {
-  top: -26px;
-  right: -26px;
+  top: -105px;
+  right: 200px;
   background: #d11212 url('../images/closeprocess.png') center bottom no-repeat;
   height: 51px;
   width: 52px;

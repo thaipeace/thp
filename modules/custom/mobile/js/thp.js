@@ -57,8 +57,12 @@
             $('#block-views-aseptic-block .wp_experience').removeClass('active');
             clearTimeout(stopTimeout);
             //Display text
-            if($(this).attr('class').indexOf('views-row-1') !== -1){
+            if($(this).attr('class').indexOf('views-row-first') !== -1){
+
               $('.aseptic-footer').removeClass('active');
+              $(".introduce-title").removeClass('hidden');
+              $(".swipe-title").removeClass('hidden');
+              $('#process1').addClass('active');
             }
             else{
               $('.aseptic-footer').addClass('active');
@@ -192,7 +196,7 @@
       var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block'];
       $(blocks).each(function(indBlock, block){
         if ($(block + ' .views-row').length > 0) {
-          var titleExtraTypes = ['data', 'video'];
+          var titleExtraTypes = ['video']; //['data','video'];
           $(block + ' .views-row').each(function(index, element) {
             if ($('.views-field-field-parts .entity', element).length > 0) {
 
@@ -419,59 +423,59 @@
             counter++;
 
             // Draw line animate
-            if (title.text() === 'data') {
-              var style = [
-                    "fill:none",
-                    "stroke:black",
-                    "stroke-width:1",
-                    "stroke-linejoin:round",
-                    "stroke-linecap:round",
-                    "stroke-dasharray:1000",
-                    "animation: dash 3s ease-in-out forwards",
-                    "stroke:#000000"
-                  ];
-              // Line animate for nid-9
-              if ($(element).hasClass('nid-9')) {
-                var pathTag = pathAnimate('M748 49 V153 H720 M530 153 H150 V140', style);
-                var svgLine = "<svg class='dash-line' width='770' height='160' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
-                svgLine += pathTag;
-                svgLine += "</svg>";
-
-                $($('.views-field-field-parts .entity', element).get(ind)).append(svgLine);
-                $($('.views-field-field-parts .entity', element).get(ind)).css({
-                  'left': (arr_po[0] - $($('.views-field-field-parts .entity', element).get(ind)).width() + 79) + 'px',
-                  'top': (arr_po[1] + 185) + 'px'
-                });
-
-              }
-
-              // Line animate for nid-12
-              style = [
-                "fill:none",
-                "stroke:black",
-                "stroke-width:1",
-                "stroke-linejoin:round",
-                "stroke-linecap:round",
-                "stroke-dasharray:1000",
-                "animation: dash 3s ease-in-out forwards",
-                "stroke:#f1e601"
-              ];
-              if ($(element).hasClass('nid-12')) {
-                var pathTag = pathAnimate('M0 40 V150 H190', style);
-                var svgLine = "<svg class='dash-line' width='770' height='360' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
-                svgLine += pathTag;
-                svgLine += "</svg>";
-
-                $($('.views-field-field-parts .entity', element).get(ind)).append(svgLine);
-                $($('.views-field-field-parts .entity', element).get(ind)).css({
-                  'left': (arr_po[0] + 101) + 'px',
-                  'top': (arr_po[1] + 161) + 'px'
-                });
-
-              }
-            }else {
+            // if (title.text() === 'data') {
+            //   var style = [
+            //         "fill:none",
+            //         "stroke:black",
+            //         "stroke-width:1",
+            //         "stroke-linejoin:round",
+            //         "stroke-linecap:round",
+            //         "stroke-dasharray:1000",
+            //         "animation: dash 3s ease-in-out forwards",
+            //         "stroke:#000000"
+            //       ];
+            //   // Line animate for nid-9
+            //   if ($(element).hasClass('nid-9')) {
+            //     var pathTag = pathAnimate('M748 49 V153 H720 M530 153 H150 V140', style);
+            //     var svgLine = "<svg class='dash-line' width='770' height='160' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
+            //     svgLine += pathTag;
+            //     svgLine += "</svg>";
+            //
+            //     $($('.views-field-field-parts .entity', element).get(ind)).append(svgLine);
+            //     $($('.views-field-field-parts .entity', element).get(ind)).css({
+            //       'left': (arr_po[0] - $($('.views-field-field-parts .entity', element).get(ind)).width() + 79) + 'px',
+            //       'top': (arr_po[1] + 185) + 'px'
+            //     });
+            //
+            //   }
+            //
+            //   // Line animate for nid-12
+            //   style = [
+            //     "fill:none",
+            //     "stroke:black",
+            //     "stroke-width:1",
+            //     "stroke-linejoin:round",
+            //     "stroke-linecap:round",
+            //     "stroke-dasharray:1000",
+            //     "animation: dash 3s ease-in-out forwards",
+            //     "stroke:#f1e601"
+            //   ];
+            //   if ($(element).hasClass('nid-12')) {
+            //     var pathTag = pathAnimate('M0 40 V150 H190', style);
+            //     var svgLine = "<svg class='dash-line' width='770' height='360' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'>";
+            //     svgLine += pathTag;
+            //     svgLine += "</svg>";
+            //
+            //     $($('.views-field-field-parts .entity', element).get(ind)).append(svgLine);
+            //     $($('.views-field-field-parts .entity', element).get(ind)).css({
+            //       'left': (arr_po[0] + 101) + 'px',
+            //       'top': (arr_po[1] + 161) + 'px'
+            //     });
+            //
+            //   }
+            // }else {
               goTop(title, arr_po[1], 10);
-            }
+            //}
           });
         }
       });
