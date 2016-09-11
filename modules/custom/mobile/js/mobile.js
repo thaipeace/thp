@@ -47,6 +47,7 @@
 
       $('#block-views-aseptic-block .wp_experience').addClass('active');
       $('#block-views-aseptic-block .wp_experience').append('<div class="wp-next-aseptic">Bắt đầu trải nghiệm<div><img src="sites/default/modules/custom/mobile/images/right-arrow.png"/></div></div>');
+      $('#block-views-aseptic-block .wp_experience').append('<div class="line-wrapper"><img src="sites/default/modules/custom/mobile/images/aseptic-line.png"></div>');
 
       $('.wp-next-aseptic').click(function(){
         $('#block-views-aseptic-block-1 .views-row-10').trigger('click');
@@ -63,7 +64,9 @@
 
       //Add foooter
       if($('body.page-node-4')){
-        $('body.page-node-4').append('<div class="aseptic-footer"><div class="footer-left-btn"><img src="sites/default/modules/custom/mobile/images/footer-left-btn.jpg"/></div><div class="footer-text"></div><div class="footer-right-btn"><img src="sites/default/modules/custom/mobile/images/footer-right-btn.jpg"</div></div>')
+        $('body.page-node-4').append('<div class="aseptic-footer"><div class="footer-left-btn"></div><div class="footer-text"></div><div class="footer-right-btn"><img src="sites/default/modules/custom/mobile/images/footer-right-btn.jpg"></div></div>');
+        var imgSrc = $('#block-views-aseptic-block-1 .views-row.active .field-content img').attr('src');
+        $('.footer-left-btn').html('<img src="'+ imgSrc + '">');
       }
 
       $('.footer-right-btn').click(function(){

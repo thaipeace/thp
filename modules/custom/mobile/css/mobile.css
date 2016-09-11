@@ -857,6 +857,7 @@ body.page-node-4 {
   position: absolute;
   left: calc((100vw - 200px)/2);
   top: 37px;
+  z-index: 2;
 }
 .hexagon.active{
   opacity: 1;
@@ -1235,6 +1236,9 @@ background-color: #d11212;
   margin-top: 70%;
   padding-right: 20%;
 }
+#block-views-aseptic-block .wp_experience svg{
+  display: none;
+}
 .field-item.even p{
   margin-top: -70px;
 }
@@ -1342,8 +1346,12 @@ background-color: #d11212;
   height: 56px;
   transition: .5s;
 }
+.footer-left-btn{
+    width: 56px;
+    padding: 9px;
+}
 .footer-left-btn img{
-  width: 56px;
+  width: 40px;
 }
 .footer-right-btn img{
   width: 56px;
@@ -1365,6 +1373,13 @@ background-color: #d11212;
 }
 .wp-next-aseptic img{
   width: 25px;
+}
+.line-wrapper img{
+  position: absolute;
+  left: 66px;
+  width: 39%;
+  top: 210px;
+  z-index: 0;
 }
 /* End Aseptic */
 

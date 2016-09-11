@@ -70,6 +70,10 @@
               $('.footer-text').html(text);
             }
 
+            //Display icon
+            var imgSrc = $('#block-views-aseptic-block-1 .views-row.active .field-content img').attr('src');
+            $('.footer-left-btn').html('<img src="'+ imgSrc + '">');
+
             if ($(this).hasClass('views-row-first')) {
               $('.svg-circle .pw:first-child').trigger('click');
             }
