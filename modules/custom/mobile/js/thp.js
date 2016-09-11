@@ -200,7 +200,7 @@
       var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block'];
       $(blocks).each(function(indBlock, block){
         if ($(block + ' .views-row').length > 0) {
-          var titleExtraTypes = ['video']; //['data','video'];
+          var titleExtraTypes = ['justdummytext', 'video']; //['data','video'];
           $(block + ' .views-row').each(function(index, element) {
             if ($('.views-field-field-parts .entity', element).length > 0) {
 
@@ -234,6 +234,7 @@
 
       // Close click
       $('.close').on('click', function(){
+        console.log('a');
         $('.views-field-field-parts .entity').removeClass('active');
         $('.views-field-field-parts .entity').parent().find('.active').removeClass('active');
 

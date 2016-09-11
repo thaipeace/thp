@@ -149,10 +149,10 @@
       })
 
       //Swipe to view steps
-      $('.entity.entity-field-collection-item ').on('swipeleft', function(){
+      $('.views-row-1 .entity.entity-field-collection-item ').on('swipeleft', function(){
         onSwipeleft();
       })
-      $('.entity.entity-field-collection-item ').on('swiperight', function(){
+      $('.views-row-1 .entity.entity-field-collection-item ').on('swiperight', function(){
         onSwiperight();
       })
        function onSwipeleft(){

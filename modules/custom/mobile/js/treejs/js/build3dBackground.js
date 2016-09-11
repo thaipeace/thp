@@ -87,7 +87,7 @@
             $('.field-name-field-video', part).addClass('active');
             $('video', part)[0].play();
 
-            //$('.field-item', part).append('<div class="close"></div>');
+            // $('.field-item', part).append('<div class="close"></div>');
           }
         }
 
