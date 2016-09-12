@@ -1230,7 +1230,10 @@ background-color: #d11212;
   transition: .5s;
 }
 #block-views-aseptic-block .views-field-body .bnt span{
-  display: none;
+  /*display: none;*/
+  display: block;
+  padding: 5px 10px 5px;
+  font-size: 12px;
 }
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img{
   margin-top: 70%;
@@ -1380,6 +1383,9 @@ background-color: #d11212;
   width: 39%;
   top: 210px;
   z-index: 0;
+}
+#block-views-aseptic-block .wp_experience .person_experience{
+  background: none;
 }
 /* End Aseptic */
 

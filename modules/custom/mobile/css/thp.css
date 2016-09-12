@@ -1520,7 +1520,7 @@ article.node-4.active {
 #block-views-label-block .views-field-body .bnt.prev,
 #block-views-label-block-2 .views-field-body .bnt.prev {
   right: inherit;
-  left: 5%;
+  left: 1%;
 }
 
 #block-views-aseptic-block-2 .views-field-body .bnt.extra {
@@ -1781,13 +1781,13 @@ article.node-4.active {
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video video,
 #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video video {
   max-width: 768px;
-  width: 100vw;
+  width: calc(100vw - 56px);
 }
 
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video .field-item .close,
 #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video .field-item .close {
-  top: -105px;
-  right: 200px;
+  top: -35px;
+  right: 193px;
   background: #d11212 url('../images/closeprocess.png') center bottom no-repeat;
   height: 51px;
   width: 52px;
@@ -1809,7 +1809,7 @@ article.node-4.active {
 
 .page-node-26 article .field-items {
   padding-left: 9%;
-  padding-top: 40%;
+  padding-top: 140%;
 }
 
 .page-node-26 article .field-name-body {
@@ -1843,7 +1843,9 @@ article.node-4.active {
   width: 290px;
   text-transform: uppercase;
   cursor: pointer;
-  margin-left: 10px;
+  position: absolute;
+  bottom: 12%;
+  left: calc((100vw - 290px)/2);
 }
 
 .page-node-26 article .video-outer {
