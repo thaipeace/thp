@@ -37,10 +37,14 @@
       // console.log($('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix[about="/thpv1/field-collection/field-parts/49"]'));
       // $('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix[about="/thpv1/field-collection/field-parts/49"]').css('display', 'none');
 
+      // if($('#block-views-bottle-block .views-row.views-row-first')){
+      //   $('#block-views-bottle-block .views-row.views-row-first').append('<div class="bottle-process active" id="bprocess1">01. Hạt nhựa pet</div><div class="bottle-process" id="bprocess2">02. Phôi chai</div><div class="bottle-process" id="bprocess3">03. Chai nhựa</div>');
+      // }
       //Init title for aseptic
       if($('#block-views-aseptic-block')){
         $('#block-views-aseptic-block').append('<h3 class="introduce-title">Tổng quan quy trình</h3>');
         $('#block-views-aseptic-block').append('<h3 class="swipe-title">Trượt ngang để xem tổng quan</h3>');
+        $('#block-views-bottle-block .views-row.views-row-first').append('<h3 class="swipe-title">Trượt ngang để xem tổng quan</h3>');
         $('#block-views-aseptic-block').append('<div class="aseptic-process active" id="process1">01. Hạt nhựa pet</div><div class="aseptic-process" id="process2">02. Phôi chai</div><div class="aseptic-process" id="process3">03. Chai nhựa</div><div class="aseptic-process" id="process4">04. Quy trình Aseptic</div><div class="aseptic-process" id="process5">05. Sản phẩm hoàn tất</div>');
         $($('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw')[0]).trigger('click');
       }
@@ -148,15 +152,15 @@
         }
       })
 
-      //Swipe to view steps
-      $('.views-row-1 .entity.entity-field-collection-item ').on('swipeleft', function(){
-        onSwipeleft();
+      //Swipe aseptic to view steps
+      $('#block-views-aseptic-block .views-row-1 .entity.entity-field-collection-item ').on('swipeleft', function(){
+        onAspeticSwipeleft();
       })
-      $('.views-row-1 .entity.entity-field-collection-item ').on('swiperight', function(){
-        onSwiperight();
+      $('#block-views-aseptic-block .views-row-1 .entity.entity-field-collection-item ').on('swiperight', function(){
+        onAsepticSwiperight();
       })
-       function onSwipeleft(){
-         var $items = $('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw');
+       function onAspeticSwipeleft(){
+         var $items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
          var currentIndex = -1;
          for(var i=0; i<$items.length; i++){
            if($($items[i]).attr('class').indexOf('active') != -1){
@@ -171,18 +175,18 @@
              $('#process' + temp).addClass('active');
            }
            else{
-             $('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix.active').removeClass('active');
-             $(".introduce-title").addClass('hidden');
-             $(".swipe-title").addClass('hidden');
+             $('#block-views-aseptic-block .entity.entity-field-collection-item.field-collection-item-field-parts.clearfix.active').removeClass('active');
+             $("#block-views-aseptic-block .introduce-title").addClass('hidden');
+             $("#block-views-aseptic-block .swipe-title").addClass('hidden');
              $('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw').removeClass('active');
-             $('.aseptic-process').removeClass('active');
+             $('#block-views-aseptic-block .aseptic-process').removeClass('active');
              $('#block-views-aseptic-block .views-row-last').addClass('active');
              $('#block-views-aseptic-block .views-row-last .views-field-body').show();
              $('#block-views-aseptic-block .hexagon.p1').addClass('active');
              $('#block-views-aseptic-block .wp_experience').append('<img class="guide-emp" src="sites/default/modules/custom/mobile/images/nhanvien1.png">');
            }
        }
-       function onSwiperight(){
+       function onAsepticSwiperight(){
          var $items = $('#block-views-aseptic-block  .views-row.views-row-first .svg-circle .pw');
          var currentIndex = 0;
          for(var i=0; i<$items.length; i++){
@@ -195,6 +199,59 @@
            var temp = currentIndex + 1;
            $('#process' + temp).removeClass('active');
            $('#process' + currentIndex).addClass('active');
+         }
+
+       }
+
+      //Swipe bottle to view steps
+      $('#block-views-bottle-block .views-row-1 .entity.entity-field-collection-item ').on('swipeleft', function(){
+        onBottleSwipeleft();
+      })
+      $('#block-views-bottle-block .views-row-1 .entity.entity-field-collection-item ').on('swiperight', function(){
+        onBottleSwiperight();
+      })
+       function onBottleSwipeleft(){
+         var $items = $('#block-views-bottle-block .views-row.views-row-first .svg-circle .pw');
+         var currentIndex = -1;
+         for(var i=0; i<$items.length; i++){
+           if($($items[i]).attr('class').indexOf('active') != -1){
+             currentIndex = i;
+           }
+         }
+           if(currentIndex < ($items.length - 1)){
+             $($items[currentIndex + 1]).trigger('click');
+             var temp = currentIndex + 1;
+             $('.bottle-process').removeClass('active');
+             temp += 1;
+             if($('#bprocess' + temp)){
+               $('#bprocess' + temp).addClass('active');
+             }
+           }
+           else{
+             $('#block-views-bottle-block .entity.entity-field-collection-item.field-collection-item-field-parts.clearfix.active').removeClass('active');
+            //  $("#block-views-bottle-block .introduce-title").addClass('hidden');
+            //  $("#block-views-bottle-block .swipe-title").addClass('hidden');
+             $('#block-views-bottle-block .views-row.views-row-first .svg-circle .pw').removeClass('active');
+             $('#block-views-bottle-block .bottle-process').removeClass('active');
+            //  $('#block-views-bottle-block .views-row-last').addClass('active');
+            //  $('#block-views-bottle-block .views-row-last .views-field-body').show();
+            //  $('#block-views-bottle-block .hexagon.p1').addClass('active');
+            //  $('#block-views-bottle-block .wp_experience').append('<img class="guide-emp" src="sites/default/modules/custom/mobile/images/nhanvien1.png">');
+           }
+       }
+       function onBottleSwiperight(){
+         var $items = $('#block-views-bottle-block .views-row.views-row-first .svg-circle .pw');
+         var currentIndex = 0;
+         for(var i=0; i<$items.length; i++){
+           if($($items[i]).attr('class').indexOf('active') != -1){
+             currentIndex = i;
+           }
+         }
+         if(currentIndex > 0){
+           $($items[currentIndex - 1]).trigger('click');
+           var temp = currentIndex + 1;
+           $('#bprocess' + temp).removeClass('active');
+           $('#bprocess' + currentIndex).addClass('active');
          }
 
        }
@@ -264,17 +321,32 @@
           rel==='label'?window.location = 'label-landing-page':false;
         }
       });
+      var windowHeight = $( window ).height();
+      if(windowHeight <= 414){
+        $('.wp_p1').animate({top: 14}, 2100);
+        $('.wp_p2').animate({top: 14}, 1800);
+        $('.wp_p3').animate({top: 14}, 1500);
+        $('.wp_p4').animate({top: 14}, 1300);
+        $('.wp_p5').animate({top: 14}, 1100);
+        $('.wp_p6').animate({top: 14}, 900);
+        $('.wp_p7').animate({top: 14}, 700);
+        $('.wp_p8').animate({top: 14},500);
+        $('.wp_p9').animate({top: 14}, 300);
+        $('.wp_p10').animate({top: 14}, 100);
+      }
+      else{
+        $('.wp_p1').animate({top: -10}, 2100);
+        $('.wp_p2').animate({top: -10}, 1800);
+        $('.wp_p3').animate({top: -10}, 1500);
+        $('.wp_p4').animate({top: -10}, 1300);
+        $('.wp_p5').animate({top: -10}, 1100);
+        $('.wp_p6').animate({top: -10}, 900);
+        $('.wp_p7').animate({top: -10}, 700);
+        $('.wp_p8').animate({top: -10},500);
+        $('.wp_p9').animate({top: -10}, 300);
+        $('.wp_p10').animate({top: -10}, 100);
+      }
 
-      $('.wp_p1').animate({top: -10}, 2100);
-      $('.wp_p2').animate({top: -10}, 1800);
-      $('.wp_p3').animate({top: -10}, 1500);
-      $('.wp_p4').animate({top: -10}, 1300);
-      $('.wp_p5').animate({top: -10}, 1100);
-      $('.wp_p6').animate({top: -10}, 900);
-      $('.wp_p7').animate({top: -10}, 700);
-      $('.wp_p8').animate({top: -10},500);
-      $('.wp_p9').animate({top: -10}, 300);
-      $('.wp_p10').animate({top: -10}, 100);
       // $('.wp_p1').animate({top: screen.height/2.8}, 2100);
       // $('.wp_p2').animate({top: screen.height/2.65}, 1800);
       // $('.wp_p3').animate({top: screen.height/2.8}, 1500);

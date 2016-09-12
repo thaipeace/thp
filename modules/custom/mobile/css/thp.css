@@ -204,7 +204,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu1 > div:hover .img-hover {
-  background-size: 489px 166.7px;
+  /*background-size: 489px 166.7px;*/
 }
 
 #block-block-2 .block-wrapper div.menu2 > div .img-hover {
@@ -219,7 +219,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu2 > div:hover .img-hover {
-  background-size: 323px 654px;
+  /*background-size: 323px 654px;*/
 }
 
 #block-block-2 .block-wrapper div.menu2 > div .boom {
@@ -281,7 +281,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu3 > div:hover .img-hover {
-  background-size: 350px 221px;
+  /*background-size: 350px 221px;*/
 }
 
 #block-block-2 .block-wrapper div.menu4 > div .img-hover {
@@ -296,7 +296,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper div.menu4 > div:hover .img-hover {
-  background-size: 320px 259px;
+  /*background-size: 320px 259px;*/
 }
 
 #block-block-2 .block-wrapper > div .label {
@@ -319,7 +319,7 @@ main.layout-3col__full {
 }
 
 #block-block-2 .block-wrapper > div:hover .desc-view {
-  animation: taller 0.5s ease-in-out forwards;
+  /*animation: taller 0.5s ease-in-out forwards;*/
 }
 
 #block-block-2 .block-wrapper > div .desc {
@@ -574,7 +574,7 @@ body.page-node-3 {
 #block-views-aseptic-block-1 .views-row.views-row-first .views-field-title .field-content {
   display: table-cell;
   vertical-align: middle;
-  font-size: 85%;
+  font-size: 80%;
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-field-menu-icon,
@@ -851,6 +851,9 @@ article.node-4.active {
   cursor: pointer;
   border: 1px solid #FFFFFF;
 }
+#block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next{
+  display: none;
+}
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .field-content .next div,
 #block-views-bottle-block .views-row.views-row-first .views-field-body .field-content .next div  {
@@ -883,9 +886,14 @@ article.node-4.active {
 #block-views-label-block-2 .views-row .views-field-title {
   display: none;
   text-align: center;
-  margin: 40px 0 0 0;
+  margin: 123px 0 0 0;
   text-transform: uppercase;
   font-size: 170%;
+}
+@media (max-height: 414px) {
+  #block-views-bottle-block .views-row.views-row-first .views-field-title{
+    margin-top: 95px;
+  }
 }
 
 /*#block-views-aseptic-block .views-row.views-row-first .views-field-title,*/
@@ -1504,6 +1512,9 @@ article.node-4.active {
   border: 1px solid #FFFFFF;
   opacity: 0.7;
 }
+#block-views-aseptic-block .views-row-last .views-field-body .bnt.next{
+  display: none;
+}
 
 #block-views-aseptic-block .views-field-body .bnt span,
 #block-views-aseptic-block-2 .views-field-body .bnt span,
@@ -1794,6 +1805,27 @@ article.node-4.active {
   border-radius: 52px;
 }
 
+@media (max-height: 414px) {
+  #block-views-aseptic-block .views-row.aseptic .field-name-field-video video,
+  #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video video {
+    width: calc(100vw - 258px);
+    position: absolute;
+    top: -112px;
+    left: 1045px;
+  }
+  #block-views-aseptic-block .views-row.aseptic .field-name-field-video .field-item .close,
+  #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video .field-item .close {
+    position: fixed;
+    top: 57px;
+    right: 98px;
+    display: none;
+  }
+  #block-views-aseptic-block .views-row.aseptic .field-name-field-video.active .field-item .close,
+  #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video.active .field-item .close {
+    display: block;
+  }
+}
+
 .page-node-26 {
   background: url('../images/hoantatquytrinhbg.png') center center no-repeat;
   background-size: cover;
@@ -1892,9 +1924,14 @@ article.node-4.active {
 #block-views-bottle-block .views-row-first .bnt {
   background: none;
   padding: 0;
-  top: -60px;
+  top: -87px;
   right: 0;
   border: none;
+}
+@media (max-height: 414px) {
+  #block-views-bottle-block .views-row-first .bnt{
+    top: -61px;
+  }
 }
 
 #block-views-aseptic-block .views-row.views-row-first .views-field-body .bnt.close {

@@ -234,7 +234,6 @@
 
       // Close click
       $('.close').on('click', function(){
-        console.log('a');
         $('.views-field-field-parts .entity').removeClass('active');
         $('.views-field-field-parts .entity').parent().find('.active').removeClass('active');
 
@@ -421,9 +420,20 @@
             });
 
             var title = $($(elem).parent().find('.field-name-field-title').get(ind));
+            //Random left and top based on screen height
+            var screenHeight = $(window).height();
+            var left, top;
+            if(screenHeight > 414){
+              left = Math.floor(Math.random() * 30*(counter+1)) + 30*counter;
+              top = Math.floor(Math.random() * 120*(counter+1)) + 120*(counter) + 30;
+            }
+            else{
+              left = Math.floor(Math.random() * 120*(counter+1)) + 120*counter;
+              top = Math.floor(Math.random() * 50*(counter+1)) + 50*(counter) + 10;
+            }
             title.css({
-              left:Math.floor(Math.random() * 100*(counter+1)) + 100*counter + 'px',
-              top: Math.floor(Math.random() * 200*(counter+1)) + 200*(counter) + 100 + 'px'
+              left:left + 'px',
+              top: top + 'px'
             });
             counter++;
 
@@ -479,7 +489,7 @@
             //
             //   }
             // }else {
-              goTop(title, arr_po[1], 10);
+              goTop(title, top, 10);
             //}
           });
         }
