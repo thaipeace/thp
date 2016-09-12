@@ -1801,12 +1801,15 @@ article.node-4.active {
 }
 
 .page-node-26 article .field-item {
-  width: 410px;
+  /*width: 410px;*/
+}
+.page-node-26 article .field-item .interview, .page-node-26 article .field-item .author{
+  display: none;
 }
 
 .page-node-26 article .field-items {
   padding-left: 9%;
-  padding-top: 10%;
+  padding-top: 40%;
 }
 
 .page-node-26 article .field-name-body {
@@ -1815,12 +1818,12 @@ article.node-4.active {
 
 .page-node-26 article .home-return {
   position: absolute;
-  top: 4%;
-  right: 12%;
+  bottom: 4%;
+  left: calc((100vw - 187px)/2);
   text-transform: uppercase;
   padding: 9px 10px 5px;
   border: 2px solid;
-  color: #928786;
+  color: white;
   cursor: pointer;
 }
 
@@ -1840,6 +1843,7 @@ article.node-4.active {
   width: 290px;
   text-transform: uppercase;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .page-node-26 article .video-outer {
@@ -1863,13 +1867,13 @@ article.node-4.active {
 }
 
 .page-node-26 article .video-outer > div > div {
-  width: 768px;
+  width: calc(100vw - 56px);
   position: relative;
   margin: 0 auto;
 }
 
 .page-node-26 article .video-outer video {
-  width: 768px;
+      width: calc(100vw - 56px);
 }
 
 .page-node-26 article .video-outer .close {
