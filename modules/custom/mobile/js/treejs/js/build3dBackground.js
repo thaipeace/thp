@@ -244,7 +244,6 @@ function build360Img(container, materialPath) {
         var arr_po = str_po.split(',').map(function(item) {
           return parseInt(item, 10);
         });
-        console.log(str_po);
 
         point.position.x = arr_po[0];
         point.position.y = arr_po[1];

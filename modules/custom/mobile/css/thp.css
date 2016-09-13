@@ -1522,7 +1522,7 @@ article.node-4.active {
 #block-views-label-block .views-field-body .bnt span,
 #block-views-label-block-2 .views-field-body .bnt span {
   display: block;
-  padding: 10px 15px 7px;
+  padding: 0 3px;
 }
 
 #block-views-aseptic-block .views-field-body .bnt.prev,
