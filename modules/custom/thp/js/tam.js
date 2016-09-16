@@ -57,10 +57,12 @@
       $('.wp_p4').animate({top: screen.height/2.95}, 1300);
       $('.wp_p5').animate({top: screen.height/2.95}, 1100);
       $('.wp_p6').animate({top: screen.height/2.8}, 900);
-      $('.wp_p7').animate({top: screen.height/2.95}, 700);
-      $('.wp_p8').animate({top: screen.height/3}, 500);
+      $('.wp_p7').animate({top: screen.height/2.65}, 700);
+      $('.wp_p8').animate({top: screen.height/2.8}, 500);
       $('.wp_p9').animate({top: screen.height/2.75}, 300);
       $('.wp_p10').animate({top: screen.height/2.65}, 100);
+      $('.wp_p11').animate({top: screen.height/2.75}, 300);
+      $('.wp_p12').animate({top: screen.height/2.65}, 100);
       
       //Build connect line
       Pace.on('done', function(){

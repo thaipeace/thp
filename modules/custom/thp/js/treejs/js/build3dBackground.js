@@ -344,10 +344,10 @@ function build360Img(container, materialPath) {
       jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).trigger('click');
       
       // Add 9 type line  
-      jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').remove();
-      if (jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').length < 1) {
+      jQuery('#block-views-aseptic-block .views-row.views-row-11 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').remove();
+      if (jQuery('#block-views-aseptic-block .views-row.views-row-11 .views-field-field-parts.active .entity:first-child .field-name-field-image svg').length < 1) {
         var nineType = run9Type();
-        jQuery('#block-views-aseptic-block .views-row.views-row-10 .views-field-field-parts.active .entity:first-child .field-name-field-image').prepend(nineType);
+        jQuery('#block-views-aseptic-block .views-row.views-row-11 .views-field-field-parts.active .entity:first-child .field-name-field-image').prepend(nineType);
       }
     }
 	}
