@@ -424,7 +424,7 @@
             var screenHeight = $(window).height();
             var left, top;
             if(screenHeight > 414){
-              left = Math.floor(Math.random() * 30*(counter+1)) + 30*counter;
+              left = Math.floor(Math.random() * 70*(counter+1)) + 70*counter;
               top = Math.floor(Math.random() * 120*(counter+1)) + 120*(counter) + 30;
             }
             else{

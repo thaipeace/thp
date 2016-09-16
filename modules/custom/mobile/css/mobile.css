@@ -1305,7 +1305,7 @@ background-color: #d11212;
 #block-views-aseptic-block .views-field-body .bnt span{
   /*display: none;*/
   display: block;
-  padding: 5px 10px 5px;
+  padding: 0 3px;
   font-size: 12px;
 }
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img,
@@ -1331,7 +1331,7 @@ background-color: #d11212;
 .field-item.even p{
   margin-top: -70px;
 }
-#block-views-aseptic-block .views-row .entity .field-item p,
+/*#block-views-aseptic-block .views-row .entity .field-item p,*/
 #block-views-bottle-block .views-row .entity .field-item p{
   position: absolute;
   left: 0;
