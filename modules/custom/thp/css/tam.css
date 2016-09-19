@@ -346,27 +346,27 @@ body.page-node-3  {
 }
 
 #pnt7 {
-  background: url('../images/gd9.png') center bottom no-repeat;
-}
-
-#pnt8 {
-  background: url('../images/gd10.png') center bottom no-repeat;
-}
-
-#pnt9 {
   background: url('../images/gd7.png') center bottom no-repeat;
 }
 
-#pnt10 {
+#pnt8 {
   background: url('../images/gd8.png') center bottom no-repeat;
 }
 
-#pnt11 {
+#pnt9 {
   background: url('../images/gd9.png') center bottom no-repeat;
 }
 
-#pnt12 {
+#pnt10 {
   background: url('../images/gd10.png') center bottom no-repeat;
+}
+
+#pnt11 {
+  background: url('../images/gd11.png') center bottom no-repeat;
+}
+
+#pnt12 {
+  background: url('../images/gd12.png') center bottom no-repeat;
 }
 /*---pag-node-4 ----experience intruction--*/
 body.page-node-4 {

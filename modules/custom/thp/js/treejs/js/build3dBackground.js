@@ -46,8 +46,6 @@
         if ($('.views-field-field-270-background canvas').length > 0) {
           $('.views-field-field-270-background canvas').remove();
         }
-        
-        // @TODO Reload it count to 6 time click
 
         $('.views-field-field-270-background', asepticBlock).attr('id', 'three-' + index);
         var materialPath = $('.views-field-field-270-background .field-content', asepticBlock).text();
@@ -55,6 +53,7 @@
           $('.views-field-nothing', asepticBlock).css('cursor', 'pointer');
           var container = 'three-' + index;
           build360Img(container, materialPath);
+          jQuery('.views-field-body', asepticBlock).append('<div class="nav">');
 
           // Appear some special data
           if (jQuery(asepticBlock).hasClass('nid-10')) {
@@ -422,24 +421,22 @@ function build360Img(container, materialPath) {
     
     var panoItems = [
       '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
-      '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
+      '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data',
     ];
     
+    var l = (lon-90)%360;
     jQuery.each(panoItems, function(index, panoItem){
-      hideShowPano(panoItem);
+      if (l > -20 && l < 20) {
+        jQuery(panoItem).fadeIn();
+      }else {
+        jQuery(panoItem).fadeOut();
+      }
     });
     
+    (l < -20 || l > 20)?$('.views-field-body .nav').fadeOut():true;
+    
 	}
-  
-  var hideShowPano = function(panoItem) {
-    // Fade data when camera turn around
-    var l = (lon-90)%360;
-    if (l > -20 && l < 20) {
-      jQuery(panoItem).fadeIn();
-    }else {
-      jQuery(panoItem).fadeOut();
-    }
-  };
+
 
 	//----------------------------//
 

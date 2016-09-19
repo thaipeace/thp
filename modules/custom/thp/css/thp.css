@@ -1524,6 +1524,18 @@ article.node-4.active {
   opacity: 1;
 }
 
+#block-views-aseptic-block .field_270_background .views-field-body .nav,
+#block-views-aseptic-block-2 .field_270_background .views-field-body .nav,
+#block-views-bottle-block .field_270_background .views-field-body .nav,
+#block-views-label-block .field_270_background .views-field-body .nav,
+#block-views-label-block-2 .field_270_background .views-field-body .nav {
+  background: url('../images/nav.png') center 0 no-repeat;
+  width: 100%;
+  height: 87px;
+  position: absolute;
+  bottom: 0;
+}
+
 #block-views-aseptic-block .views-row.aseptic .views-field-field-parts .entity.data .field-name-field-description {
   text-align: left;
   position: relative;

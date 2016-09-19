@@ -49,6 +49,11 @@
               $('.svg-circle .pw:first-child').trigger('click');
             }
             
+            // Blink Menu
+            if ($(this).hasClass('views-row-last')) {
+              blink();
+            }
+            
             // Count number
             if ($($('#block-views-aseptic-block .views-row').get(ind)).find('.iCounter')) {
               var counter = $($('#block-views-aseptic-block .views-row').get(ind)).find('.iCounter');
@@ -286,7 +291,7 @@
           if ($('#block-views-aseptic-block .views-row.views-row-first.active').length > 0) {
             var items = $('#block-views-aseptic-block .views-row.views-row-first .svg-circle .pw');
             //Auto click after the page loaded
-            autoClick(items, 4000, '#block-views-aseptic-block-1 .views-row.views-row-11', '#block-views-aseptic-block-1');
+            autoClick(items, 3000, '#block-views-aseptic-block-1 .views-row.views-row-last', '#block-views-aseptic-block-1');
           }
         });
         
@@ -373,10 +378,16 @@
               //more time in the end
               setTimeout(function() {
                 $(nextpage).trigger('click');
-              }, 2000)
+              }, 2000);
             }
           }, speed, nextpage);
         })();
+      }
+
+      function blink() {
+        $('#block-views-aseptic-block-1 .views-row').each(function(index, element){
+          $(element).delay(2200 - 200*index).animate({backgroundColor: "#FCFCD8"},1).delay(200).animate({backgroundColor: "#d11212"},200);
+        });
       }
       
       // Introduction button click
