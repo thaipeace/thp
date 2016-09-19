@@ -229,14 +229,8 @@
            }
            else{
              $('#block-views-bottle-block .entity.entity-field-collection-item.field-collection-item-field-parts.clearfix.active').removeClass('active');
-            //  $("#block-views-bottle-block .introduce-title").addClass('hidden');
-            //  $("#block-views-bottle-block .swipe-title").addClass('hidden');
              $('#block-views-bottle-block .views-row.views-row-first .svg-circle .pw').removeClass('active');
              $('#block-views-bottle-block .bottle-process').removeClass('active');
-            //  $('#block-views-bottle-block .views-row-last').addClass('active');
-            //  $('#block-views-bottle-block .views-row-last .views-field-body').show();
-            //  $('#block-views-bottle-block .hexagon.p1').addClass('active');
-            //  $('#block-views-bottle-block .wp_experience').append('<img class="guide-emp" src="sites/default/modules/custom/mobile/images/nhanvien1.png">');
            }
        }
        function onBottleSwiperight(){
