@@ -393,10 +393,11 @@ main.layout-3col__full {
   height: 56px;
   cursor: pointer;
 }
+
 #question-bnt {
   display: none;
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
-  bottom: 168px;
+  bottom: 112px;
   height: 56px;
 }
 
@@ -406,7 +407,7 @@ main.layout-3col__full {
 
 #fb-bnt { 
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
-  bottom: 112px;
+  bottom: 56px;
   height: 56px;
 }
 
@@ -419,7 +420,7 @@ main.layout-3col__full {
 #youtube-bnt {
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
   bottom: 56px;
-  height: 56px;
+  height: 0;
 }
 
 #youtube-bnt a {
@@ -432,6 +433,7 @@ main.layout-3col__full {
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
   bottom: 0;
   height: 56px;
+  display: none;
 }
 
 #volume-bnt.active {
@@ -446,7 +448,7 @@ main.layout-3col__full {
 }
 
 #copy-right {
-  bottom: 185px;
+  bottom: 168px;
   -webkit-transform:rotate(-90deg);
   -moz-transform:rotate(-90deg);
   -o-transform: rotate(-90deg);
@@ -459,7 +461,7 @@ main.layout-3col__full {
 }
 
 .page-node-4 #copy-right {
-  bottom: 240px;
+  bottom: 185px;
 }
 
 .left-item {
