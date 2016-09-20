@@ -386,7 +386,10 @@
 
       function blink() {
         $('#block-views-aseptic-block-1 .views-row').each(function(index, element){
-          $(element).delay(2200 - 200*index).animate({backgroundColor: "#FCFCD8"},1).delay(200).animate({backgroundColor: "#d11212"},200);
+          $('.views-field-field-menu-icon img', element)
+                  .delay(6600 - 600*index).animate({opacity:0.4},1)
+                  .delay(200).animate({opacity:1, width:'50%'},200)
+                  .delay(100).animate({width:'37%'},200);
         });
       }
       

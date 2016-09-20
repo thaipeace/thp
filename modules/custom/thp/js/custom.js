@@ -73,6 +73,8 @@
         $('body .layout-center').show();
       });
       
+      $('.field_270_background .views-field-body').append('<div class="nav">Kéo trái phải để trải nghiệm</div>');
+      
       /*
       // Sound pending
       if ($('.page-node-4, .page-node-21, .page-node-22').length > 0) {

@@ -50,10 +50,8 @@
         $('.views-field-field-270-background', asepticBlock).attr('id', 'three-' + index);
         var materialPath = $('.views-field-field-270-background .field-content', asepticBlock).text();
         if (materialPath.length > 0) {
-          $('.views-field-nothing', asepticBlock).css('cursor', 'pointer');
           var container = 'three-' + index;
           build360Img(container, materialPath);
-          jQuery('.views-field-body', asepticBlock).append('<div class="nav">');
 
           // Appear some special data
           if (jQuery(asepticBlock).hasClass('nid-10')) {
