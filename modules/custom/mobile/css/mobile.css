@@ -937,36 +937,9 @@ body.page-node-4 {
 
   }
 }
-/*.hexagon:before,
-.hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-}
 
-.hexagon:before {
-  bottom: 100%;
-  border-bottom: 60px solid #eeeeee;
-}
-
-.hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top:60px solid #eeeeee;
-}*/
 
 .hexagon.p1 {
-	/*position: absolute;
-  left: 0;
-  top: 37px;*/
-  /*opacity: 0;
-
-  -webkit-animation: fadein 5s forwards;
-  -webkit-animation-delay: 2s;
-  animation: fadein 5s forwards;
-  animation-delay: 1.9s;*/
 }
 
 @-webkit-keyframes fadein {
@@ -980,39 +953,12 @@ body.page-node-4 {
 }
 
 .hexagon.p2 {
-	/*position: absolute;
-	left: 132px;
-  top: 208px;*/
-	/*opacity: 0;
-
-  -webkit-animation: fadein 5s forwards;
-  -webkit-animation-delay: 2s;
-  animation: fadein 5s forwards;
-  animation-delay: 0.8s;*/
 }
 
 .hexagon.p3 {
-	/*right: 0;
-  top: 28px;
-  position: absolute;*/
-  /*opacity: 0;
-
-  -webkit-animation: fadein 5s forwards;
-  -webkit-animation-delay: 2s;
-  animation: fadein 5s forwards;
-  animation-delay: 0.8s;*/
 }
 
 .hexagon.p4 {
-	/*position: absolute;
-	right: 120px;
-  top: 207px;*/
-	/*opacity: 0;
-
-  -webkit-animation: fadein 5s forwards;
-  -webkit-animation-delay: 2s;
-  animation: fadein 5s forwards;
-  animation-delay: 0.8s;*/
 }
 
 .hexagon:hover {
@@ -1351,25 +1297,10 @@ background-color: #d11212;
 .field-name-field-description .line{
   display: none;
 }
-.view.view-aseptic.view-id-aseptic.view-display-id-block{
-  /*display: none;*/
-}
-/*#block-views-aseptic-block .views-row,*/
-/*#block-views-aseptic-block-2 .views-row,
-#block-views-bottle-block .views-row,
-#block-views-label-block .views-row {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  left: 100vw;
-  display: none;
-}*/
 #block-views-aseptic-block .views-row,
 #block-views-aseptic-block-2 .views-row,
 #block-views-bottle-block .views-row
-#block-views-label-block .views-row,
-/*#block-views-label-block-2 .views-row*/
+#block-views-label-block .views-row
 {
   left: 0;
   opacity: 1;
@@ -1380,8 +1311,7 @@ background-color: #d11212;
 #block-views-aseptic-block .views-row.active,
 #block-views-aseptic-block-2 .views-row.active,
 #block-views-bottle-block .views-row.active
-#block-views-label-block .views-row.active,
-/*#block-views-label-block-2 .views-row.active */
+#block-views-label-block .views-row.active
 {
   width: 100vw;
 }
