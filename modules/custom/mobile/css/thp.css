@@ -907,6 +907,7 @@ article.node-4.active {
   padding: 20px 0;
   font-size: 150%;
   line-height: 130%;
+  display: none;
 }
 
 #block-views-aseptic-block .views-row,

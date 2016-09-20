@@ -47,9 +47,10 @@
         $(this).parent().parent().find('.pnt').trigger('click');
       });
 
-      $('.cloud_topLeft').animate({left:"-200", opacity:"0.5"}, 3000);
-      $('.cloud_topRight').animate({right:"-600", opacity:"0.5"}, 2000);
-      $('.cloud_bottomLeft').animate({left:"-900", opacity:"0.5"}, 4000);
+      //Disable cloud animation on mobile
+      // $('.cloud_topLeft').animate({left:"-200", opacity:"0.5"}, 3000);
+      // $('.cloud_topRight').animate({right:"-600", opacity:"0.5"}, 2000);
+      // $('.cloud_bottomLeft').animate({left:"-900", opacity:"0.5"}, 4000);
 
       // $('.wp_p1').animate({top: screen.height/2.8}, 2100);
       // $('.wp_p2').animate({top: screen.height/2.65}, 1800);
