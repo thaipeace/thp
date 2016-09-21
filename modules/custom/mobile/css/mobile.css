@@ -1489,6 +1489,26 @@ background-color: #d11212;
 #block-views-aseptic-block .wp_experience .person_experience{
   background: none;
 }
+#block-views-aseptic-block-2 .field_270_background .views-field-body .nav, #block-views-bottle-block .field_270_background .views-field-body .nav, #block-views-label-block .field_270_background .views-field-body .nav, #block-views-label-block-2 .field_270_background .views-field-body .nav {
+    background: url(../images/nav.png) center 0 no-repeat;
+    width: 100%;
+    height: 87px;
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 135px;
+}
+#block-views-aseptic-block .field_270_background .views-field-body .nav{
+  background: url(../images/nav.png) center 0 no-repeat;
+  width: 100%;
+  height: 87px;
+  position: absolute;
+  bottom: 56px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 135px;
+}
 /* End Aseptic */
 
 /* Label */

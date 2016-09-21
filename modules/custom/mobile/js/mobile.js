@@ -83,6 +83,8 @@
 
       })
 
+      $('.field_270_background .views-field-body').append('<div class="nav">Kéo trái phải để trải nghiệm</div>');
+
 
       $('#menu-bnt').click(function(){
         var $block2 = $('#block-block-2');
