@@ -183,6 +183,14 @@ html, body {
   height: calc((100% - 56px)/4);
   overflow: hidden;
 }
+@media (max-height: 414px) {
+  #block-block-2 .block-wrapper > div {
+    float: left;
+    width: 50%;
+    height: calc((100% - 56px)/2);
+    overflow: hidden;
+  }
+}
 
 #block-block-2 .block-wrapper > div .menu-inner {
   display: table-cell;
@@ -409,22 +417,11 @@ html, body {
   opacity: 1;
 }
 @media (max-height: 414px) {
-  #block-block-2 .menu2 .desc-view .view,   #block-block-2 .menu4 .desc-view .view{
-    position: absolute;
-    right: 0;
-    top: 15%
+  #block-block-2 .block-wrapper > div.menu2 .menu-inner,  #block-block-2 .block-wrapper > div.menu4 .menu-inner{
+    padding: 0 0 105px 200px;
   }
-  #block-block-2 .menu1 .desc-view .view,   #block-block-2 .menu3 .desc-view .view{
-    position: absolute;
-    left: 22%;
-    top: 15%
-  }
-  #block-block-2 .block-wrapper > div .menu-inner{
-    padding: 0 0 130px 35px;
-  }
-  #block-block-2 .block-wrapper div.menu1 > div .img-hover{
-    background-size: 50%;
-    top: -50px;
+  #block-block-2 .block-wrapper > div.menu1 .menu-inner,   #block-block-2 .block-wrapper > div.menu3 .menu-inner{
+    padding: 0 0 105px 27px;
   }
 }
 
@@ -534,6 +531,7 @@ html, body {
   left: -56px;
   opacity: 0;
   transition: .5s;
+  display: none;
 }
 #volume-bnt.active{
   opacity: 1;
@@ -1311,7 +1309,8 @@ background-color: #d11212;
   margin-top: 0;
 }
 @media (max-height: 414px) {
-  #block-views-aseptic-block .views-row .entity .field-item p{
+  #block-views-aseptic-block .views-row-first .entity .field-item p{
+    position: absolute;
     left: -32%;
     margin-top: -30px;
   }
@@ -1523,6 +1522,9 @@ background-color: #d11212;
   text-transform: uppercase;
   text-align: center;
   line-height: 135px;
+}
+#block-views-aseptic-block .views-row-11 .views-field-body .nav {
+    color: #d11212;
 }
 /* End Aseptic */
 
