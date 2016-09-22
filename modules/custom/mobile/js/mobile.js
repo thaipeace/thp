@@ -134,7 +134,7 @@
         idArr.splice(0,3);
         var id = idArr.join('');
         id = +id +1;
-        if(id < 11){
+        if(id < 13){
           removeUblActive();
           $('.pnt.point'+id).addClass('active');
           $('#ubl'+id+' img').addClass('active')
@@ -319,28 +319,32 @@
       });
       var windowHeight = $( window ).height();
       if(windowHeight <= 414){
-        $('.wp_p1').animate({top: 14}, 2100);
-        $('.wp_p2').animate({top: 14}, 1800);
-        $('.wp_p3').animate({top: 14}, 1500);
-        $('.wp_p4').animate({top: 14}, 1300);
-        $('.wp_p5').animate({top: 14}, 1100);
-        $('.wp_p6').animate({top: 14}, 900);
-        $('.wp_p7').animate({top: 14}, 700);
-        $('.wp_p8').animate({top: 14},500);
-        $('.wp_p9').animate({top: 14}, 300);
-        $('.wp_p10').animate({top: 14}, 100);
+        $('.wp_p1').animate({top: 20}, 2300);
+        $('.wp_p2').animate({top: 20}, 2100);
+        $('.wp_p3').animate({top: 20}, 1900);
+        $('.wp_p4').animate({top: 20}, 1700);
+        $('.wp_p5').animate({top: 20}, 1500);
+        $('.wp_p6').animate({top: 20}, 1300);
+        $('.wp_p7').animate({top: 20}, 1100);
+        $('.wp_p8').animate({top: 20}, 900);
+        $('.wp_p9').animate({top: 20}, 700);
+        $('.wp_p10').animate({top: 20}, 500);
+        $('.wp_p11').animate({top: 20}, 300);
+        $('.wp_p12').animate({top: 20}, 100);
       }
       else{
-        $('.wp_p1').animate({top: -10}, 2100);
-        $('.wp_p2').animate({top: -10}, 1800);
-        $('.wp_p3').animate({top: -10}, 1500);
-        $('.wp_p4').animate({top: -10}, 1300);
-        $('.wp_p5').animate({top: -10}, 1100);
-        $('.wp_p6').animate({top: -10}, 900);
-        $('.wp_p7').animate({top: -10}, 700);
-        $('.wp_p8').animate({top: -10},500);
-        $('.wp_p9').animate({top: -10}, 300);
-        $('.wp_p10').animate({top: -10}, 100);
+        $('.wp_p1').animate({top: -6}, 2300);
+        $('.wp_p2').animate({top: -6}, 2100);
+        $('.wp_p3').animate({top: -6}, 1900);
+        $('.wp_p4').animate({top: -6}, 1700);
+        $('.wp_p5').animate({top: -6}, 1500);
+        $('.wp_p6').animate({top: -6}, 1300);
+        $('.wp_p7').animate({top: -6}, 1100);
+        $('.wp_p8').animate({top: -6}, 900);
+        $('.wp_p9').animate({top: -6}, 700);
+        $('.wp_p10').animate({top: -6}, 500);
+        $('.wp_p11').animate({top: -6}, 300);
+        $('.wp_p12').animate({top: -6}, 100);
       }
 
       // $('.wp_p1').animate({top: screen.height/2.8}, 2100);
@@ -371,7 +375,7 @@
       }
 
       function removeUblActive(){
-        for(var i = 1; i <= 10; i++){
+        for(var i = 1; i <= 12; i++){
           $('.pnt.point'+i).removeClass('active');
         }
         $('.ubl_img').removeClass('active');
