@@ -1408,6 +1408,12 @@ background-color: #d11212;
 #block-views-aseptic-block .views-row .field-item.even img{
   width: 100%;
 }
+
+#block-views-aseptic-block .views-row .field-name-field-description.field-type-text-long div img {
+  height: 80px;
+  width: auto;
+}
+
 @media (max-height: 414px) {
   #block-views-aseptic-block .views-row.views-row-10 .field-item.even img{
     width: 100%;
@@ -1503,26 +1509,22 @@ background-color: #d11212;
 #block-views-aseptic-block .wp_experience .person_experience{
   background: none;
 }
-#block-views-aseptic-block-2 .field_270_background .views-field-body .nav, #block-views-bottle-block .field_270_background .views-field-body .nav, #block-views-label-block .field_270_background .views-field-body .nav, #block-views-label-block-2 .field_270_background .views-field-body .nav {
+
+#block-views-aseptic-block .field_270_background .views-field-body .nav,
+#block-views-aseptic-block-2 .field_270_background .views-field-body .nav,
+#block-views-bottle-block .field_270_background .views-field-body .nav,
+#block-views-label-block .field_270_background .views-field-body .nav,
+#block-views-label-block-2 .field_270_background .views-field-body .nav {
     background: url(../images/nav.png) center 0 no-repeat;
     width: 100%;
     height: 87px;
     position: absolute;
-    bottom: 0;
+    bottom: 56px;
     text-transform: uppercase;
     text-align: center;
     line-height: 135px;
 }
-#block-views-aseptic-block .field_270_background .views-field-body .nav{
-  background: url(../images/nav.png) center 0 no-repeat;
-  width: 100%;
-  height: 87px;
-  position: absolute;
-  bottom: 56px;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 135px;
-}
+
 #block-views-aseptic-block .views-row-11 .views-field-body .nav {
     color: #d11212;
 }

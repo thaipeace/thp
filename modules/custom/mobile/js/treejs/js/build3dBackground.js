@@ -280,7 +280,7 @@ function build360Img(container, materialPath) {
 //      spritey.position.set(190,50,450);
       // @Todo for hover
       //scene.add(spritey);
-
+    jQuery('.views-field-body .nav').show();
 	}
 
 	//-----------------//
@@ -426,22 +426,20 @@ function build360Img(container, materialPath) {
       '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
       '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
     ];
-
+    
+    var l = (lon-90)%360;
     jQuery.each(panoItems, function(index, panoItem){
-      hideShowPano(panoItem);
+      // Fade data when camera turn around
+      if (l > -20 && l < 20) {
+        jQuery(panoItem).fadeIn();
+      }else {
+        jQuery(panoItem).fadeOut();
+      }
+
     });
+    (l < -20 || l > 20)?$('.views-field-body .nav').fadeOut():true;
 
 	}
-
-  var hideShowPano = function(panoItem) {
-    // Fade data when camera turn around
-    var l = (lon-90)%360;
-    if (l > -20 && l < 20) {
-      jQuery(panoItem).fadeIn();
-    }else {
-      jQuery(panoItem).fadeOut();
-    }
-  };
 
 	//----------------------------//
 
@@ -498,6 +496,9 @@ function build360Img(container, materialPath) {
 			lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
 
 		}
+    
+    var l = (lon-90)%360;
+    (l < -20 || l > 20)?$('.views-field-body .nav').fadeOut():true;
 
 	}
 

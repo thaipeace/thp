@@ -262,6 +262,8 @@ function build360Img(container, materialPath) {
         targetList.push(point);
   
       }
+      
+      jQuery('.views-field-body .nav').show();
     });
     
     // Add word
