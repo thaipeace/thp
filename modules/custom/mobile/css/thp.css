@@ -1377,6 +1377,10 @@ article.node-4.active {
   opacity: 0;
 }
 
+#block-views-aseptic-block .views-row.active.views-row-11 .views-field-field-parts .entity .field-name-field-image {
+  display: none;
+}
+
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .entity .field-name-field-image,
 #block-views-aseptic-block-2 .views-row .views-field-field-parts .entity .field-name-field-image,
 #block-views-bottle-block .views-row:not(.views-row-first) .views-field-field-parts .entity .field-name-field-image,
