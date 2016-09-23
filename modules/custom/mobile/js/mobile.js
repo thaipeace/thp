@@ -332,6 +332,20 @@
         $('.wp_p11').animate({top: 20}, 300);
         $('.wp_p12').animate({top: 20}, 100);
       }
+      else if(windowHeight >= 1024){
+        $('.wp_p1').animate({top: -85}, 2300);
+        $('.wp_p2').animate({top: -85}, 2100);
+        $('.wp_p3').animate({top: -85}, 1900);
+        $('.wp_p4').animate({top: -85}, 1700);
+        $('.wp_p5').animate({top: -85}, 1500);
+        $('.wp_p85').animate({top: -85}, 1300);
+        $('.wp_p7').animate({top: -85}, 1100);
+        $('.wp_p8').animate({top: -85}, 900);
+        $('.wp_p9').animate({top: -85}, 700);
+        $('.wp_p10').animate({top: -85}, 500);
+        $('.wp_p11').animate({top: -85}, 300);
+        $('.wp_p12').animate({top: -85}, 100);
+      }
       else{
         $('.wp_p1').animate({top: -6}, 2300);
         $('.wp_p2').animate({top: -6}, 2100);

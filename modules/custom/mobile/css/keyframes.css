@@ -101,7 +101,7 @@
 /*** Item slide in ***/
 @keyframes itemlidein {
   0% {
-    right: -719px;
+    right: -1300px;
   }
   100% {
     right: 0;
@@ -114,7 +114,7 @@
     right: 0;
   }
   100% {
-    right: -719px;
+    right: -1300px;
   }
 }
 

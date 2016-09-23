@@ -47,6 +47,9 @@ html, body {
 .field-item.even img{
   width: 80%;
 }
+#block-views-bottle-block .field-item.even img {
+    width: 100%;
+}
 #introduce{
   font-size: 0.9em;
   font-family: utm_neo_sans_intelbold;
@@ -899,6 +902,20 @@ body.page-node-3  {
   left: -56px;
   cursor: pointer;
 }
+@media (min-width: 768px){
+  .btn_next{
+    top: 174px;
+    left: 619px;
+  }
+  .btn_back{
+    top: 174px;
+    left: 39px;
+  }
+  .points .pnt {
+    width: 67%;
+    left: 17%;
+  }
+}
 @media (max-height: 414px) {
   .btn_next{
     width: 28px;
@@ -1282,6 +1299,13 @@ background-color: #d11212;
   margin-top: 70%;
   padding-right: 20%;
 }
+@media (min-width: 758px) {
+  #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img,
+  #block-views-bottle-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img{
+    margin-top: 32%;
+    padding-right: 10%;
+  }
+}
 @media (max-height: 414px) {
   #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img,
   #block-views-bottle-block .views-row.views-row-first .views-field-field-parts .entity .field-name-field-image img{
@@ -1304,6 +1328,11 @@ background-color: #d11212;
 #block-views-bottle-block .views-row .entity .field-item p{
   position: absolute;
   left: 0;
+}
+@media (max-width: 320px) {
+  #block-views-aseptic-block .views-row .entity .field-item p{
+    margin-top: -50px;
+  }
 }
 #block-views-bottle-block .views-row .entity .field-item p{
   margin-top: 0;
