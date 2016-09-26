@@ -75,7 +75,7 @@
             //$('.field-item', part).append('<div class="close"></div>');
           }
         }
-        
+        $('#block-views-bottle-block .view-footer').css({'z-index': '1'});
       });
       
       // Click to step
@@ -298,6 +298,9 @@ function build360Img(container, materialPath) {
 
     // if there is one (or more) intersections
     if ( intersects.length > 0 ) {
+      jQuery('#block-views-bottle-block .view-footer').css({'z-index': '1'});
+      jQuery('#block-views-bottle-block-2 .view-footer').css({'z-index': '1'});
+      
       var sign = jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).text();
       if (sign === 'link') {
         jQuery('#block-views-bottle-block-1 .views-row.views-row-first').trigger('click');
