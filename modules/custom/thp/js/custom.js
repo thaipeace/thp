@@ -106,6 +106,11 @@
           
         });
       }*/
+      
+      $('.view-footer .click-remain').click(function(){
+        $('.close').trigger('click');
+        $(this).parent().css({'z-index': '-1'});
+      });
     }
   }
 

@@ -77,7 +77,7 @@
         }
         
         $('#block-views-label-block-1').fadeOut(100);
-        
+        $('#block-views-label-block .view-footer').css({'z-index': '1'});
       });
       
       // Click to step
@@ -299,6 +299,9 @@ function build360Img(container, materialPath) {
 
     // if there is one (or more) intersections
     if ( intersects.length > 0 ) {
+      jQuery('#block-views-label-block .view-footer').css({'z-index': '1'});
+      jQuery('#block-views-label-block-2 .view-footer').css({'z-index': '1'});
+      
       var sign = jQuery(jQuery('.field-name-field-title', jQuery('#' + container).parent()).get(intersects[0].object.name)).text();
       if (sign === 'link') {
         jQuery('#block-views-label-block-1 .views-row.views-row-first').trigger('click');

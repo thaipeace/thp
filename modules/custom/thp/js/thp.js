@@ -245,6 +245,7 @@
           stepInd = $(step).index();
         }
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).show();
+        $('#block-views-aseptic-block .view-footer').css({'z-index': '-1'});
       });
       
       // Summary aseptic process
