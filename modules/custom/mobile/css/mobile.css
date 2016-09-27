@@ -1514,25 +1514,43 @@ background-color: #d11212;
 }
 
 @media (max-height: 414px) {
-  #block-views-aseptic-block .views-row.views-row-10 .field-item.even img{
+  #block-views-aseptic-block .views-row:not(.views-row-1) .field-item.even img{
     width: 100%;
     margin-top: 40%;
   }
-  #block-views-aseptic-block .views-row.views-row-10 .entity .content{
+  #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content{
     display: flex;
   }
-  #block-views-aseptic-block .views-row.views-row-10 .entity .content .field-type-image:nth-child(1){
+  #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content .field-type-image:nth-child(1){
     width: 30%;
   }
-  #block-views-aseptic-block .views-row.views-row-10 .entity .content .field-name-field-description {
+  #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content .field-name-field-description {
     width: 70%;
     padding-top: 30px;
   }
-  #block-views-aseptic-block .views-row.views-row-10 .entity .field-item p{
+  #block-views-aseptic-block .views-row:not(.views-row-1) .entity .field-item p{
     position: static;
     margin-top: 0;
   }
-  #block-views-aseptic-block .views-row.views-row-9 .field-item.even img{
+  #block-views-label-block .views-row .field-item.even img{
+    width: 100%;
+    margin-top: 60%;
+  }
+  #block-views-label-block .views-row .entity .content{
+    display: flex;
+  }
+  #block-views-label-block .views-row .entity .content .field-type-image:nth-child(1){
+    width: 30%;
+  }
+  #block-views-label-block .views-row .entity .content .field-name-field-description {
+    width: 70%;
+    padding-top: 90px;
+  }
+  #block-views-label-block .views-row .entity .field-item p{
+    position: static;
+    margin-top: 0;
+  }
+  /*#block-views-aseptic-block .views-row.views-row-9 .field-item.even img{
     width: 100%;
     margin-top: 40%;
   }
@@ -1545,7 +1563,7 @@ background-color: #d11212;
   #block-views-aseptic-block .views-row.views-row-9 .entity .content .field-name-field-description {
     width: 70%;
     padding-top: 30px;
-  }
+  }*/
   #block-views-aseptic-block .views-row.views-row-9 .entity .field-item p{
     position: static;
     margin-top: 0;

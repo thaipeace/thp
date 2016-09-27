@@ -85,6 +85,21 @@
 
       $('.field_270_background .views-field-body').append('<div class="nav">Kéo trái phải để trải nghiệm</div>');
 
+      //Adjust style for landscape screen (mobile)
+      $('#block-views-aseptic-block .views-row:not(.views-row-1) .entity .content').each(function(i, el){
+        if($(this).html().indexOf('field-name-field-description') === -1){
+          $(this).css('display', 'block');
+          $(this).children('.field-name-field-hero-image').css('width','100%').find('img').css('margin-top', '0');
+        }
+      })
+
+      $('#block-views-label-block .views-row .entity .content').each(function(i, el){
+        if($(this).html().indexOf('field-name-field-description') === -1){
+          $(this).css('display', 'block');
+          $(this).children('.field-name-field-hero-image').css('width','100%').find('img').css('margin-top', '0');
+        }
+      })
+
 
       $('#menu-bnt').click(function(){
         var $block2 = $('#block-block-2');
