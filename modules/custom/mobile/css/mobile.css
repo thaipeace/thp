@@ -1399,6 +1399,13 @@ background-color: #d11212;
 #block-views-bottle-block .views-row .entity .field-item p{
   margin-top: 0;
 }
+#block-views-bottle-block .views-row .entity .field-item p:nth-child(1){
+  width: 100vw;
+  text-align: center;
+}
+#block-views-bottle-block .views-row .entity .field-item p:nth-child(2){
+  margin-top: 15px;
+}
 @media (max-height: 414px) {
   #block-views-aseptic-block .views-row-first .entity .field-item p{
     position: absolute;
@@ -1572,6 +1579,28 @@ background-color: #d11212;
 }
 .footer-right-btn img{
   width: 56px;
+}
+.footer-landscape-btn{
+  width: 80px;
+  height: 56px;
+  padding-top: 8px;
+  padding-right: 5px;
+  text-align: center;
+  display: none;
+}
+@media (max-height: 480px) {
+  .footer-right-btn{
+    display: none;
+  }
+  .footer-landscape-btn{
+    display: inline-block;
+  }
+}
+.footer-landscape-btn a{
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
 }
 .footer-text{
   width: calc(100vw - 112px);

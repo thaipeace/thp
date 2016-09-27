@@ -68,7 +68,7 @@
 
       //Add foooter
       if($('body.page-node-4')){
-        $('body.page-node-4').append('<div class="aseptic-footer"><div class="footer-left-btn"></div><div class="footer-text"></div><div class="footer-right-btn"><img src="sites/default/modules/custom/mobile/images/footer-right-btn.jpg"></div></div>');
+        $('body.page-node-4').append('<div class="aseptic-footer"><div class="footer-left-btn"></div><div class="footer-text"></div><div class="footer-right-btn"><img src="sites/default/modules/custom/mobile/images/footer-right-btn.jpg"></div><div class="footer-landscape-btn"><a href="#">Quy trình sản xuất</a></div></div>');
         var imgSrc = $('#block-views-aseptic-block-1 .views-row.active .field-content img').attr('src');
         $('.footer-left-btn').html('<img src="'+ imgSrc + '">');
       }
@@ -338,7 +338,7 @@
         $('.wp_p3').animate({top: -85}, 1900);
         $('.wp_p4').animate({top: -85}, 1700);
         $('.wp_p5').animate({top: -85}, 1500);
-        $('.wp_p85').animate({top: -85}, 1300);
+        $('.wp_p6').animate({top: -85}, 1300);
         $('.wp_p7').animate({top: -85}, 1100);
         $('.wp_p8').animate({top: -85}, 900);
         $('.wp_p9').animate({top: -85}, 700);
@@ -360,6 +360,10 @@
         $('.wp_p11').animate({top: -6}, 300);
         $('.wp_p12').animate({top: -6}, 100);
       }
+
+      $('.footer-landscape-btn').click(function(){
+        $('#block-views-aseptic-block-1 .views-row-1').trigger('click');
+      })
 
       // $('.wp_p1').animate({top: screen.height/2.8}, 2100);
       // $('.wp_p2').animate({top: screen.height/2.65}, 1800);
