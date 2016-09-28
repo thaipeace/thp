@@ -799,6 +799,11 @@ article.node-4.active {
   top: -80px;
 }
 
+#block-views-aseptic-block .views-row:not(.views-row-first) .views-field-field-parts .field-name-field-image,
+#block-views-bottle-block .views-row:not(.views-row-first) .views-field-field-parts .field-name-field-image {
+    display: none;
+}
+
 #block-views-aseptic-block .views-row.views-row-first .views-field-field-parts .field-name-field-description,
 #block-views-bottle-block .views-row.views-row-first .views-field-field-parts .field-name-field-description {
   position: absolute;
