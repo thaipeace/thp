@@ -93,12 +93,24 @@
         }
       })
 
+      $('#block-views-aseptic-block-2 .views-row .entity .content').each(function(i, el){
+        if($(this).html().indexOf('field-name-field-description') === -1){
+          $(this).css('display', 'block');
+          $(this).children('.field-name-field-hero-image').css('width','100%').find('img').css('margin-top', '0');
+        }
+      })
+
       $('#block-views-label-block .views-row .entity .content').each(function(i, el){
         if($(this).html().indexOf('field-name-field-description') === -1){
           $(this).css('display', 'block');
           $(this).children('.field-name-field-hero-image').css('width','100%').find('img').css('margin-top', '0');
         }
       })
+
+      //Hide gif "Tau hoa"
+      if($('#block-views-aseptic-block .views-row-8 .field-name-field-image')){
+        $('#block-views-aseptic-block .views-row-8 .field-name-field-image').css('display', 'none');
+      }
 
 
       $('#menu-bnt').click(function(){

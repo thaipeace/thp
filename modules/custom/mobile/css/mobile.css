@@ -1400,7 +1400,7 @@ background-color: #d11212;
   margin-top: 0;
 }
 #block-views-bottle-block .views-row .entity .field-item p:nth-child(1){
-  width: 100vw;
+  width: 80vw;
   text-align: center;
 }
 #block-views-bottle-block .views-row .entity .field-item p:nth-child(2){
@@ -1413,7 +1413,7 @@ background-color: #d11212;
     margin-top: -30px;
   }
     #block-views-bottle-block .views-row .entity .field-item p{
-      left: -102px;
+      left: -28vw;
     }
 }
 .field-name-field-description .line{
@@ -1516,19 +1516,39 @@ background-color: #d11212;
 @media (max-height: 414px) {
   #block-views-aseptic-block .views-row:not(.views-row-1) .field-item.even img{
     width: 100%;
-    margin-top: 40%;
+    margin-top: 23%;
+    padding-left: 28px;
   }
   #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content{
     display: flex;
   }
   #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content .field-type-image:nth-child(1){
-    width: 30%;
+    width: 40%;
   }
   #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content .field-name-field-description {
-    width: 70%;
+    width: 60%;
     padding-top: 30px;
   }
   #block-views-aseptic-block .views-row:not(.views-row-1) .entity .field-item p{
+    position: static;
+    margin-top: 0;
+  }
+  #block-views-aseptic-block-2 .views-row .field-item.even img{
+    width: 100%;
+    margin-top: 23%;
+    padding-left: 28px;
+  }
+  #block-views-aseptic-block-2 .views-row .entity .content{
+    display: flex;
+  }
+  #block-views-aseptic-block-2 .views-row .entity .content .field-type-image:nth-child(1){
+    width: 40%;
+  }
+  #block-views-aseptic-block-2 .views-row .entity .content .field-name-field-description {
+    width: 60%;
+    padding-top: 30px;
+  }
+  #block-views-aseptic-block-2 .views-row .entity .field-item p{
     position: static;
     margin-top: 0;
   }
