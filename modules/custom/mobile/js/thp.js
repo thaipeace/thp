@@ -423,26 +423,35 @@
             //Random left and top based on screen height
             var screenHeight = $(window).height();
             var left, top;
-            if(counter == 3){
-              if(screenHeight > 414){
-                left = Math.floor(Math.random() * 67*(counter+1)) + 67*counter;
-                top = Math.floor(Math.random() * 50*(counter+1)) + 50*(counter);
-              }
-              else{
-                left = Math.floor(Math.random() * 68*(counter+1)) + 68*counter;
-                top = Math.floor(Math.random() * 20*(counter+1)) + 20*(counter);
-              }
+            // if(counter == 3){
+            //   if(screenHeight > 414){
+            //     left = Math.floor(Math.random() * 67*(counter+1)) + 67*counter;
+            //     top = Math.floor(Math.random() * 20*(counter+1)) + 20*(counter);
+            //   }
+            //   else{
+            //     left = Math.floor(Math.random() * 68*(counter+1)) + 68*counter;
+            //     top = Math.floor(Math.random() * 10*(counter+1)) + 10*(counter);
+            //   }
+            // }
+            // else{
+            //   if(screenHeight > 414){
+            //     left = Math.floor(Math.random() * 50*(counter+1)) + 50*counter + 20;
+            //     top = Math.floor(Math.random() * 30*(counter+1)) + 30*(counter) + 30;
+            //   }
+            //   else{
+            //     left = Math.floor(Math.random() * 55*(counter+1)) + 55*counter + 20;
+            //     top = Math.floor(Math.random() * 15*(counter+1)) + 15*(counter) + 10;
+            //   }
+            // }
+            if(screenHeight > 414){
+              left = (counter+1)*60;
+              top = (counter+1)*110;
             }
             else{
-              if(screenHeight > 414){
-                left = Math.floor(Math.random() * 70*(counter+1)) + 70*counter;
-                top = Math.floor(Math.random() * 50*(counter+1)) + 50*(counter) + 30;
-              }
-              else{
-                left = Math.floor(Math.random() * 80*(counter+1)) + 80*counter;
-                top = Math.floor(Math.random() * 20*(counter+1)) + 20*(counter) + 10;
-              }
+              left = (counter+1)*110;
+              top = (counter+1)*30;
             }
+
 
             title.css({
               left:left + 'px',
