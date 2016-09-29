@@ -423,14 +423,27 @@
             //Random left and top based on screen height
             var screenHeight = $(window).height();
             var left, top;
-            if(screenHeight > 414){
-              left = Math.floor(Math.random() * 70*(counter+1)) + 70*counter;
-              top = Math.floor(Math.random() * 120*(counter+1)) + 120*(counter) + 30;
+            if(counter == 3){
+              if(screenHeight > 414){
+                left = Math.floor(Math.random() * 67*(counter+1)) + 67*counter;
+                top = Math.floor(Math.random() * 50*(counter+1)) + 50*(counter);
+              }
+              else{
+                left = Math.floor(Math.random() * 68*(counter+1)) + 68*counter;
+                top = Math.floor(Math.random() * 20*(counter+1)) + 20*(counter);
+              }
             }
             else{
-              left = Math.floor(Math.random() * 120*(counter+1)) + 120*counter;
-              top = Math.floor(Math.random() * 50*(counter+1)) + 50*(counter) + 10;
+              if(screenHeight > 414){
+                left = Math.floor(Math.random() * 70*(counter+1)) + 70*counter;
+                top = Math.floor(Math.random() * 50*(counter+1)) + 50*(counter) + 30;
+              }
+              else{
+                left = Math.floor(Math.random() * 80*(counter+1)) + 80*counter;
+                top = Math.floor(Math.random() * 20*(counter+1)) + 20*(counter) + 10;
+              }
             }
+
             title.css({
               left:left + 'px',
               top: top + 'px'

@@ -1535,10 +1535,6 @@ background-color: #d11212;
 
 }
 
-#block-views-aseptic-block .views-row:not(.views-row-1) .views-field-field-parts .entity .field-name-field-image {
-  display: none;
-}
-
 @media (max-height: 414px) {
   #block-views-aseptic-block .views-row:not(.views-row-1) .field-item.even img{
     width: 100%;
@@ -1558,10 +1554,6 @@ background-color: #d11212;
   #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content .field-name-field-description {
     width: 60%;
     padding-top: 30px;
-  }
-  #block-views-aseptic-block .views-row:not(.views-row-1) .entity .content .field-name-field-description img {
-    width: auto;
-    margin: 0;
   }
   #block-views-aseptic-block .views-row:not(.views-row-1) .entity .field-item p{
     position: static;
