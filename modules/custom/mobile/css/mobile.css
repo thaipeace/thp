@@ -1624,11 +1624,12 @@ background-color: #d11212;
   }
 }
 .aseptic-footer{
+  position: absolute;
   background-color: #d11212;
   width: 100vw;
   height: 0;
-  position: absolute;
-  bottom: 0;
+  /*bottom: 0;*/
+  top: calc(100vh - 56px);
   z-index: 1;
   display: -webkit-box;
   display: -moz-box;
