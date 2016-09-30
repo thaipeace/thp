@@ -444,11 +444,11 @@
             //   }
             // }
             if(screenHeight > 414){
-              left = (counter+1)*60;
-              top = (counter+1)*110;
+              left = (counter+1)*50;
+              top = (counter+1)*70;
             }
             else{
-              left = (counter+1)*110;
+              left = (counter+1)*80;
               top = (counter+1)*30;
             }
 

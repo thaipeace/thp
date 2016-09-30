@@ -1105,9 +1105,10 @@ article.node-4.active {
 #block-views-label-block .views-row .views-field-nothing .field-name-field-title .field-items,
 #block-views-label-block-2 .views-row .views-field-nothing .field-name-field-title .field-items {
   background: url('../images/icon_hxg.png') center bottom no-repeat;
+  background-size: 60%;
   position: relative;
-  height: 60px;
-  width: 60px;
+  height: 36px;
+  width: 36px;
 }
 
 #block-views-aseptic-block .views-row:not(.views-row-first) .views-field-nothing .field-name-field-title:nth-child(1),
