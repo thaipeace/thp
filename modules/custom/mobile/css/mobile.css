@@ -1512,6 +1512,13 @@ background-color: #d11212;
   top: 50vh;
   left: calc((100vw - 288px)/2);
 }
+#block-views-aseptic-block .views-row:not(.views-row-1) .views-field-field-parts .entity .field-name-field-image {
+  display: none;
+}
+#block-views-aseptic-block .views-row:not(.views-row-1) .entity .content .field-name-field-description img {
+   width: auto;
+   margin: 0;
+ }
 @media (max-height: 414px) {
   .guide-emp{
     left: 0
