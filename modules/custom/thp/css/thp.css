@@ -1125,7 +1125,7 @@ article.node-4.active {
   z-index: 1;
   right: -719px;
   height: 100vh;
-  width: 694px;
+  width: 574px;
   padding: 0 94px 0 0;
   background: #f1e601;
   animation: itemlideout 0.5s ease-in-out forwards;
@@ -1343,7 +1343,7 @@ article.node-4.active {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100vw - 694px);
+  width: calc(100vw - 574px);
   height: 100vh;
   z-index: -1;
 }
@@ -1360,7 +1360,7 @@ article.node-4.active {
 #block-views-label-block .views-row .views-field-field-parts .entity .field-name-field-image {
   position: absolute;
   bottom: 1%;
-  width: 694px;
+  width: 574px;
   padding: 0 94px 0 0;
   text-align: center;
 }

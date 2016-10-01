@@ -69,9 +69,19 @@
       Pace.on('start', function(){
         $('body .layout-center').hide();
       });
-      Pace.on('done', function(){
-        $('body .layout-center').show();
-      });
+      
+      var myVar = setInterval(function(){ checkLoad() }, 300);
+      function checkLoad() {
+        var d = Pace.bar.progress;
+        if (d > 70) {
+          $('body .layout-center').show();
+          clearInterval(myVar);
+        }
+      }
+      
+//      Pace.on('done', function(){
+//        $('body .layout-center').show();
+//      });
       
       $('.field_270_background .views-field-body').append('<div class="nav">Kéo trái phải để trải nghiệm</div>');
       
