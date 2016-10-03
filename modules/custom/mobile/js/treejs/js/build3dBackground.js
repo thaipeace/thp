@@ -426,7 +426,7 @@ function build360Img(container, materialPath) {
       '#block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data',
       '#block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data'
     ];
-    
+
     var l = (lon-90)%360;
     jQuery.each(panoItems, function(index, panoItem){
       // Fade data when camera turn around
@@ -496,7 +496,7 @@ function build360Img(container, materialPath) {
 			lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
 
 		}
-    
+
     var l = (lon-90)%360;
     (l < -20 || l > 20)?$('.views-field-body .nav').fadeOut():true;
 
