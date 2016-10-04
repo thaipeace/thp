@@ -115,12 +115,14 @@
       })
 
       //
-
-      $('#block-views-aseptic-block .views-row-11 .entity.video .field-items .field-item').click(function(){
-        //var video = $('video')[0];
-        var video = $('#block-views-aseptic-block .views-row-11 .entity.video .field-items .field-item').find('video')[0];
-        video.play();
+      $('video').each(function(i, el){
+        $(el).attr('playsinline', '').attr('autoplay', '');
       })
+      // $('#block-views-aseptic-block .views-row-11 .entity.video .field-items .field-item').click(function(){
+      //   //var video = $('video')[0];
+      //   var video = $('#block-views-aseptic-block .views-row-11 .entity.video .field-items .field-item').find('video')[0];
+      //   video.play();
+      // })
 
 
       //Hide gif "Tau hoa"
