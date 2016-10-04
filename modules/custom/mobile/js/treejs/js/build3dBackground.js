@@ -493,8 +493,12 @@ function build360Img(container, materialPath) {
 			event.preventDefault();
 
 			lon = ( onPointerDownPointerX - event.touches[0].pageX ) * 0.1 + onPointerDownLon;
-			lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-
+      
+      var turn = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+      if (turn >= -25 && turn <= 18) {
+        lat = turn;
+      }
+//			lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
 		}
 
     var l = (lon-90)%360;
