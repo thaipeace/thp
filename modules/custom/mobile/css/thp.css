@@ -1877,7 +1877,7 @@ article.node-4.active {
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video video,
 #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video video {
   max-width: 768px;
-  width: calc(100vw - 25%);
+  width: calc(100vw - 77px);
 }
 
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video .field-item .close,
@@ -1893,7 +1893,7 @@ article.node-4.active {
 #block-views-aseptic-block .views-row.aseptic .field-name-field-video.active .field-item .close,
 #block-views-aseptic-block-2 .views-row.aseptic .field-name-field-video.active .field-item .close {
   position: absolute;
-  right: -50px;
+  right: -25px;
   top: -26px;
   display: block;
 }

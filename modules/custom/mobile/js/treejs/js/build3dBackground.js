@@ -235,7 +235,7 @@ function build360Img(container, materialPath) {
 		window.addEventListener( 'resize', onWindowResize, false );
 
     jQuery('.views-field-nothing .field-name-field-position', element).each(function(ind, elem) {
-      //if (jQuery(jQuery('.views-field-nothing .field-name-field-title', element).get(ind)).text() !== 'data') {
+      if (jQuery(jQuery('.views-field-nothing .field-name-field-title', element).get(ind)).text() !== 'data') {
         var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
         var pointGeometry = new THREE.PlaneGeometry(50, 50);
         point = new THREE.Mesh(pointGeometry, pointMaterial);
@@ -255,7 +255,8 @@ function build360Img(container, materialPath) {
 
         targetList.push(point);
 
-      // }
+       }
+      
       // else{
       //   // var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
       //   var pointGeometry = new THREE.PlaneGeometry(50, 50);
@@ -493,12 +494,8 @@ function build360Img(container, materialPath) {
 			event.preventDefault();
 
 			lon = ( onPointerDownPointerX - event.touches[0].pageX ) * 0.1 + onPointerDownLon;
-      
-      var turn = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-      if (turn >= -25 && turn <= 18) {
-        lat = turn;
-      }
-//			lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+			lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+
 		}
 
     var l = (lon-90)%360;
