@@ -106,17 +106,17 @@
         return svg;
       }
       
-      $('.wp_experience').append(pathAnimate('M289 500 L100 500 L100 304', style, 768, screen.height));
-      $('.wp_experience').append(pathAnimate('M270 540 L232 540 L232 475', style, 768, screen.height));
-      $('.wp_experience').append(pathAnimate('M480 500 L548 500 L548 474', style, 768, screen.height));
-      $('.wp_experience').append(pathAnimate('M650 350 L667 350 L667 295', style, 768, screen.height));
+//      $('.wp_experience').append(pathAnimate('M289 500 L100 500 L100 304', style, 768, screen.height));
+//      $('.wp_experience').append(pathAnimate('M270 540 L232 540 L232 475', style, 768, screen.height));
+//      $('.wp_experience').append(pathAnimate('M480 500 L548 500 L548 474', style, 768, screen.height));
+//      $('.wp_experience').append(pathAnimate('M650 350 L667 350 L667 295', style, 768, screen.height));
       //$('.wp_experience').append(pathAnimate('M768 330 L667 330 L667 295', style, 768, screen.height));
       
       // Click from factory page
       $('.pnt').click(function(){
         var rel = $(this).attr('rel');
         if (['bottle', 'label'].indexOf(rel) === -1) {
-          window.location = 'experience-instruction-landing?rel=' + rel;
+          window.location = 'day-chuyen-san-xuat-nha-may-number-one?rel=' + rel;
         }else {
           rel==='bottle'?window.location = 'bottle-landing-page':false;
           rel==='label'?window.location = 'label-landing-page':false;

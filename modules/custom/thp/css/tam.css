@@ -375,7 +375,6 @@ body.page-node-4 {
 .wp_experience {
 	margin: 0 auto;
 	position: relative;
-	width: 768px;
 }
 
 .hexagon {
@@ -494,10 +493,10 @@ body.page-node-4 {
 }
 
 .person_experience {
-	background: url('../images/nhanvien.png') no-repeat center bottom fixed;
+	background: url('../images/huongdanbg.png') no-repeat center bottom fixed;
 	text-align: center;
   height: 100vh;
-  background-size: 21%;
+  /*background-size: 21%;*/
 }
 
 .hexagon.p1 >.icon_ex {

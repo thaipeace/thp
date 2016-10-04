@@ -77,7 +77,7 @@
         
         $('#block-views-aseptic-block-1 .views-row.views-row-first').trigger('click');
         
-        if (url.indexOf('experience-instruction-landing') !== -1) {
+        if (url.indexOf('day-chuyen-san-xuat-nha-may-number-one') !== -1) {
           var args = getUrlVars();
           if (!$.isEmptyObject(args) && args.rel !== 'auto') {
             $(document).ready(function(){
@@ -121,7 +121,7 @@
           $('#block-views-bottle-block-1 .views-row.views-row-2').trigger('click');
         }, 100);
         
-        if (url.indexOf('experience-instruction-landing') !== -1) {
+        if (url.indexOf('day-chuyen-san-xuat-nha-may-number-one') !== -1) {
           var args = getUrlVars();
           if (!$.isEmptyObject(args) && args.rel !== 'auto') {
             $(document).ready(function(){
@@ -162,7 +162,7 @@
         
         $('#block-views-label-block-1 .views-row.views-row-first').trigger('click');
         
-        if (url.indexOf('experience-instruction-landing') !== -1) {
+        if (url.indexOf('day-chuyen-san-xuat-nha-may-number-one') !== -1) {
           var args = getUrlVars();
           if (!$.isEmptyObject(args) && args.rel !== 'auto') {
             $(document).ready(function(){
@@ -361,7 +361,7 @@
             //$('#block-views-aseptic-block .views-row.views-row-first .views-field-nothing').css('pointer-events','auto');
             return;
           }else {
-            if (url.indexOf('experience-instruction-landing') !== -1) {
+            if (url.indexOf('day-chuyen-san-xuat-nha-may-number-one') !== -1) {
               var args = getUrlVars();
               if ((!$.isEmptyObject(args) && args.rel === 'auto') || $.isEmptyObject(args)) {
                 $(document).ready(function(){
