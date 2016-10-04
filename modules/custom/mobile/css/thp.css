@@ -1474,7 +1474,7 @@ article.node-4.active {
 
 #block-views-aseptic-block .views-row.aseptic .views-field-field-parts .entity.data {
   /*overflow: hidden;*/
-  color: white;
+  /*color: white; */
   /* TODO */
 }
 
@@ -1498,6 +1498,7 @@ article.node-4.active {
   padding: 10px;
   background: rgba(255,255,255,0.7);
   border: 1px solid #f1e601;
+  bottom: 70px;
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-9 .views-field-field-parts .entity.data .field-name-field-description {
@@ -1599,11 +1600,16 @@ article.node-4.active {
   height: 120px;
   padding: 0;
 }
-
 #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data {
   width: 800px;
   top: 16%;
   left: 20%;
+}
+@media (max-height: 414px){
+  #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data{
+    transform: scale(0.85);
+    left: -2%;
+  }
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data .i1 {
@@ -1661,6 +1667,11 @@ article.node-4.active {
   bottom: 150px;
   color: #FFFFFF;
   width: 100%;
+}
+@media (max-height: 320px) {
+  #block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data {
+    bottom: 124px;
+  }
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data .content {
@@ -1854,7 +1865,7 @@ article.node-4.active {
   position: fixed;
   top: 35%;
   left: 9%;
-  width: calc(100vw - 25%);
+  width: calc(100vw - 70px);
   display: none;
 }
 
