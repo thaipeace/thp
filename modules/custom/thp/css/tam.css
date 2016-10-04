@@ -494,7 +494,7 @@ body.page-node-4 {
 }
 
 .person_experience {
-	background: url('../images/nhanvien.png') no-repeat 567px bottom fixed;
+	background: url('../images/nhanvien.png') no-repeat center bottom fixed;
 	text-align: center;
   height: 100vh;
   background-size: 21%;
