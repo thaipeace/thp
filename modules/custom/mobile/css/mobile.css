@@ -1571,7 +1571,7 @@ background-color: #d11212;
   }
   #block-views-aseptic-block-2 .views-row .field-item.even img{
     width: 100%;
-    margin-top: 23%;
+    margin-top: 50%;
     padding-left: 28px;
   }
   #block-views-aseptic-block-2 .views-row .entity .content{
@@ -1586,7 +1586,7 @@ background-color: #d11212;
   }
   #block-views-aseptic-block-2 .views-row .entity .content .field-name-field-description {
     width: 60%;
-    padding-top: 30px;
+    padding-top: 70px;
   }
   #block-views-aseptic-block-2 .views-row .entity .field-item p{
     position: static;
@@ -1594,7 +1594,8 @@ background-color: #d11212;
   }
   #block-views-label-block .views-row .field-item.even img{
     width: 100%;
-    margin-top: 60%;
+    margin-top: 23%;
+    padding-left: 28px;
   }
   #block-views-label-block .views-row .entity .content{
     display: -webkit-box;
@@ -1604,11 +1605,11 @@ background-color: #d11212;
     display: flex;
   }
   #block-views-label-block .views-row .entity .content .field-type-image:nth-child(1){
-    width: 30%;
+    width: 40%;
   }
   #block-views-label-block .views-row .entity .content .field-name-field-description {
-    width: 70%;
-    padding-top: 90px;
+    width: 60%;
+    padding-top: 30px;
   }
   #block-views-label-block .views-row .entity .field-item p{
     position: static;
