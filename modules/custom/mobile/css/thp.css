@@ -1650,6 +1650,14 @@ article.node-4.active {
   /*padding: 0 0 0 182px;*/
   font-size: 80%;
   line-height: 18px;
+  /*margin-top: -50px;*/
+}
+@media (max-height: 414px) {
+  #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data .i2,
+  #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data .i3{
+    float: right;
+    margin-top: -50px;
+  }
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-10 .views-field-field-parts .entity.data .i3 {
@@ -1660,6 +1668,7 @@ article.node-4.active {
   /*padding: 0 0 0 56px;*/
   font-size: 80%;
   line-height: 18px;
+  /*margin-top: -50px;*/
 }
 
 #block-views-aseptic-block .views-row.aseptic.nid-11 .views-field-field-parts .entity.data {

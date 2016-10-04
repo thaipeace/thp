@@ -1615,6 +1615,29 @@ background-color: #d11212;
     position: static;
     margin-top: 0;
   }
+  #block-views-bottle-block .views-row .field-item.even img{
+    width: 100%;
+    margin-top: 50%;
+    padding-left: 28px;
+  }
+  #block-views-bottle-block .views-row .entity .content{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  #block-views-bottle-block .views-row .entity .content .field-type-image:nth-child(1){
+    width: 40%;
+  }
+  #block-views-bottle-block .views-row .entity .content .field-name-field-description {
+    width: 60%;
+    padding-top: 70px;
+  }
+  #block-views-bottle-block .views-row .entity .field-item p{
+    position: static;
+    margin-top: 0;
+  }
   /*#block-views-aseptic-block .views-row.views-row-9 .field-item.even img{
     width: 100%;
     margin-top: 40%;
