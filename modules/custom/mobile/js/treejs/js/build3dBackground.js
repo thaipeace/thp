@@ -256,7 +256,7 @@ function build360Img(container, materialPath) {
         targetList.push(point);
 
        }
-      
+
       // else{
       //   // var pointMaterial = loadTexture('./sites/default/modules/custom/thp/images/icon_hxg.png');
       //   var pointGeometry = new THREE.PlaneGeometry(50, 50);
@@ -494,7 +494,11 @@ function build360Img(container, materialPath) {
 			event.preventDefault();
 
 			lon = ( onPointerDownPointerX - event.touches[0].pageX ) * 0.1 + onPointerDownLon;
-			lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+			//lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+      var turn = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+      if (turn >= -25 && turn <= 18) {
+        lat = turn;
+      }
 
 		}
 
