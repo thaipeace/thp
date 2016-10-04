@@ -397,7 +397,7 @@ main.layout-3col__full {
 #question-bnt {
   display: none;
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
-  bottom: 112px;
+  bottom: 168px;
   height: 56px;
 }
 
@@ -419,12 +419,25 @@ main.layout-3col__full {
   
 #youtube-bnt {
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
-  bottom: 56px;
-  height: 0;
+  bottom: 0;
+  height: 56px;
 }
 
 #youtube-bnt a {
   background: url('../images/icon-youtube.png') 12px center no-repeat;
+  display: block;
+  height: 56px;
+}
+
+#bthanh-bnt {
+  background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+  bottom: 112px;
+  height: 56px;
+}
+
+#bthanh-bnt a {
+  background: url('../images/logobacthanh.png') center center no-repeat;
+  background-size: 60%;
   display: block;
   height: 56px;
 }
@@ -448,7 +461,7 @@ main.layout-3col__full {
 }
 
 #copy-right {
-  bottom: 168px;
+  bottom: 182px;
   -webkit-transform:rotate(-90deg);
   -moz-transform:rotate(-90deg);
   -o-transform: rotate(-90deg);
@@ -461,7 +474,7 @@ main.layout-3col__full {
 }
 
 .page-node-4 #copy-right {
-  bottom: 185px;
+  bottom: 241px;
 }
 
 .left-item {
