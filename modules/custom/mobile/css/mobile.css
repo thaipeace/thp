@@ -37,6 +37,7 @@ html, body {
       margin-top: 20%;
   }
 }
+
 .node-2 {
     background: url('../images/may1.png') -260% -10% no-repeat;
     animation: slowfly 60s linear infinite;
@@ -49,6 +50,7 @@ html, body {
   -o-background-size: cover;
   background-size: cover;
 }
+
 .field-item.even p{
   margin-bottom: 0;
 }
@@ -93,6 +95,27 @@ html, body {
     margin: 0;
   }
 }
+@media (max-height: 414px) {
+  .page-node-2{
+    background: url('../images/homepagebg.jpg') no-repeat center bottom fixed;
+    background-size: 100%;
+  }
+  .node-2 .field-name-body .field-item > p > img{
+    width: 40%;
+  }
+  #introduce{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 0.8em;
+  }
+  #describe{
+    font-size: 0.7em;
+    margin-bottom: 15px;
+  }
+  .bnt-try a img{
+    width: 60px;
+  }
+}
 .img_exper1 a img{
   width: 55%;
 }
@@ -110,11 +133,11 @@ html, body {
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
   z-index: 11;
 }
 #menu-bnt{
   background: url('../images/icon_menu.png') 16px center no-repeat;
+  display: flex;
   cursor: pointer;
   width: 56px;
   height: 56px;
@@ -514,6 +537,17 @@ html, body {
   height: 56px;
 }
 
+#bthanh-bnt{
+  opacity: 0;
+  left: -56px;
+  bottom: 0;
+  transition: .5s;
+}
+#bthanh-bnt.acive{
+  opacity: 1;
+  left: 168px;
+  transition: .5s;
+}
 #youtube-bnt {
   background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
   bottom: 0;
@@ -980,7 +1014,6 @@ body.page-node-4 {
   }
 }
 
-
 .hexagon.p1 {
 }
 
@@ -1005,6 +1038,7 @@ body.page-node-4 {
 
 .hexagon:hover {
 	background-color: #f1e601;
+
 }
 
 .hexagon:hover:before {

@@ -137,6 +137,7 @@
         var $fbBtn = $('#fb-bnt');
         var $questionBtn= $('#question-bnt');
         var $volume = $('#volume-bnt');
+        var $bthanh = $('#bthanh-bnt');
 
         //Behavior for menu button
         if($block2.attr('class') && $block2.attr('class').indexOf('active') === -1 ){
@@ -147,6 +148,7 @@
           $fbBtn.addClass('active');
           $questionBtn.addClass('active');
           $volume.addClass('active');
+          $bthanh.addClass('active');
         }
         else{
           //Collapse menu
@@ -156,6 +158,7 @@
           $fbBtn.removeClass('active');
           $questionBtn.removeClass('active');
           $volume.removeClass('active');
+          $bthanh.removeClass('active');
         }
 
 
