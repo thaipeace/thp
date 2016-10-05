@@ -536,14 +536,22 @@ html, body {
   display: block;
   height: 56px;
 }
-
-#bthanh-bnt{
+#bthanh-bnt {
+  background: url('../images/serpa-leftitem.jpg') 0 0 repeat-x;
+  height: 56px;
   opacity: 0;
   left: -56px;
   bottom: 0;
   transition: .5s;
 }
-#bthanh-bnt.acive{
+
+#bthanh-bnt a {
+  background: url('../images/logobacthanh.png') center center no-repeat;
+  background-size: 60%;
+  display: block;
+  height: 56px;
+}
+#bthanh-bnt.active{
   opacity: 1;
   left: 168px;
   transition: .5s;
