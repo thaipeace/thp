@@ -435,7 +435,7 @@ main.layout-3col__full {
   height: 56px;
 }
 
-#bthanh-bnt a {
+#bthanh-bnt div {
   background: url('../images/logobacthanh.png') center center no-repeat;
   background-size: 60%;
   display: block;
@@ -2077,6 +2077,32 @@ article.node-4.active {
   position: absolute;
   top: 56px;
   display: none;
+}
+
+.close {
+  position: absolute;
+  right: -20px;
+  top: -21px;
+  background: #d11212 url(../images/closeprocess.png) center bottom no-repeat;
+  height: 51px;
+  width: 52px;
+  border-radius: 52px;
+}
+
+.bt-video {
+  width:100vw;
+  height:100vh;
+  position:absolute;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.8);
+  z-index:1;
+}
+
+.bt-video td > div {
+  width:600px;
+  margin:0 auto;
+  position:relative;
 }
 
 /** End reorder menu aseptic **/
