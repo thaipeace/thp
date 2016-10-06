@@ -1440,7 +1440,7 @@ background-color: #d11212;
 .field-item.even p{
   margin-top: -70px;
 }
-@media (max-height: 414px) {
+@media (max-height: 568px) {
   #block-views-aseptic-block .views-row-1 .entity .field-item p{
     margin-top: -50px;
   }
