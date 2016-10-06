@@ -435,7 +435,7 @@ main.layout-3col__full {
   height: 56px;
 }
 
-#bthanh-bnt div {
+#bthanh-bnt a {
   background: url('../images/logobacthanh.png') center center no-repeat;
   background-size: 60%;
   display: block;
@@ -2080,13 +2080,13 @@ article.node-4.active {
 }
 
 .close {
-  position: absolute;
+/*  position: absolute;
   right: -20px;
   top: -21px;
   background: #d11212 url(../images/closeprocess.png) center bottom no-repeat;
   height: 51px;
   width: 52px;
-  border-radius: 52px;
+  border-radius: 52px;*/
 }
 
 .bt-video {
