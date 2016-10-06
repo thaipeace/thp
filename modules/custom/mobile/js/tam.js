@@ -115,7 +115,7 @@
       $('.pnt').click(function(){
         var rel = $(this).attr('rel');
         if (['bottle', 'label'].indexOf(rel) === -1) {
-          window.location = 'experience-instruction-landing?rel=' + rel;
+          window.location = 'day-chuyen-san-xuat-nha-may-number-one?rel=' + rel;
         }else {
           rel==='bottle'?window.location = 'bottle-landing-page':false;
           rel==='label'?window.location = 'label-landing-page':false;
