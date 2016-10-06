@@ -123,22 +123,22 @@
       });
       
       //Video bacthanh view
-      $('#bthanh-bnt').click(function(){
-        
-        var video = '';
-        video += '<div class="bt-video">';
-        video += '<table style="width:100%; height:100%"><tr><td style="text-align:center"><div>';
-        video += '<div class="close"></div>';
-        video += '<video controls="controls" autoplay style="width:600px; height:auto"><source src="./sites/default/files/pvbt.mp4" type="video/mp4"></video>';
-        video += '</div></td></tr></table>';
-        video += '</div>';
-        
-        $('body').append(video);
-        
-        $('.bt-video .close').click(function(){
-          $('.bt-video').remove();
-        });
-      });
+//      $('#bthanh-bnt').click(function(){
+//        
+//        var video = '';
+//        video += '<div class="bt-video">';
+//        video += '<table style="width:100%; height:100%"><tr><td style="text-align:center"><div>';
+//        video += '<div class="close"></div>';
+//        video += '<video controls="controls" autoplay style="width:600px; height:auto"><source src="./sites/default/files/pvbt.mp4" type="video/mp4"></video>';
+//        video += '</div></td></tr></table>';
+//        video += '</div>';
+//        
+//        $('body').append(video);
+//        
+//        $('.bt-video .close').click(function(){
+//          $('.bt-video').remove();
+//        });
+//      });
       
       if ($('.page-node-26').length > 0) {
         $('.view-video').trigger('click');
