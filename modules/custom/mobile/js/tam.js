@@ -113,7 +113,6 @@
 
       // Click from factory page
       $('.pnt').click(function(){
-        debugger;
         var rel = $(this).attr('rel');
         if (['bottle', 'label'].indexOf(rel) === -1) {
           window.location = 'day-chuyen-san-xuat-nha-may-number-one?rel=' + rel;
