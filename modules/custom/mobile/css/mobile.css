@@ -1440,6 +1440,11 @@ background-color: #d11212;
 .field-item.even p{
   margin-top: -70px;
 }
+@media (max-height: 414px) {
+  #block-views-aseptic-block .views-row-1 .entity .field-item p{
+    margin-top: -50px;
+  }
+}
 /*#block-views-aseptic-block .views-row .entity .field-item p,*/
 #block-views-bottle-block .views-row .entity .field-item p{
   position: absolute;
