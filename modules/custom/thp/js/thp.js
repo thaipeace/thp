@@ -177,7 +177,7 @@
       var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block'];
       $(blocks).each(function(indBlock, block){
         if ($(block + ' .views-row').length > 0) {
-          var titleExtraTypes = ['data', 'video'];
+          var titleExtraTypes = ['data', 'video', 'link'];
           $(block + ' .views-row').each(function(index, element) {
             if ($('.views-field-field-parts .entity', element).length > 0) {
               
@@ -193,6 +193,11 @@
                   }
                   if (titleIndex === 1) {
                     $('.field-name-field-video .field-item', elem).append('<div class="close"></div>');
+                  }
+                  
+                  if ($('.field-name-field-description', elem).length > 0) {
+                    $('.field-name-field-title', elem).addClass($('.field-name-field-description', elem).text());
+                    $(elem).addClass($('.field-name-field-description', elem).text());
                   }
                   
                 } else {
@@ -246,6 +251,12 @@
         }
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).show();
         $('#block-views-aseptic-block .view-footer').css({'z-index': '-1'});
+        
+        if ($('.entity.auto.active', step).length > 0) {
+          $('#block-views-aseptic-block-2').removeClass('active');
+          $('.entity.auto', step).removeClass('active');
+          $(step).removeClass('active');
+        }
       });
       
       // Summary aseptic process
