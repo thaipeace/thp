@@ -86,8 +86,10 @@
             $('.views-field-field-parts', step).addClass('active');
             $('.field-name-field-video', part).addClass('active');
             $('video', part)[0].play();
-
-            // $('.field-item', part).append('<div class="close"></div>');
+          }else if ($(this).hasClass('link')) {
+            $(this).addClass('bnt');
+            var ent = $($('.views-field-field-parts .entity', step).get(index));
+            $('.field-name-field-description .field-item .bnt span', ent).trigger('click');
           }
         }
 
@@ -133,6 +135,12 @@
             if (materialPath.length > 0) {
               var container = 'threeExt-' + step[40];
               build360Img(container, materialPath);
+            }
+            
+            // Auto point click
+            if ($('.field-name-field-title.auto', step).length > 0) {
+              $('.field-name-field-title.auto', step).trigger('click');
+              $('#block-views-aseptic-block').addClass('active');
             }
           }
         }else {

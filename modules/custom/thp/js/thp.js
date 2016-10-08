@@ -252,10 +252,10 @@
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).show();
         $('#block-views-aseptic-block .view-footer').css({'z-index': '-1'});
         
-        if ($('.entity.auto.active', step).length > 0) {
+        if ($('.entity.auto', step).length > 0) {
           $('#block-views-aseptic-block-2').removeClass('active');
-          $('.entity.auto', step).removeClass('active');
           $(step).removeClass('active');
+          $('.entity.auto', step).removeClass('active');
         }
       });
       
