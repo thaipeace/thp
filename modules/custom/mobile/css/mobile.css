@@ -1404,7 +1404,11 @@ background-color: #d11212;
   width:56px;
   transition: .5s;
 }
-#block-views-aseptic-block .views-field-body .bnt span{
+#block-views-aseptic-block .views-field-body .bnt span,
+#block-views-aseptic-block-2 .views-field-body .bnt span,
+#block-views-bottle-block .views-field-body .bnt span,
+#block-views-label-block .views-field-body .bnt span,
+#block-views-label-block-2 .views-field-body .bnt span {
   /*display: none;*/
   display: block;
   padding: 0 3px;

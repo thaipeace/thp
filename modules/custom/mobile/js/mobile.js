@@ -456,7 +456,10 @@
         return vars;
       }
 
-
+      if ($('.page-node-26').length > 0) {
+        $('.page-node-26 .view-video').trigger('click');
+      }
+      
     }
 
 

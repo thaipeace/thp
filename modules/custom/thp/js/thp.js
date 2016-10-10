@@ -42,6 +42,11 @@
             var ind = $(this).index();
             $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
             $($('#block-views-aseptic-block .views-row').get(ind)).addClass('active');
+            
+            // Auto point click
+            if ($('.field-name-field-title.auto', $($('#block-views-aseptic-block .views-row').get(ind))).length > 0) {
+              $('.field-name-field-title.auto', $($('#block-views-aseptic-block .views-row').get(ind))).trigger('click');
+            }
 
             clearTimeout(stopTimeout);
             
@@ -174,7 +179,7 @@
       
       // Reorder parts title, position
       // Draw line
-      var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block'];
+      var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block', '#block-views-label-block-2'];
       $(blocks).each(function(indBlock, block){
         if ($(block + ' .views-row').length > 0) {
           var titleExtraTypes = ['data', 'video', 'link'];
@@ -253,9 +258,9 @@
         $('#block-views-aseptic-block .view-footer').css({'z-index': '-1'});
         
         if ($('.entity.auto', step).length > 0) {
-          $('#block-views-aseptic-block-2').removeClass('active');
-          $(step).removeClass('active');
-          $('.entity.auto', step).removeClass('active');
+          // TODO do it for all case not only for row-11
+          $('#block-views-aseptic-block-1 .views-row-11').trigger('click');
+          $('#block-views-aseptic-block-1 .views-row-11 .views-field-title .field-content').show();
         }
       });
       

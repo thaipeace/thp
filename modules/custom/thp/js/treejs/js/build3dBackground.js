@@ -100,7 +100,6 @@
               $('video', part)[0].play();
             }
           }else if ($(this).hasClass('link')) {
-            $(this).addClass('bnt');
             var ent = $($('.views-field-field-parts .entity', step).get(index));
             $('.field-name-field-description .field-item .bnt span', ent).trigger('click');
           }
@@ -121,7 +120,6 @@
             $('#block-views-aseptic-block').addClass('active');
             $('#block-views-aseptic-block-2').removeClass('active');
             $(step).trigger('click');
-
           }else {
 
             $('#block-views-aseptic-block').removeClass('active');
@@ -149,12 +147,6 @@
             if (materialPath.length > 0) {
               var container = 'threeExt-' + step[40];
               build360Img(container, materialPath);
-            }
-            
-            // Auto point click
-            if ($('.field-name-field-title.auto', step).length > 0) {
-              $('.field-name-field-title.auto', step).trigger('click');
-              $('#block-views-aseptic-block').addClass('active');
             }
           }
         }else {

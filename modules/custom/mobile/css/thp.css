@@ -2060,6 +2060,10 @@ and (max-device-width : 413px){
   }
 }*/
 
+#block-views-aseptic-block-1 .views-row-13 {
+  display: none;
+}
+
 .page-node-26 {
   background: url('../images/hoantatquytrinhbg.png') center center no-repeat;
   background-size: cover;
@@ -2110,7 +2114,7 @@ and (max-device-width : 413px){
   text-transform: uppercase;
   cursor: pointer;
   position: absolute;
-  bottom: 12%;
+  bottom: 17%;
   left: calc((100vw - 290px)/2);
 }
 
@@ -2132,16 +2136,17 @@ and (max-device-width : 413px){
 .page-node-26 article .video-outer > div {
   display: table-cell;
   vertical-align: middle;
+  padding: 60px 0 0 0;
 }
 
 .page-node-26 article .video-outer > div > div {
-  width: calc(100vw - 56px);
+  width: calc(100vw - 200px);
   position: relative;
   margin: 0 auto;
 }
 
 .page-node-26 article .video-outer video {
-      width: calc(100vw - 56px);
+  width: 100%;
 }
 
 .page-node-26 article .video-outer .close {
@@ -2153,6 +2158,7 @@ and (max-device-width : 413px){
   height: 52px;
   cursor: pointer;
   border-radius: 52px;
+  z-index: 20;
 }
 
 #block-views-bottle-block .views-row-first .bnt {

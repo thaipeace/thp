@@ -49,6 +49,12 @@
             var ind = $(this).index();
             $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
             $($('#block-views-aseptic-block .views-row').get(ind)).addClass('active');
+            
+            // Auto point click
+            if ($('.field-name-field-title.auto', $($('#block-views-aseptic-block .views-row').get(ind))).length > 0) {
+              $('.field-name-field-title.auto', $($('#block-views-aseptic-block .views-row').get(ind))).trigger('click');
+            }
+            
             //Remove title from steps
             $('.entity.entity-field-collection-item.field-collection-item-field-parts.clearfix.active').removeClass('active');
             $(".introduce-title").addClass('hidden');
@@ -260,9 +266,9 @@
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).show();
         
         if ($('.entity.auto', step).length > 0) {
-          $('#block-views-aseptic-block-2').removeClass('active');
-          $(step).removeClass('active');
-          $('.entity.auto', step).removeClass('active');
+          // TODO do it for all case not only for row-11
+          $('#block-views-aseptic-block-1 .views-row-11').trigger('click');
+          $('#block-views-aseptic-block-1 .views-row-11 .views-field-title .field-content').show();
         }
       });
 
