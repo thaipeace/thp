@@ -233,7 +233,7 @@
              $('#block-views-aseptic-block .views-row-last').addClass('active');
              $('#block-views-aseptic-block .views-row-last .views-field-body').show();
              $('#block-views-aseptic-block .hexagon.p1').addClass('active');
-             $('#block-views-aseptic-block .wp_experience').append('<img class="guide-emp" src="sites/default/modules/custom/mobile/images/nhanvien1.png">');
+             $('#block-views-aseptic-block .wp_experience').append('<img class="guide-emp" src="sites/default/modules/custom/mobile/images/nhanvien.png">');
            }
        }
        function onAsepticSwiperight(){

@@ -2262,11 +2262,6 @@ and (max-device-width : 413px){
   top: calc(56px * 9);
 }
 
-#block-views-aseptic-block-1 .views-row-2 {
-  position: absolute;
-  top: calc(56px * 9);
-}
-
 #block-views-aseptic-block-1 .views-row-3 {
   position: absolute;
   top: calc(56px * 8);

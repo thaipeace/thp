@@ -203,7 +203,7 @@
 
       // Reorder parts title, position
       // Draw line
-      var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block'];
+      var blocks = ['#block-views-aseptic-block', '#block-views-aseptic-block-2', '#block-views-bottle-block', '#block-views-label-block', '#block-views-label-block-2'];
       $(blocks).each(function(indBlock, block){
         if ($(block + ' .views-row').length > 0) {
           var titleExtraTypes = ['data', 'video', 'link']; //['data','video'];
