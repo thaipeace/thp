@@ -54,14 +54,14 @@
       $('#block-views-aseptic-block .wp_experience').append('<div class="line-wrapper"><img src="sites/default/modules/custom/mobile/images/aseptic-line.png"></div>');
 
       $('.wp-next-aseptic').click(function(){
-        $('#block-views-aseptic-block-1 .views-row-11').trigger('click');
+        $('#block-views-aseptic-block-1 .views-row-13').trigger('click');
         $('#block-views-aseptic-block .views-row, #block-views-aseptic-block-2 .views-row').removeClass('active').find('.active').removeClass('active');
         $('#block-views-aseptic-block').addClass('active');
-        $('#block-views-aseptic-block .views-row-11').addClass('active');
-        $('#block-views-aseptic-block .views-row-11 .views-field-body').show();
+        $('#block-views-aseptic-block .views-row-13').addClass('active');
+        $('#block-views-aseptic-block .views-row-13 .views-field-body').show();
 
         $('.aseptic-footer').addClass('active');
-        var text = $('#block-views-aseptic-block .views-row-11 .views-field-title').html();
+        var text = $('#block-views-aseptic-block .views-row-13 .views-field-title').html();
         $('.footer-text').html(text);
       })
 

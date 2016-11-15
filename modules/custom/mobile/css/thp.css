@@ -546,7 +546,8 @@ body.page-node-3 {
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-title,
-#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title {
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title,
+#block-views-aseptic-block-1 .views-row.follow:not(.views-row-first) .views-field-title {
   background: url(../../../../files/arrow_r.png) no-repeat right center;
 }
 
@@ -582,16 +583,19 @@ body.page-node-3 {
 
 }
 
-#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content {
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content,
+#block-views-aseptic-block-1 .views-row.follow:not(.views-row-first) .views-field-field-menu-icon .field-content {
   background: url('../../../../files/icon_preparation_fuel.png') no-repeat center center;
 }
 
-#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content img {
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-field-menu-icon .field-content img,
+#block-views-aseptic-block-1 .views-row.follow:not(.views-row-first) .views-field-field-menu-icon .field-content img {
   display: none;
 }
 
 #block-views-aseptic-block-1 .views-row:not(.views-row-first):hover .views-field-title,
-#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title {
+#block-views-aseptic-block-1 .views-row.active:not(.views-row-first) .views-field-title,
+#block-views-aseptic-block-1 .views-row.follow:not(.views-row-first) .views-field-title {
   display: block;
 }
 
@@ -1161,7 +1165,7 @@ article.node-4.active {
 #block-views-label-block-2 .views-row .views-field-field-parts .entity{
   height: 100vh;
 }
-#block-views-label-block .views-row .views-field-field-parts .entity{
+#block-views-label-block .views-row .views-field-field-parts .entity {
   position: absolute;
   z-index: 1;
   right: -719px;
@@ -1172,7 +1176,8 @@ article.node-4.active {
   animation: itemlideout 0.5s ease-in-out forwards;
   color: #000000;
 }
-#block-views-label-block .field-item.even img{
+#block-views-label-block .field-item.even img,
+#block-views-label-block-2 .field-item.even img {
   width: 100%;
 }
 
@@ -2059,11 +2064,6 @@ and (max-device-width : 413px){
     left: -354px;
   }
 }*/
-
-#block-views-aseptic-block-1 .views-row-13 {
-  display: none;
-}
-
 .page-node-26 {
   background: url('../images/hoantatquytrinhbg.png') center center no-repeat;
   background-size: cover;
@@ -2256,50 +2256,5 @@ and (max-device-width : 413px){
 }
 
 /** Reorder menu asectic **/
-
-#block-views-aseptic-block-1 .views-row-2 {
-  position: absolute;
-  top: calc(56px * 9);
-}
-
-#block-views-aseptic-block-1 .views-row-3 {
-  position: absolute;
-  top: calc(56px * 8);
-}
-
-#block-views-aseptic-block-1 .views-row-4 {
-  position: absolute;
-  top: calc(56px * 7);
-}
-
-#block-views-aseptic-block-1 .views-row-5 {
-  position: absolute;
-  top: calc(56px * 6);
-}
-
-#block-views-aseptic-block-1 .views-row-6 {
-  position: absolute;
-  top: calc(56px * 5);
-}
-
-#block-views-aseptic-block-1 .views-row-7 {
-  position: absolute;
-  top: calc(56px * 4);
-}
-
-#block-views-aseptic-block-1 .views-row-8 {
-  position: absolute;
-  top: calc(56px * 3);
-}
-
-#block-views-aseptic-block-1 .views-row-9 {
-  position: absolute;
-  top: calc(56px * 2);
-}
-
-#block-views-aseptic-block-1 .views-row-10 {
-  position: absolute;
-  top: 56px;
-}
 
 /** End reorder menu aseptic **/

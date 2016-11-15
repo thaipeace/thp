@@ -93,7 +93,13 @@
               }
             }
           }
-
+          
+          // Hard code for 2 last process
+          $('#block-views-aseptic-block-1 .views-row').removeClass('follow');
+          if ($.inArray(ind, [2,1]) !== -1) {
+            $('#block-views-aseptic-block-1 .views-row-4').addClass('follow');
+          }
+          
           // Close button on aseptic process page
           if (preInd !== -1) {
             $('#block-views-aseptic-block .views-row.views-row-first .views-field-body .bnt.close span').css('display','block').click(function(){

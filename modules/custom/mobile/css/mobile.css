@@ -1270,66 +1270,6 @@ background-color: #d11212;
   }
 
 
-#block-views-aseptic-block-1 .views-row-2 {
-  position: absolute;
-  top: calc(48px * 11);
-}
-
-#block-views-aseptic-block-1 .views-row-2 {
-  position: absolute;
-  top: calc(48px * 10);
-}
-
-#block-views-aseptic-block-1 .views-row-3 {
-  position: absolute;
-  top: calc(48px * 9);
-}
-
-#block-views-aseptic-block-1 .views-row-4 {
-  position: absolute;
-  top: calc(48px * 8);
-}
-
-#block-views-aseptic-block-1 .views-row-5 {
-  position: absolute;
-  top: calc(48px * 7);
-}
-
-#block-views-aseptic-block-1 .views-row-6 {
-  position: absolute;
-  top: calc(48px * 6);
-}
-
-#block-views-aseptic-block-1 .views-row-7 {
-  position: absolute;
-  top: calc(48px * 5);
-}
-
-#block-views-aseptic-block-1 .views-row-8 {
-  position: absolute;
-  top: calc(48px * 4);
-}
-
-#block-views-aseptic-block-1 .views-row-9 {
-  position: absolute;
-  top: calc(48px * 3);
-}
-
-#block-views-aseptic-block-1 .views-row-10 {
-  position: absolute;
-  top: calc(48px * 2);
-}
-
-#block-views-aseptic-block-1 .views-row-11 {
-  position: absolute;
-  top: calc(48px * 1);
-}
-
-#block-views-aseptic-block-1 .views-row-12 {
-  position: absolute;
-  top: 48px;
-  display: none;
-}
 @media (max-height: 568px) {
   #block-views-aseptic-block-1 .views-row-2 {
     position: absolute;
@@ -1841,52 +1781,62 @@ background-color: #d11212;
   font-size: 65%;
 }
 
-#block-views-aseptic-block-1 .views-row-2 {
-  position: absolute;
-  top: calc(36px * 10);
-}
-
+#block-views-aseptic-block-1 .views-row-2,
 #block-views-aseptic-block-1 .views-row-3 {
-  position: absolute;
-  top: calc(36px * 9);
+  display: none;
 }
 
 #block-views-aseptic-block-1 .views-row-4 {
   position: absolute;
-  top: calc(36px * 8);
+  top: calc(36px * 10);
 }
 
 #block-views-aseptic-block-1 .views-row-5 {
   position: absolute;
-  top: calc(36px * 7);
+  top: calc(36px * 9);
 }
 
 #block-views-aseptic-block-1 .views-row-6 {
   position: absolute;
-  top: calc(36px * 6);
+  top: calc(36px * 8);
 }
 
 #block-views-aseptic-block-1 .views-row-7 {
   position: absolute;
-  top: calc(36px * 5);
+  top: calc(36px * 7);
 }
 
 #block-views-aseptic-block-1 .views-row-8 {
   position: absolute;
-  top: calc(36px * 4);
+  top: calc(36px * 6);
 }
 
 #block-views-aseptic-block-1 .views-row-9 {
   position: absolute;
-  top: calc(36px * 3);
+  top: calc(36px * 5);
 }
 
 #block-views-aseptic-block-1 .views-row-10 {
   position: absolute;
-  top: calc(36px * 2);
+  top: calc(36px * 4);
 }
 
 #block-views-aseptic-block-1 .views-row-11 {
   position: absolute;
-  top: 36px;
+  top: calc(36px * 3);
 }
+
+#block-views-aseptic-block-1 .views-row-12 {
+  position: absolute;
+  top: calc(36px * 2);
+}
+
+#block-views-aseptic-block-1 .views-row-13 {
+  position: absolute;
+  top: calc(36px * 1);
+}
+
+#block-views-aseptic-block-1 .views-row-14 {
+  display: none;
+}
+

@@ -67,6 +67,12 @@
                 countNumber($(counter[0]).attr('id'), parseInt(($(counter[0]).text()).replace('.','')), 2);
               }
             }
+            
+            // Hard code for 2 last process
+            $('#block-views-aseptic-block-1 .views-row').removeClass('follow');
+            if ($.inArray(ind, [2,1]) !== -1) {
+              $('#block-views-aseptic-block-1 .views-row-4').addClass('follow');
+            }
           }
           
           // Close button on aseptic process page
@@ -77,7 +83,7 @@
                 
               }
             });
-          }
+          }      
         });
         
         $('#block-views-aseptic-block-1 .views-row.views-row-first').trigger('click');
@@ -89,7 +95,7 @@
               $('#block-views-aseptic-block-1 .views-row-' + args.rel).trigger('click');
             });
           }
-        }
+        } 
       }
       
       // Bottle Menu click
@@ -254,8 +260,16 @@
         }else {
           stepInd = $(step).index();
         }
+        
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).show();
+        
+        // Hard code for 2 last process
+        if ($.inArray(stepInd, [2,1]) !== -1) {
+          $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(3)).show();
+        }
+        
         $('#block-views-aseptic-block .view-footer').css({'z-index': '-1'});
+        $('#block-views-aseptic-block-2 .view-footer').css({'z-index': '-1'});
         
         if ($('.entity.auto', step).length > 0) {
           // TODO do it for all case not only for row-11
@@ -404,7 +418,7 @@
       function blink() {
         $('#block-views-aseptic-block-1 .views-row').each(function(index, element){
           $('.views-field-field-menu-icon img', element)
-                  .delay(6600 - 600*index).animate({opacity:0.4},1)
+                  .delay(7800 - 600*index).animate({opacity:0.4},1)
                   .delay(200).animate({opacity:1, width:'50%'},200)
                   .delay(100).animate({width:'37%'},200);
         });

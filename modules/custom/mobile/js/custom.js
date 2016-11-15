@@ -69,9 +69,15 @@
       Pace.on('start', function(){
         $('body').hide();
       });
-      Pace.on('done', function(){
-        $('body').show();
-      });
+      
+      var myVar = setInterval(function(){ checkLoad() }, 50);
+      function checkLoad() {
+        var d = Pace.bar.progress;
+        if (d > 90) {
+          $('body .layout-center').show();
+          clearInterval(myVar);
+        }
+      }
       
     }
   }

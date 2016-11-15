@@ -70,10 +70,10 @@
         $('body .layout-center').hide();
       });
       
-      var myVar = setInterval(function(){ checkLoad() }, 300);
+      var myVar = setInterval(function(){ checkLoad() }, 50);
       function checkLoad() {
         var d = Pace.bar.progress;
-        if (d > 70) {
+        if (d > 90) {
           $('body .layout-center').show();
           clearInterval(myVar);
         }

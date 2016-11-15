@@ -78,7 +78,7 @@
           var followId = clArr[6].substring(7);
           if (followId === "") {
             // In case of views-row last
-            followId = clArr[7].substring(7);
+            followId = clArr[8].substring(7);
           }
           stepInd = $('#block-views-aseptic-block .' + followId).index();
         }else {
@@ -106,7 +106,13 @@
         }
         
         $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(stepInd)).hide();
+        // Hard code for 2 last process
+        if ($.inArray(stepInd, [2,1]) !== -1) {
+          $('.views-field-title .field-content', $('#block-views-aseptic-block-1 .views-row').get(3)).hide();
+        }
+        
         $('#block-views-aseptic-block .view-footer').css({'z-index': '1'});
+        $('#block-views-aseptic-block-2 .view-footer').css({'z-index': '1'});
       });
       
       // Click to step
@@ -347,10 +353,10 @@ function build360Img(container, materialPath) {
       jQuery('#block-views-aseptic-block-2 .view-footer').css({'z-index': '1'});
       
       // Add 9 type line  
-      jQuery('#block-views-aseptic-block .views-row.views-row-11 .views-field-field-parts.active .entity.active:first-child .field-name-field-image svg').remove();
-      if (jQuery('#block-views-aseptic-block .views-row.views-row-11 .views-field-field-parts.active .entity.active:first-child .field-name-field-image svg').length < 1) {
+      jQuery('#block-views-aseptic-block .views-row.views-row-13 .views-field-field-parts.active .entity.active:first-child .field-name-field-image svg').remove();
+      if (jQuery('#block-views-aseptic-block .views-row.views-row-13 .views-field-field-parts.active .entity.active:first-child .field-name-field-image svg').length < 1) {
         var nineType = run9Type();
-        jQuery('#block-views-aseptic-block .views-row.views-row-11 .views-field-field-parts.active .entity.active:first-child .field-name-field-image').prepend(nineType);
+        jQuery('#block-views-aseptic-block .views-row.views-row-13 .views-field-field-parts.active .entity.active:first-child .field-name-field-image').prepend(nineType);
       }
     }
 	}
